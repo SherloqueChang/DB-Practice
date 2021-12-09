@@ -8,7 +8,11 @@
 
 # 设计
 
-在登录界面添加病人注册界面的router，设置submitForm方法
+在登录界面添加病人注册界面的router，设置submitForm方法向数据库插入数据
+
+关于用户登录问题，由于sprint boot采用的数据库连接机制，不太方便设置不同用户的登录方式，所以考虑通过前端功能界面对用户操作权限进行限制
+
+后端处理主要是`GetMapping`和`PostMapping`的处理逻辑，按照sprint boot的架构，`@Repository`是数据层，直接和数据库进行数据交互；`@Service`是服务层，接受`@Controller`发来的请求，调用数据层的接口进行操作（隔离机制）
 
 # 问题
 
