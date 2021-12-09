@@ -48,7 +48,9 @@ public class UserServiceImpl implements UserService {
             throw new BadCredentialsException();
         } else {
             Map<String, Object> map = new HashMap<>();
+            // 在这里根据user的相关属性put不同的key来区分登录用户的身份
             map.put("user", user);
+//            map.put("patient", user);
             return map;
         }
     }
