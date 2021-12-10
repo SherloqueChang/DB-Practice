@@ -29,13 +29,13 @@
                 @click="submitForm('registerForm')"
                 style="width: 25%"
               >
-                Register in
+                注册
               </el-button>
               <el-button
                 @click="$router.back(-1)"
                 style="width: 25%; float: right"
               >
-                BACK
+                返回
               </el-button>
             </el-form-item>
           </el-form>
@@ -78,12 +78,13 @@ export default {
             this.$store.commit('register', resp.data.user)
             this.$message({
               type: 'success',
-              message: 'Register success. Welcome to log in!'
+              message: '注册成功，请完善个人信息'
             })
-            this.$ruoter.push('/register')
+            this.$ruoter.push('/registerInfo')
             this.reload()
           }
         })
+        // 需要根据返回数据判断是否用户已存在
         // eslint-disable-next-line handle-callback-err
         .catch((error) => {
           this.$message({

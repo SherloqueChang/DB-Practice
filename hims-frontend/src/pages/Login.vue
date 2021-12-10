@@ -33,7 +33,7 @@
                 登录
               </el-button>
               <p class="tips" style="float: right">
-                <a href="/register" type="primary">没有账户？现在注册</a>
+                <a href="/registerInfo" type="primary">没有账户？现在注册</a>
               </p>
             </el-form-item>
           </el-form>

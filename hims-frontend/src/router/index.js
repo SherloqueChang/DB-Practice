@@ -16,6 +16,7 @@ import DailyReportDataPanel from '@/pages/DailyReportDataPanel'
 import Messages from '@/pages/Messages'
 import PatientPanel from '../pages/PatientPanel'
 import AppointmentInfo from '../pages/AppointmentInfo'
+import RegisterInfo from '../pages/RegisterInfo'
 
 Vue.use(Router)
 
@@ -32,6 +33,11 @@ export default new Router({
       path: '/register',
       name: 'Register',
       component: Register
+    },
+    {
+      path: '/registerInfo',
+      name: 'RegisterInfo',
+      component: RegisterInfo
     },
     {
       path: '/patientPanel',
