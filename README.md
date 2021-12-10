@@ -24,4 +24,15 @@
 
 # 笔记
 
-vue components 是可复用的组件，通过v-if设置显示的内容，可以作为统一的界面
+## VUE 语法
+
+vue components 是可复用的组件，通过v-if设置显示的内容，可以作为统一的界面；
+
+v-model实现表单输入和应用状态之间的双向绑定；
+
+vue实例创建时，将data对象中的所有property加入到vue的响应系统中，值改变时视图产生响应更新；
+
+生命周期钩子，如created，在一个实例创建后执行代码；
+
+`v-bind` 指令可以用于响应式地更新 HTML attribute；
+
