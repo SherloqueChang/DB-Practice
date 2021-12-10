@@ -8,6 +8,129 @@
 
 # 设计
 
+```sql
+CREATE TABLE users(  
+    name VARCHAR(50) UNIQUE NOT NULL PRIMARY KEY COMMENT 'name',
+    pwd VARCHAR(50) NOT NULL COMMENT 'password',
+    privilege ENUM('patient', 'doctor', 'leader', 'admin') NOT NULL comment 'role of user'    
+) DEFAULT CHARSET UTF8 COMMENT '';
+
+CREATE TABLE patient(  
+    id int NOT NULL PRIMARY KEY AUTO_INCREMENT COMMENT 'Primary Key',
+    name VARCHAR(50) NOT NULL COMMENT 'name of the patient',
+    birthdate DATE NOT NULL COMMENT 'birthdate of the patient',
+    idcard VARCHAR(50) NOT NULL COMMENT 'ID card number of the patient',
+    gender ENUM('male','female') NOT NULL COMMENT 'gender of the patient',
+    phone VARCHAR(50) NOT NULL COMMENT 'phone number of the patient',
+    email VARCHAR(50) COMMENT 'email of the patient, can be NULL',
+    login_name VARCHAR(50) NOT NULL COMMENT 'login id',
+    FOREIGN KEY (login_name) REFERENCES users(name) ON DELETE CASCADE
+) DEFAULT CHARSET UTF8 COMMENT '';
+
+CREATE TABLE department( 
+    name VARCHAR(50) NOT NULL PRIMARY KEY COMMENT 'Name of department',
+    leader_id int COMMENT 'Leader id of the department'
+) DEFAULT CHARSET UTF8 COMMENT '';
+
+CREATE TABLE doctor(
+    id int NOT NULL PRIMARY KEY AUTO_INCREMENT COMMENT 'Primary Key',
+    name VARCHAR(50) NOT NULL COMMENT 'name of the doctor',
+    birthdate DATE NOT NULL COMMENT 'birthdate of the doctor',
+    idcard VARCHAR(50) NOT NULL COMMENT 'ID card number of the doctor',
+    gender ENUM('male','female') NOT NULL COMMENT 'gender of the doctor',
+    phone VARCHAR(50) NOT NULL COMMENT 'phone number of the doctor',
+    email VARCHAR(50) COMMENT 'email of the doctor, can be NULL',
+    login_name VARCHAR(50) NOT NULL COMMENT 'login id',
+    department VARCHAR(50) COMMENT 'department name of the doctor, can be NULL',
+    graduate_school VARCHAR(255) NOT NULL COMMENT 'graduate_school',
+    job_title VARCHAR(50) NOT NULL COMMENT 'job title',
+    specialties VARCHAR(255) COMMENT 'specialties',
+    FOREIGN KEY (login_name) REFERENCES users(name) ON DELETE CASCADE,
+    FOREIGN KEY (department) REFERENCES department(name) ON DELETE SET NULL
+)DEFAULT CHARSET UTF8 COMMENT '';
+
+ALTER TABLE department ADD CONSTRAINT CS
+    FOREIGN KEY (leader_id) REFERENCES doctor(id) ON DELETE SET NULL;
+
+
+CREATE TABLE medicine(
+    id int NOT NULL PRIMARY KEY AUTO_INCREMENT COMMENT 'Primary Key',
+    name VARCHAR(50) NOT NULL COMMENT 'medicine name'
+) DEFAULT CHARSET UTF8 COMMENT '';
+
+CREATE TABLE prescription(
+    id int NOT NULL PRIMARY KEY AUTO_INCREMENT COMMENT 'Primary Key',
+    doctor_id int NOT NULL COMMENT 'id of the doctor',
+    patient_id int NOT NULL COMMENT 'id of the patient',
+    pres_date DATE NOT NULL COMMENT 'date of the prescription',
+    medicine_id int COMMENT 'medicine id',
+    medicine_num int NOT NULL COMMENT 'number of the madicine',
+    FOREIGN KEY (doctor_id) REFERENCES doctor(id) ON DELETE NO ACTION,
+    FOREIGN KEY (patient_id) REFERENCES patient(id) ON DELETE NO ACTION,
+    FOREIGN KEY (medicine_id) REFERENCES medicine(id) ON DELETE NO ACTION
+) DEFAULT CHARSET UTF8 COMMENT '';
+
+CREATE TABLE Medical_records(
+    id int NOT NULL PRIMARY KEY AUTO_INCREMENT COMMENT 'Primary Key',
+    doctor_id int NOT NULL COMMENT 'id of the doctor',
+    patient_id int NOT NULL COMMENT 'id of the patient',
+    see_doctor_date DATE NOT NULL COMMENT 'date of the the record',
+    issue VARCHAR(200) NOT NULL COMMENT 'issue of the patient',
+    diagnosed_disease VARCHAR(200) COMMENT 'The doctor diagnosed the disease',
+    allergens VARCHAR(200) COMMENT 'determined allergens of this record',
+    prescription_id int COMMENT 'id of the prescription, can be NULL',
+    FOREIGN KEY (doctor_id) REFERENCES doctor(id) ON DELETE NO ACTION,
+    FOREIGN KEY (patient_id) REFERENCES patient(id) ON DELETE NO ACTION,
+    FOREIGN KEY (prescription_id) REFERENCES prescription(id) ON DELETE NO ACTION
+) DEFAULT CHARSET UTF8 COMMENT '';
+
+CREATE TABLE Coronavirus_Survey_Form(
+    id int NOT NULL PRIMARY KEY AUTO_INCREMENT COMMENT 'Primary Key',
+    patient_id int NOT NULL COMMENT 'Who fills the table',
+    fill_time DATETIME NOT NULL COMMENT 'time of the form finished',
+    name VARCHAR(50) NOT NULL COMMENT 'name of the patient',
+    gender ENUM('male','female') NOT NULL COMMENT 'gender of the patient',
+    idcard VARCHAR(50) NOT NULL COMMENT 'ID card number of the patient',
+    phone VARCHAR(50) NOT NULL COMMENT 'phone number of the patient',
+    address VARCHAR(255) NOT NULL COMMENT 'address of the patient',
+    whether_14days_fever ENUM('yes', 'no') NOT NULL COMMENT 'whether the patient has fever in the past 14 days',
+    fever_info VARCHAR(255) COMMENT 'information of the patient about fever, can be NULL',
+    whether_14days_area ENUM('yes', 'no') NOT NULL COMMENT 'Whether there is a history of residence in high-risk areas within 14 days',
+    area_info VARCHAR(255) COMMENT 'information of the patient about high-risk areas, can be NULL',
+    whether_14days_contact ENUM('yes', 'no') NOT NULL COMMENT 'Whether there is a history of close contact with patients with coronavirus in 14 days',
+    contact_info VARCHAR(255) COMMENT 'information of the patient about contact, can be NULL',
+    whether_14days_contact_area ENUM('yes', 'no') NOT NULL COMMENT 'Whether there is close contact with people from medium-to-high-risk areas or overseas within 14 days',
+    contact_area_info VARCHAR(255) COMMENT 'information of the patient about contact with people from medium-to-high-risk areas or overseas, can be NULL',     
+    FOREIGN KEY (patient_id) REFERENCES patient(id) ON DELETE NO ACTION
+) DEFAULT CHARSET UTF8 COMMENT '';
+
+CREATE TABLE num_appointed(
+    doctor_id int NOT NULL COMMENT 'id of the doctor',
+    appointment_date date NOT NULL COMMENT 'date of the record',
+    num int NOT NULL COMMENT 'number of patient already appointed',
+    FOREIGN KEY (doctor_id) REFERENCES doctor(id) ON DELETE CASCADE
+) DEFAULT CHARSET UTF8 COMMENT '';
+
+
+CREATE USER 'patient'@'localhost' IDENTIFIED BY 'patient';
+CREATE USER 'doctor'@'localhost' IDENTIFIED BY 'doctor';
+CREATE USER 'leader'@'localhost' IDENTIFIED BY 'leader';
+CREATE USER 'administrator'@'localhost' IDENTIFIED BY 'administrator';
+
+
+GRANT SELECT ON * TO 'patient'@'localhost';
+
+GRANT INSERT, UPDATE ON patient TO 'patient'@'localhost';
+
+GRANT INSERT ON Coronavirus_Survey_Form to 'patient'@'localhost';
+
+GRANT SELECT ON * TO 'doctor'@'localhost';
+
+GRANT INSERT, UPDATE ON doctor TO 'doctor'@'localhost';
+```
+
+
+
 在登录界面添加病人注册界面的router，设置submitForm方法向数据库插入数据
 
 关于用户登录问题，由于sprint boot采用的数据库连接机制，不太方便设置不同用户的登录方式，所以考虑通过前端功能界面对用户操作权限进行限制
@@ -35,4 +158,6 @@ vue实例创建时，将data对象中的所有property加入到vue的响应系�
 生命周期钩子，如created，在一个实例创建后执行代码；
 
 `v-bind` 指令可以用于响应式地更新 HTML attribute；
+
+# 进度
 
