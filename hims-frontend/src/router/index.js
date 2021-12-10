@@ -14,6 +14,8 @@ import NatInfo from '@/pages/NatInfo'
 import DailyReportInfo from '@/pages/DailyReportInfo'
 import DailyReportDataPanel from '@/pages/DailyReportDataPanel'
 import Messages from '@/pages/Messages'
+import PatientPanel from '../pages/PatientPanel'
+import AppointmentInfo from '../pages/AppointmentInfo'
 
 Vue.use(Router)
 
@@ -30,6 +32,16 @@ export default new Router({
       path: '/register',
       name: 'Register',
       component: Register
+    },
+    {
+      path: '/patientPanel',
+      name: 'PatientPanel',
+      component: PatientPanel
+    },
+    {
+      path: '/appointmentInfo',
+      name: 'AppointmentInfo',
+      component: AppointmentInfo
     },
     {
       path: '/workerDataPanel',

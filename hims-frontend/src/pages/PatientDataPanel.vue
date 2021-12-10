@@ -123,9 +123,11 @@
 
 <script>
 import navmenu from '../components/Nav.vue'
+// import mainPanel from '../components/MainPanel'
 
 export default {
   name: 'PatientDataPanel',
+  // components: { mainPanel },
   components: { navmenu },
   data () {
     return {

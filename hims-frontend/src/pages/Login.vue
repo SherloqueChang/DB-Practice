@@ -1,6 +1,6 @@
 <template>
   <el-container>
-    <el-header style="font-size: 30px; text-align: center">WeiMing Hospital</el-header>
+    <el-header style="font-size: 30px; text-align: center">未名医院</el-header>
     <el-main>
       <el-row type="flex" justify="center">
         <el-col :span="6">
@@ -12,10 +12,10 @@
             ref="loginForm"
             v-loading="loading"
           >
-            <el-form-item label="User ID" prop="id">
+            <el-form-item label="用户名" prop="id">
               <el-input v-model="loginForm.id"></el-input>
             </el-form-item>
-            <el-form-item label="Password" prop="password">
+            <el-form-item label="密码" prop="password">
               <el-input
                 type="password"
                 v-model="loginForm.password"
@@ -30,10 +30,10 @@
                 @click="submitForm('loginForm')"
                 style="width: 25%"
                 >
-                Log in
+                登录
               </el-button>
               <p class="tips" style="float: right">
-                <a href="/register" type="primary">No account？Register now</a>
+                <a href="/register" type="primary">没有账户？现在注册</a>
               </p>
             </el-form-item>
           </el-form>
@@ -44,11 +44,12 @@
 </template>
 
 <script>
-// import navmenu from '../components/Nav.vue'
+import navmenu from '../components/Nav.vue'
+// import mainPanel from '../components/MainPanel'
 
 export default {
   name: 'Login',
-  // components: { navmenu },
+  components: { navmenu },
   inject: ['reload'],
   data () {
     return {
@@ -57,8 +58,8 @@ export default {
         password: ''
       },
       rules: {
-        id: { required: true, message: 'Please enter user id', blur: 'change' },
-        password: { required: true, message: 'Please enter password', blur: 'change' }
+        id: { required: true, message: '请输入用户名', blur: 'change' },
+        password: { required: true, message: '请输入密码', blur: 'change' }
       },
       loading: false
     }
@@ -81,7 +82,8 @@ export default {
               message: 'Welcome to log in！'
             })
             // 需要修改，根据返回数据push不同的路径
-            this.$router.push('/patientDataPanel')
+            // this.$router.push('/patientDataPanel')
+            this.$router.push('/patientPanel')
             this.reload()
           }
         })
@@ -90,7 +92,7 @@ export default {
           if (error.message === 'Request failed with status code 403') {
             this.$message({
               type: 'error',
-              message: '用户id或密码错误，请重试。'
+              message: '用户名或密码错误，请重试。'
             })
             this.loading = false
           } else {

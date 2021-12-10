@@ -205,7 +205,7 @@ import navmenu from '../components/Nav.vue'
 
 export default {
   name: 'PatientInfo',
-  components: { navmenu },
+  // components: { navmenu },
   inject: ['reload'],
   data () {
     return {

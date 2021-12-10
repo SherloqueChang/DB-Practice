@@ -1,6 +1,6 @@
 <template>
   <el-container>
-    <el-header style="font-size: 30px; text-align: center">Fulfill your information</el-header>
+    <el-header style="font-size: 30px; text-align: center">注册用户</el-header>
     <el-main>
       <el-row type="flex" justify="center">
         <el-col :span="6">
@@ -12,12 +12,10 @@
             ref="registerForm"
             v-loading="loading"
           >
-            <el-form-item label="User Name" prop="name">
-              <el-input v-model="registerForm.name"></el-input>
-            </el-form-item><el-form-item label="User ID" prop="id">
+            <el-form-item label="用户名" prop="id">
               <el-input v-model="registerForm.id"></el-input>
             </el-form-item>
-            <el-form-item label="Password" prop="password">
+            <el-form-item label="密码" prop="password">
               <el-input
                 type="password"
                 v-model="registerForm.password"
