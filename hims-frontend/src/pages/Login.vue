@@ -44,12 +44,9 @@
 </template>
 
 <script>
-import navmenu from '../components/Nav.vue'
-// import mainPanel from '../components/MainPanel'
 
 export default {
   name: 'Login',
-  components: { navmenu },
   inject: ['reload'],
   data () {
     return {
@@ -79,11 +76,11 @@ export default {
             this.$store.commit('login', resp.data.user)
             this.$message({
               type: 'success',
-              message: 'Welcome to log in！'
+              message: '欢迎登录'
             })
             // 需要修改，根据返回数据push不同的路径
             // this.$router.push('/patientDataPanel')
-            this.$router.push('/patientPanel')
+            this.$router.push('/userInfo')
             this.reload()
           }
         })

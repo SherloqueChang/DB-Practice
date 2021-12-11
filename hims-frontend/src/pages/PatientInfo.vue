@@ -333,7 +333,7 @@ export default {
     handleUserData () {
       if (this.$store.state.user) {
         this.user = this.$store.state.user
-        this.isDoctor = this.$store.state.user.u_type === 'doctor'
+        this.isDoctor = this.$store.state.user.user_type === 'doctor'
       }
     },
     handleParams () {
@@ -341,7 +341,7 @@ export default {
         this.isReading = true
         this.isCreating = false
       } else {
-        if (this.user.u_type === 'e_nurse') {
+        if (this.user.user_type === 'e_nurse') {
           this.patientInfoForm.ENurseId = this.user.id.toString()
         }
       }

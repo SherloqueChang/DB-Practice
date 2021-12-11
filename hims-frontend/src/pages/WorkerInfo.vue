@@ -184,7 +184,7 @@ export default {
               this.worker.age = resp.data.worker.age
               this.worker.email = resp.data.worker.email
               this.worker.phone = resp.data.worker.phone
-              this.worker.isWNurse = resp.data.worker.u_type === 'w_nurse'
+              this.worker.isWNurse = resp.data.worker.user_type === 'w_nurse'
             } else {
               this.$message.error('请求错误，请重试')
             }

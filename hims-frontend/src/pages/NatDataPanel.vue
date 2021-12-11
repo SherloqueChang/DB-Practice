@@ -48,13 +48,13 @@
 </template>
 
 <script>
-import navmenu from "../components/Nav.vue";
+import navmenu from '../components/Nav.vue'
 
 export default {
-  name: "NatDataPanel",
+  name: 'NatDataPanel',
   components: { navmenu },
-  inject: ["reload"],
-  data() {
+  inject: ['reload'],
+  data () {
     return {
       user: [],
       tableData: [],
@@ -63,96 +63,96 @@ export default {
       p_id: null,
       p_name: null,
 
-      loading: false,
-    };
+      loading: false
+    }
   },
-  created() {
-    this.handleUserData();
-    this.loadTableData();
+  created () {
+    this.handleUserData()
+    this.loadTableData()
   },
   methods: {
-    handleUserData() {
+    handleUserData () {
       if (this.$store.state.user) {
-        this.user = this.$store.state.user;
-        if (this.user.u_type === "w_nurse" || this.user.u_type === "doctor") {
-          this.isEditable = true;
+        this.user = this.$store.state.user
+        if (this.user.user_type === 'w_nurse' || this.user.user_type === 'doctor') {
+          this.isEditable = true
         }
       }
 
       if (this.$route.params.p_id && this.$route.params.p_name) {
-        this.p_id = this.$route.params.p_id;
-        this.p_name = this.$route.params.p_name;
+        this.p_id = this.$route.params.p_id
+        this.p_name = this.$route.params.p_name
       } else {
-        this.$message.error("您所查看的病人不存在！");
+        this.$message.error('您所查看的病人不存在！')
       }
     },
-    loadTableData() {
+    loadTableData () {
       this.$axios
-        .get("/getNATReport", {
-          params: { p_id: this.p_id },
+        .get('/getNATReport', {
+          params: { p_id: this.p_id }
         })
         .then((resp) => {
           if (resp.status === 200) {
-            var index = -1;
+            var index = -1
             resp.data.forEach((element) => {
-              index++;
-              this.loadRow(index, element);
-            });
+              index++
+              this.loadRow(index, element)
+            })
           } else {
-            this.$message.error("请求错误，请重试");
+            this.$message.error('请求错误，请重试')
           }
         })
         .catch((error) => {
-          console.log(error);
-          this.$message.error("请求错误，请重试");
-        });
+          console.log(error)
+          this.$message.error('请求错误，请重试')
+        })
     },
 
-    loadRow(index, report) {
+    loadRow (index, report) {
       this.tableData.push({
         id: report.id,
-        result: report.result ? this.parseResult(report.result) : "",
-        date: report.date ? report.date : "",
-        time: report.time ? report.time : "",
-      });
+        result: report.result ? this.parseResult(report.result) : '',
+        date: report.date ? report.date : '',
+        time: report.time ? report.time : ''
+      })
     },
-    parseResult(result) {
+    parseResult (result) {
       switch (result) {
-        case "positive":
-          return "阳性";
-        case "negative":
-          return "阴性";
+        case 'positive':
+          return '阳性'
+        case 'negative':
+          return '阴性'
       }
     },
 
-    goBack() {
-      this.$router.push("/patientInfo/" + this.p_id);
+    goBack () {
+      this.$router.push('/patientInfo/' + this.p_id)
     },
-    handleAdd(index, row) {
+    handleAdd (index, row) {
       this.$axios
-        .get("/addNATReport", {
+        .get('/addNATReport', {
           params: {
-            p_id: this.p_id.toString(),
-          },
+            p_id: this.p_id.toString()
+          }
         })
         .then((resp) => {
           if (resp.status === 200) {
-            this.$message.info("添加成功！");
-            this.reload();
+            this.$message.info('添加成功！')
+            this.reload()
           }
         })
         .catch((error) => {
-          console.log(error);
-          this.$message.error("请求错误，请重试");
-        });
+          console.log(error)
+          this.$message.error('请求错误，请重试')
+        })
     },
-    handleEdit(index, row) {
+    handleEdit (index, row) {
       this.$router.push(
-        "/natInfo/" + this.p_id + "&" + this.p_name + "/" + row.id
-      );
-    },
-  },
-};
+        '/natInfo/' + this.p_id + '&' + this.p_name + '/' + row.id
+      )
+    }
+  }
+}
 </script>
 
 <style>

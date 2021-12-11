@@ -89,7 +89,7 @@ public class UserServiceImpl implements UserService {
         Map<String, Object> map = new HashMap<>();
         User user = find(Integer.parseInt(id));
         map.put("worker", user);
-        switch (user.getU_type()) {
+        switch (user.getuser_type()) {
             case "e_nurse":
                 return map;
             case "doctor": {

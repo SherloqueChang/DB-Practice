@@ -138,7 +138,7 @@ export default {
 
       worker: {
         id: '',
-        u_type: '',
+        user_type: '',
         name: ''
       }
     }
@@ -151,23 +151,23 @@ export default {
     handleUserData () {
       if (this.$store.state.user) {
         this.user = this.$store.state.user
-        this.isENurse = this.user.u_type === 'e_nurse'
+        this.isENurse = this.user.user_type === 'e_nurse'
       }
 
       if (this.$route.params.w_id && this.$route.params.w_name) {
         this.worker.id = this.$route.params.w_id
         this.worker.name = this.$route.params.w_name
-        this.worker.u_type = 'w_nurse'
+        this.worker.user_type = 'w_nurse'
       } else {
         this.worker.id = this.user.id
         this.worker.name = '我'
-        this.worker.u_type = this.user.u_type
+        this.worker.user_type = this.user.user_type
       }
     },
     loadTableData () {
       this.$axios
         .get('/patientDataPanel', {
-          params: { id: this.worker.id, type: this.worker.u_type }
+          params: { id: this.worker.id, type: this.worker.user_type }
         })
         .then((resp) => {
           if (resp.status === 200) {

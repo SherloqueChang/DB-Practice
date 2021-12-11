@@ -36,8 +36,8 @@ export default {
     handleUserData () {
       if (this.$store.state.user) {
         this.user = this.$store.state.user
-        this.isHeadNurse = this.user.u_type === 'h_nurse'
-        this.isDoctor = this.user.u_type === 'doctor'
+        this.isHeadNurse = this.user.user_type === 'h_nurse'
+        this.isDoctor = this.user.user_type === 'doctor'
       }
     },
     handleLogout () {

@@ -7,19 +7,19 @@ public class User {
     private String age;
     private String email;
     private String phone;
-    private String u_type;
+    private String user_type;
 
     public User() {
     }
 
-    public User(int id, String name, String password, String age, String email, String phone, String u_type) {
+    public User(int id, String name, String password, String age, String email, String phone, String user_type) {
         this.id = id;
         this.name = name;
         this.password = password;
         this.age = age;
         this.email = email;
         this.phone = phone;
-        this.u_type = u_type;
+        this.user_type = user_type;
     }
 
     public int getId() {
@@ -70,11 +70,11 @@ public class User {
         this.phone = phone;
     }
 
-    public String getU_type() {
-        return u_type;
+    public String getuser_type() {
+        return user_type;
     }
 
-    public void setU_type(String u_type) {
-        this.u_type = u_type;
+    public void setuser_type(String user_type) {
+        this.user_type = user_type;
     }
 }

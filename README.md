@@ -137,6 +137,10 @@ GRANT INSERT, UPDATE ON doctor TO 'doctor'@'localhost';
 
 后端处理主要是`GetMapping`和`PostMapping`的处理逻辑，按照sprint boot的架构，`@Repository`是数据层，直接和数据库进行数据交互；`@Service`是服务层，接受`@Controller`发来的请求，调用数据层的接口进行操作（隔离机制）
 
+## 前端
+
+依据全局性的`this.$store.state.user`判断用户类型，从而进行相应的页面显示（`v-if`）
+
 # 问题
 
 前后端数据交互格式，特别是前端收到response的数据后如何绑定到组件上进行可视化，以及数据属性如何定义；
