@@ -15,12 +15,6 @@
               ref="userInfoForm"
               v-loading="loading"
             >
-              <el-form-item label="用户名" prop="name">
-                <el-input v-model="userInfoForm.id"></el-input>
-              </el-form-item>
-              <el-form-item label="姓名" prop="name">
-                <el-input v-model="userInfoForm.name"></el-input>
-              </el-form-item>
               <el-form-item label="密码" prop="password">
                 <el-input
                   type="password"
@@ -105,15 +99,11 @@ export default {
       isLeader: false,
 
       userInfoForm: {
-        id: '',
-        name: '',
         password: '',
         phone: '',
         email: ''
       },
       rules: {
-        id: { required: true, message: '请输入用户名', blur: 'change' },
-        name: { required: true, message: '请输入姓名', blur: 'change' },
         password: { required: true, message: '请输入密码', blur: 'change' },
         phone: { required: true, message: '请输入电话', blur: 'change' },
         email: { required: true, message: '请输入Email', blur: 'change' }
@@ -149,8 +139,6 @@ export default {
               this.user.email = resp.data.worker.email
               this.user.phone = resp.data.worker.phone
               this.user.user_type = resp.data.worker.user_type
-              this.userInfoForm.id = resp.data.worker.id
-              this.userInfoForm.name = resp.data.worker.name
               this.userInfoForm.password = resp.data.worker.password
               this.userInfoForm.email = resp.data.worker.email
               this.userInfoForm.phone = resp.data.worker.phone
@@ -197,9 +185,7 @@ export default {
         .get('/modifyUserInfo', {
           params: {
             id: this.user.id.toString(),
-            name: this.userInfoForm.name,
             password: this.userInfoForm.password,
-            age: this.userInfoForm.age,
             email: this.userInfoForm.email,
             phone: this.userInfoForm.phone
           }
@@ -207,7 +193,11 @@ export default {
         .then((resp) => {
           this.loading = false
           if (resp.status === 200) {
-            this.$router.push('/patientPanel')
+            this.$router.push('/userInfo')
+            this.$message({
+              type: 'success',
+              message: '个人信息修改成功！'
+            })
           } else {
             this.$message.error('请求错误，请重试')
           }

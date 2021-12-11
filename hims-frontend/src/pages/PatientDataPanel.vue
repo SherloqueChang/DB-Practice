@@ -122,13 +122,12 @@
 </template>
 
 <script>
-import navmenu from '../components/Nav.vue'
-// import mainPanel from '../components/MainPanel'
+import NavHeader from '../components/NavHeader'
+import NavAside from '../components/NavAside'
 
 export default {
   name: 'PatientDataPanel',
-  // components: { mainPanel },
-  components: { navmenu },
+  components: { NavAside, NavHeader },
   data () {
     return {
       user: [],

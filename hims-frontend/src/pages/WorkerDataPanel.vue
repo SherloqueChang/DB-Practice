@@ -50,11 +50,12 @@
 </template>
 
 <script>
-import navmenu from '../components/Nav.vue'
+import NavHeader from '../components/NavHeader'
+import NavAside from '../components/NavAside'
 
 export default {
   name: 'WorkerDataPanel',
-  components: { navmenu },
+  components: { NavHeader, NavAside },
   // 数据更新后刷新页面，获取最新的列表数据
   inject: ['reload'],
   data () {

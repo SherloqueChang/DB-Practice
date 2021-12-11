@@ -33,11 +33,14 @@
 </template>
 
 <script>
-import navmenu from '../components/Nav.vue'
+
+
+import NavAside from '../components/NavAside'
+import NavHeader from '../components/NavHeader'
 
 export default {
   name: 'BedDataPanel',
-  components: { navmenu },
+  components: { NavAside, NavHeader },
   data () {
     return {
       user: [],

@@ -55,12 +55,13 @@
 </template>
 
 <script>
-import navmenu from "../components/Nav.vue";
+import NavAside from '../components/NavAside'
+import NavHeader from '../components/NavHeader'
 
 export default {
-  name: "DailyReportInfo",
-  components: { navmenu },
-  data() {
+  name: 'DailyReportInfo',
+  components: { NavAside, NavHeader },
+  data () {
     return {
       user: [],
       r_id: null,
@@ -68,88 +69,88 @@ export default {
       p_name: null,
 
       drInfoForm: {
-        date: "",
-        temperature: "",
-        symptom: "",
+        date: '',
+        temperature: '',
+        symptom: ''
       },
       datePickerOptions: {
-        disabledDate(time) {
-          return time.getTime() > Date.now();
-        },
+        disabledDate (time) {
+          return time.getTime() > Date.now()
+        }
       },
 
       rules: {
         date: {
           required: true,
-          message: "请输入日期",
-          blur: "change",
+          message: '请输入日期',
+          blur: 'change'
         },
         temperature: {
           required: true,
-          message: "请输入体温",
-          blur: "change",
+          message: '请输入体温',
+          blur: 'change'
         },
         symptom: {
           required: true,
-          message: "请输入症状",
-          blur: "change",
-        },
+          message: '请输入症状',
+          blur: 'change'
+        }
       },
-      loading: false,
-    };
+      loading: false
+    }
   },
-  created() {
-    this.handleUserData();
-    this.handleParams();
+  created () {
+    this.handleUserData()
+    this.handleParams()
   },
   methods: {
-    handleUserData() {
+    handleUserData () {
       if (this.$store.state.user) {
-        this.user = this.$store.state.user;
+        this.user = this.$store.state.user
       }
     },
-    handleParams() {
+    handleParams () {
       if (this.$route.params.p_id && this.$route.params.p_name) {
-        this.p_id = this.$route.params.p_id;
-        this.p_name = this.$route.params.p_name;
+        this.p_id = this.$route.params.p_id
+        this.p_name = this.$route.params.p_name
       }
     },
 
-    goBack() {
-      this.$router.push("/drDataPanel/" + this.p_id + "&" + this.p_name);
+    goBack () {
+      this.$router.push('/drDataPanel/' + this.p_id + '&' + this.p_name)
     },
 
-    submitForm(formName) {
-      this.loading = true;
+    submitForm (formName) {
+      this.loading = true
       this.$axios
-        .get("/addDailyReport", {
+        .get('/addDailyReport', {
           params: {
             p_id: this.p_id,
             date: this.drInfoForm.date,
             temperature: this.drInfoForm.temperature,
             symptom: this.drInfoForm.symptom,
-            w_nurse_id: this.user.id,
-          },
+            w_nurse_id: this.user.id
+          }
         })
         .then((resp) => {
-          this.loading = false;
+          this.loading = false
           if (resp.status === 200) {
-            this.$router.push("/drDataPanel/" + this.p_id + "&" + this.p_name);
+            this.$router.push('/drDataPanel/' + this.p_id + '&' + this.p_name)
           } else {
-            this.$message.error("请求错误，请重试");
+            this.$message.error('请求错误，请重试')
           }
         })
         .catch((error) => {
-          console.log(error);
+          console.log(error)
           if (error.response.status === 400) {
-            this.$message.error("当日信息登记已存在！");
+            this.$message.error('当日信息登记已存在！')
           } else {
-            this.$message.error("请求错误，请重试");
+            this.$message.error('请求错误，请重试')
           }
-        });
-    },
-  },
-};
+        })
+    }
+  }
+}
 </script>
 
 <style>
