@@ -108,12 +108,13 @@ export default {
       this.loading = true
       this.$axios
         .post('/registerInfo', {
+          id: this.$route.params.id,
           name: this.registerInfoForm.name,
           birthdate: this.registerInfoForm.birthdate,
           idcard: this.registerInfoForm.idcard,
           gender: this.registerInfoForm.gender,
           phone: this.registerInfoForm.phone,
-          emial: this.registerInfoForm.email
+          email: this.registerInfoForm.email
         })
         .then((resp) => {
           if (resp.status === 200) {

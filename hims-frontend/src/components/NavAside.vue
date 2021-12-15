@@ -53,9 +53,9 @@ export default {
         this.user = this.$store.state.user
         this.isPatient = true
         // this.isPatient = this.user.u_type === 'patient'
-        this.isDoctor = this.user.u_type === 'doctor'
-        this.isLeader = this.user.u_type === 'leader'
-        this.isAdmin = this.user.u_type === 'admin'
+        // this.isDoctor = this.user.u_type === 'doctor'
+        // this.isLeader = this.user.u_type === 'leader'
+        // this.isAdmin = this.user.u_type === 'admin'
       }
     }
   }

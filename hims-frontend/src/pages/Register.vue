@@ -80,7 +80,12 @@ export default {
               type: 'success',
               message: '注册成功，请完善个人信息'
             })
-            this.$ruoter.push('/registerInfo')
+            this.$ruoter.push({
+              name: 'RegisterInfo',
+              params: {
+                id: this.registerForm.id
+              }
+            })
             this.reload()
           }
         })
@@ -89,7 +94,7 @@ export default {
         .catch((error) => {
           this.$message({
             tyep: 'error',
-            message: 'Service is not available. Please try later'
+            message: '服务不可用，请重试'
           })
           this.loading = false
         })
