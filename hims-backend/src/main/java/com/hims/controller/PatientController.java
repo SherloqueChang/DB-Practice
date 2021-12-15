@@ -76,7 +76,7 @@ public class PatientController {
     @GetMapping("/getMessage")
     public ResponseEntity<?> getMessage(@RequestParam("id") String id) {
         User user = userRepository.find(Integer.parseInt(id));
-        switch (user.getuser_type()) {
+        switch (user.getu_type()) {
             case "doctor":
                 return new ResponseEntity<>(patientRepository.getReleasedPatient(), HttpStatus.OK);
             case "h_nurse":

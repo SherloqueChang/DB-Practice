@@ -20,12 +20,12 @@ public class UserRepository {
     private JdbcTemplate jdbcTemplate;
 
     public void save(User user) {
-        String sql = "insert into user(id,name,password,age,email,phone,user_type) values(?,?,?,?,?,?,?)";
-        jdbcTemplate.update(sql, user.getId(), user.getName(), user.getPassword(), user.getAge(), user.getEmail(), user.getPhone(), user.getuser_type());
+        String sql = "insert into user(id,name,password,age,email,phone,u_type) values(?,?,?,?,?,?,?)";
+        jdbcTemplate.update(sql, user.getId(), user.getName(), user.getPassword(), user.getAge(), user.getEmail(), user.getPhone(), user.getu_type());
     }
 
     public int saveWNurse(String name, String age, String email, String phone) {
-        String sql = "insert into user(name,password,age,email,phone,user_type) values(?,?,?,?,?,?)";
+        String sql = "insert into user(name,password,age,email,phone,u_type) values(?,?,?,?,?,?)";
         KeyHolder keyHolder = new GeneratedKeyHolder();
         PreparedStatementCreator preparedStatementCreator = con -> {
             PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
@@ -70,7 +70,7 @@ public class UserRepository {
     }
 
     public List<User> findByType(String type) {
-        String sql = "select * from user where user_type=?";
+        String sql = "select * from user where u_type=?";
         try {
             return jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(User.class), type);
         } catch (Exception e) {

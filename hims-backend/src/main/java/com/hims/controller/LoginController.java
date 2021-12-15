@@ -62,7 +62,7 @@ public class LoginController {
     public ResponseEntity<?> deleteWardNurse(@RequestParam("u_id") String u_id,
                                              @RequestParam("w_nurse_id") String w_nurse_id) {
         User user = userService.find(Integer.parseInt(u_id));
-        if (user.getuser_type().equals("h_nurse")) {
+        if (user.getu_type().equals("h_nurse")) {
             try {
                 userService.deleteWardNurseByWNurseId(Integer.parseInt(w_nurse_id));
                 return ResponseEntity.ok("Deleted successfully!");
