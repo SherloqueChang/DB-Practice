@@ -39,6 +39,7 @@ public class PatientController {
         this.treatmentAreaRepository = treatmentAreaRepository;
     }
 
+    /*
     @GetMapping("/addPatient")
     @Transactional
     public ResponseEntity<?> addPatient(@RequestParam("ENurseId") String ENurseId,
@@ -76,7 +77,7 @@ public class PatientController {
     @GetMapping("/getMessage")
     public ResponseEntity<?> getMessage(@RequestParam("id") String id) {
         User user = userRepository.find(Integer.parseInt(id));
-        switch (user.getu_type()) {
+        switch (user.getU_type()) {
             case "doctor":
                 return new ResponseEntity<>(patientRepository.getReleasedPatient(), HttpStatus.OK);
             case "h_nurse":
@@ -153,4 +154,5 @@ public class PatientController {
         reportService.fillNATReport(id, result, date, time);
         return new ResponseEntity<>("OK!", HttpStatus.OK);
     }
+    */
 }

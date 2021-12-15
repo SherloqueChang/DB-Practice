@@ -1,23 +1,26 @@
 package com.hims.serviceImpl;
 
+import com.hims.controller.request.*;
 import com.hims.domain.Patient;
 import com.hims.domain.User;
 import com.hims.exception.BadCredentialsException;
 import com.hims.exception.UserNotFoundException;
 import com.hims.exception.WardNurseDeleteFailureException;
 import com.hims.repository.*;
-import com.hims.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 @Service
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl{
     @Autowired
     private UserRepository userRepository;
     @Autowired
@@ -41,13 +44,15 @@ public class UserServiceImpl implements UserService {
     }
 
     public Map<String, Object> login(String id, String password) {
-        User user = find(Integer.parseInt(id));
+        User user = find(id);
+        Map<String, Object> map = new HashMap<>();
         if (user == null) {
-            throw new UserNotFoundException(id);
-        } else if (!password.equals(user.getPassword())) {
-            throw new BadCredentialsException();
+            map.put("error", "未找到用户名，请检查用户名是否正确");
+            return map;
+        } else if (!password.equals(user.getPwd())) {
+            map.put("error", "用户名或密码错误");
+            return map;
         } else {
-            Map<String, Object> map = new HashMap<>();
             // 在这里根据user的相关属性put不同的key来区分登录用户的身份
             map.put("user", user);
 //            map.put("patient", user);
@@ -55,11 +60,35 @@ public class UserServiceImpl implements UserService {
         }
     }
 
-    public void register(String name, String id, String password) {
+    public Map<String, Object> register(String id, String password) {
         User user = new User();
-        user.setId(Integer.parseInt(id)); user.setName(name); user.setPassword(password);
+        user.setId(id);  user.setPwd(password);
+        user.setU_type("patient");
         save(user);
+        Map<String, Object> map = new HashMap<>();
+        map.put("user",user);
+        return map;
     }
+
+    public Map<String, Object> registerinfo(RegisterInfoRequest request)
+    {
+        DateFormat fmt =new SimpleDateFormat("yyyy-MM-dd");
+        User user = find(request.getId());
+        System.out.println("!!!");
+        System.out.println(user);
+        System.out.println("!!!");
+        try {
+            user = new User(user.getId(), user.getPwd(), request.getName(), fmt.parse(request.getBirthdate()), request.getIdcard(), request.getGender(), request.getPhone(), request.getEmail(), user.getU_type());
+        } catch (ParseException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        update(user);
+        Map<String, Object> map = new HashMap<>();
+        map.put("user",user);
+        return map;
+    }
+
 
     public Map<String, Object> getDoctorDataPanel(String id) {
         Map<String, Object> map = new HashMap<>();
@@ -87,9 +116,9 @@ public class UserServiceImpl implements UserService {
 
     public Map<String, Object> getWorkerInfo(String id) {
         Map<String, Object> map = new HashMap<>();
-        User user = find(Integer.parseInt(id));
+        User user = find(id);
         map.put("worker", user);
-        switch (user.getu_type()) {
+        switch (user.getU_type()) {
             case "e_nurse":
                 return map;
             case "doctor": {
@@ -127,56 +156,52 @@ public class UserServiceImpl implements UserService {
 //        return map;
 //    }
 
-    @Override
+    
+
     public void save(User user) {
         userRepository.save(user);
     }
 
-    @Override
-    public void delete(int id) {
+    public void update(User user) {
+        userRepository.update(user);
+    }
+
+    public void delete(String id) {
         userRepository.delete(id);
     }
 
-    @Override
-    public User find(int id) {
+    public User find(String id) {
         return userRepository.find(id);
     }
 
-    @Override
     public List<User> findAll() {
         return userRepository.findAll();
     }
 
-    @Override
     public User findHeadNurseByDoctorId(int id) {
         return treatmentAreaRepository.findHeadNurseByDoctorId(id);
     }
 
-    @Override
     public int findTreatmentAreaIdByDoctorId(int id) {
         return treatmentAreaRepository.findByDoctorId(id);
     }
 
-    @Override
     public int findTreatmentAreaIdByHeadNurseId(int id) {
         return treatmentAreaRepository.findByHeadNurseId(id);
     }
 
-    @Override
     @Transactional
     public List<Integer> findWardIdByDoctorId(int id) {
         int t_area_id = findTreatmentAreaIdByDoctorId(id);
         return wardRepository.findByTreatmentAreaId(t_area_id);
     }
 
-    @Override
     @Transactional
     public List<Integer> findWardIdByHeadNurseId(int id) {
         int t_area_id = findTreatmentAreaIdByHeadNurseId(id);
         return wardRepository.findByTreatmentAreaId(t_area_id);
     }
 
-    @Override
     @Transactional
     public void deleteWardNurseByWNurseId(int id) {
         List<Patient> hospitalizedPatients = patientRepository.findHospitalizedByWNurseId(id);
@@ -199,18 +224,16 @@ public class UserServiceImpl implements UserService {
 //
 //    }
 
-    @Override
     public List<User> findWardNurseByWardId(int id) {
         return wardNurseAndWardRepository.findWardNurseByWardId(id);
     }
 
-    @Override
     public List<Patient> findPatientByWardId(int id) {
         return patientRepository.findByWardId(id);
     }
 
     public void modifyUserInfo(String id, String name, String password, String age, String email, String phone) {
-        userRepository.update(Integer.parseInt(id), name, password, age, email, phone);
+        userRepository.update(id, name, password, age, email, phone);
     }
 
     @Transactional

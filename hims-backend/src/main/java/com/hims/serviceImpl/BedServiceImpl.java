@@ -2,7 +2,6 @@ package com.hims.serviceImpl;
 
 import com.hims.domain.Bed;
 import com.hims.repository.BedRepository;
-import com.hims.service.BedService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +11,7 @@ import java.util.List;
 import java.util.Map;
 
 @Service
-public class BedServiceImpl implements BedService {
+public class BedServiceImpl{
     @Autowired
     private BedRepository bedRepository;
     @Autowired

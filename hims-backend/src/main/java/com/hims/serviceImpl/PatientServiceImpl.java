@@ -4,7 +4,6 @@ import com.hims.domain.Bed;
 import com.hims.domain.NatReport;
 import com.hims.domain.Patient;
 import com.hims.repository.*;
-import com.hims.service.PatientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,7 +14,7 @@ import java.util.List;
 import java.util.Map;
 
 @Service
-public class PatientServiceImpl implements PatientService {
+public class PatientServiceImpl{
     @Autowired
     private PatientRepository patientRepository;
     @Autowired

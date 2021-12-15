@@ -20,8 +20,13 @@ public class UserRepository {
     private JdbcTemplate jdbcTemplate;
 
     public void save(User user) {
-        String sql = "insert into user(id,name,password,age,email,phone,u_type) values(?,?,?,?,?,?,?)";
-        jdbcTemplate.update(sql, user.getId(), user.getName(), user.getPassword(), user.getAge(), user.getEmail(), user.getPhone(), user.getu_type());
+        String sql = "insert into user(id,pwd,name,birthdate,idcard,gender,phone,email,u_type) values(?,?,?,?,?,?,?,?,?)";
+        jdbcTemplate.update(sql, user.getId(), user.getPwd(), user.getName(), user.getBirthdate(), user.getIdcard(), user.getGender(), user.getPhone(), user.getEmail(), user.getU_type());
+    }
+
+    public void update(User user) {
+        String sql = "update user set pwd = ?, name = ?, birthdate = ?, idcard = ?, gender = ?, phone = ?, email = ? where id = ?";
+        jdbcTemplate.update(sql, user.getPwd(), user.getName(), user.getBirthdate(), user.getIdcard(), user.getGender(), user.getPhone(), user.getEmail(), user.getId());
     }
 
     public int saveWNurse(String name, String age, String email, String phone) {
@@ -41,17 +46,17 @@ public class UserRepository {
         return Objects.requireNonNull(keyHolder.getKey()).intValue();
     }
 
-    public void delete(int id) {
+    public void delete(String id) {
         String sql = "delete from user where id=?";
         jdbcTemplate.update(sql, id);
     }
 
-    public void update(int id, String name, String password, String age, String email, String phone) {
+    public void update(String id, String name, String password, String age, String email, String phone) {
         String sql = "update user set name=?,password=?,age=?,email=?,phone=? where id=?";
         jdbcTemplate.update(sql, name, password, age, email, phone, id);
     }
 
-    public User find(int id) {
+    public User find(String id) {
         String sql = "select * from user where id=?";
         try {
             return jdbcTemplate.queryForObject(sql, new BeanPropertyRowMapper<>(User.class), id);

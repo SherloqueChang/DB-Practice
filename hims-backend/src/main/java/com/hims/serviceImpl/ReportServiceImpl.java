@@ -4,7 +4,6 @@ import com.hims.domain.DailyReport;
 import com.hims.domain.NatReport;
 import com.hims.repository.DailyReportRepository;
 import com.hims.repository.NATReportRepository;
-import com.hims.service.ReportService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.stereotype.Service;
@@ -12,7 +11,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class ReportServiceImpl implements ReportService {
+public class ReportServiceImpl{
     @Autowired
     private NATReportRepository natReportRepository;
     @Autowired

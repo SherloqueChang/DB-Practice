@@ -2,6 +2,7 @@ package com.hims.controller;
 
 import com.hims.controller.request.LoginRequest;
 import com.hims.controller.request.RegisterRequest;
+import com.hims.controller.request.RegisterInfoRequest;
 import com.hims.domain.User;
 import com.hims.exception.WardNurseDeleteFailureException;
 import com.hims.serviceImpl.BedServiceImpl;
@@ -42,8 +43,12 @@ public class LoginController {
 
     @PostMapping("/register")
     ResponseEntity<?> register(@RequestBody RegisterRequest request) {
-        userService.register(request.getName(), request.getId(), request.getPassword());
-        return new ResponseEntity<>("Register done", HttpStatus.OK);
+        return ResponseEntity.ok(userService.register(request.getId(), request.getPassword()));
+    }
+
+    @PostMapping("/registerInfo")
+    ResponseEntity<?> registerInfo(@RequestBody RegisterInfoRequest request) {
+        return ResponseEntity.ok(userService.registerinfo(request));
     }
 
     @GetMapping("/workerDataPanel")
@@ -61,8 +66,9 @@ public class LoginController {
     @GetMapping("/deleteWardNurse")
     public ResponseEntity<?> deleteWardNurse(@RequestParam("u_id") String u_id,
                                              @RequestParam("w_nurse_id") String w_nurse_id) {
-        User user = userService.find(Integer.parseInt(u_id));
-        if (user.getu_type().equals("h_nurse")) {
+        User user = userService.find(u_id);
+        
+        if (user.getU_type().equals("h_nurse")) {
             try {
                 userService.deleteWardNurseByWNurseId(Integer.parseInt(w_nurse_id));
                 return ResponseEntity.ok("Deleted successfully!");

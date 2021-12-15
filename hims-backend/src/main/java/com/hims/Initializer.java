@@ -138,7 +138,7 @@ class Initializer {
         Class.forName(driver);
         Connection conn = DriverManager.getConnection(initial_url, userName, password);
         Statement stat = conn.createStatement();
-        stat.executeUpdate(createDatabase);
+        /* stat.executeUpdate(createDatabase);
         stat.execute(useDatabase);
         stat.executeUpdate(createUser);
         stat.executeUpdate(insertUser);
@@ -154,12 +154,12 @@ class Initializer {
         stat.executeUpdate(createNAT_report);
         stat.executeUpdate(createDaily_report);
         stat.executeUpdate(to_be_transfer);
-        stat.executeUpdate(dropTrigger_on_patient);
+        stat.executeUpdate(dropTrigger_on_patient);*/
 //        stat.execute(transfer_patient);
-        stat.execute(drop_transfer_patient_after_add_new_wnurse);
+        /*stat.execute(drop_transfer_patient_after_add_new_wnurse);
         stat.execute(transfer_patient_after_add_new_wnurse);
         stat.execute(drop_transfer);
-        stat.execute(transfer);
+        stat.execute(transfer);*/
 //        stat.execute(drop_trigger_on_nat);
 //        stat.execute(trigger_on_nat);
 //        stat.execute(drop_trigger_on_daily_report);
