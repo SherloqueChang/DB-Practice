@@ -75,7 +75,7 @@ export default {
     handleUserData () {
       if (this.$store.state.user) {
         this.user = this.$store.state.user
-        if (this.user.user_type === 'w_nurse' || this.user.user_type === 'doctor') {
+        if (this.user.u_type === 'w_nurse' || this.user.u_type === 'doctor') {
           this.isEditable = true
         }
       }

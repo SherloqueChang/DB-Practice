@@ -60,7 +60,7 @@
                 {{ this.user.email }}
               </el-form-item>
               <el-form-item label="身份">
-                {{ this.parseUType(this.user.user_type) }}
+                {{ this.parseUType(this.user.u_type) }}
               </el-form-item>
               <el-form-item label="毕业院校" v-if="isDoctor">
                 {{ this.user.gradSchool }}
@@ -120,7 +120,7 @@ export default {
     handleUserData () {
       if (this.$store.state.user) {
         this.user = this.$store.state.user
-        this.isDoctor = this.$store.state.user.user_type === 'doctor'
+        this.isDoctor = this.$store.state.user.u_type === 'doctor'
       }
     },
     loadUserData () {
@@ -138,11 +138,11 @@ export default {
               this.user.password = resp.data.worker.password
               this.user.email = resp.data.worker.email
               this.user.phone = resp.data.worker.phone
-              this.user.user_type = resp.data.worker.user_type
+              this.user.u_type = resp.data.worker.u_type
               this.userInfoForm.password = resp.data.worker.password
               this.userInfoForm.email = resp.data.worker.email
               this.userInfoForm.phone = resp.data.worker.phone
-              if (this.user.user_type === 'doctor') {
+              if (this.user.u_type === 'doctor') {
                 this.user.gradSchool = resp.data.worker.gradSchool
                 this.user.degree = resp.data.worker.degree
                 this.user.techTitle = resp.data.worker.techTitle
@@ -166,8 +166,8 @@ export default {
       this.isUpdating = true
     },
 
-    parseUType (user_type) {
-      switch (user_type) {
+    parseUType (u_type) {
+      switch (u_type) {
         case 'doctor':
           return '医生'
         case 'patient':

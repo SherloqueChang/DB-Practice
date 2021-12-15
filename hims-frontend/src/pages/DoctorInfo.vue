@@ -35,7 +35,7 @@
                 {{ this.doctorInfoForm.email }}
               </el-form-item>
               <el-form-item label="身份">
-                {{ this.doctorInfoForm.user_type }}
+                {{ this.doctorInfoForm.u_type }}
               </el-form-item>
               <el-form-item label="毕业院校">
                 {{ this.doctorInfoForm.gradSchool }}
@@ -71,7 +71,7 @@ export default {
         gender: '',
         phone: '',
         email: '',
-        user_type: '',
+        u_type: '',
         gradSchool: '',
         degree: '',
         techTitle: '',
@@ -107,7 +107,7 @@ export default {
             this.doctorInfoForm.gender = resp.data.gender
             this.doctorInfoForm.phone = resp.data.phone
             this.doctorInfoForm.email = resp.data.email
-            this.doctorInfoForm.user_type = resp.data.user_type
+            this.doctorInfoForm.u_type = resp.data.u_type
             this.doctorInfoForm.gradSchool = resp.data.gradSchool
             this.doctorInfoForm.degree = resp.data.degree
             this.doctorInfoForm.techTitle = resp.data.techTitle

@@ -15,7 +15,7 @@
             </el-table-column>
             <el-table-column prop="phone" label="电话" width="180">
             </el-table-column>
-            <el-table-column prop="user_type" label="身份" width="150">
+            <el-table-column prop="u_type" label="身份" width="150">
             </el-table-column>
             <el-table-column align="right">
               <template slot="header" slot-scope="scope">
@@ -74,15 +74,15 @@ export default {
     handleUserData () {
       if (this.$store.state.user) {
         this.user = this.$store.state.user
-        this.isHeadNurse = this.user.user_type === 'h_nurse'
-        this.isDoctor = this.user.user_type === 'doctor'
+        this.isHeadNurse = this.user.u_type === 'h_nurse'
+        this.isDoctor = this.user.u_type === 'doctor'
       }
     },
 
     loadTableData () {
       this.$axios
         .get('/workerDataPanel', {
-          params: { id: this.user.id, type: this.user.user_type }
+          params: { id: this.user.id, type: this.user.u_type }
         })
         .then((resp) => {
           if (resp.status === 200) {
@@ -111,11 +111,11 @@ export default {
         age: worker.age,
         email: worker.email,
         phone: worker.phone,
-        user_type: this.parseUType(worker.user_type)
+        u_type: this.parseUType(worker.u_type)
       })
     },
-    parseUType (user_type) {
-      switch (user_type) {
+    parseUType (u_type) {
+      switch (u_type) {
         case 'doctor':
           return '主治医生'
         case 'h_nurse':
