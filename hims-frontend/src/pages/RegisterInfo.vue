@@ -123,7 +123,7 @@ export default {
               type: 'success',
               message: '提交成功，欢迎登录！'
             })
-            this.$ruoter.push('/login')
+            this.$router.push('/login')
             this.reload()
           }
         })

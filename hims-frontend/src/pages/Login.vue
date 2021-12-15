@@ -33,7 +33,7 @@
                 登录
               </el-button>
               <p class="tips" style="float: right">
-                <a href="/registerInfo" type="primary">没有账户？现在注册</a>
+                <a href="/register" type="primary">没有账户？现在注册</a>
               </p>
             </el-form-item>
           </el-form>
@@ -78,27 +78,23 @@ export default {
               type: 'success',
               message: '欢迎登录'
             })
-            // 需要修改，根据返回数据push不同的路径
-            // this.$router.push('/patientDataPanel')
             this.$router.push('/userInfo')
             this.reload()
+          } else if (resp.status === 200 && resp.data.hasOwnProperty('error')) {
+            this.$message({
+              type: 'error',
+              message: resp.data.error
+            })
+            this.loading = false
           }
         })
         .catch((error) => {
           console.log(error)
-          if (error.message === 'Request failed with status code 403') {
-            this.$message({
-              type: 'error',
-              message: '用户名或密码错误，请重试。'
-            })
-            this.loading = false
-          } else {
-            this.$message({
-              type: 'error',
-              message: '服务暂时不可用，请稍后再试。'
-            })
-            this.loading = false
-          }
+          this.$message({
+            type: 'error',
+            message: '服务暂时不可用，请稍后再试。'
+          })
+          this.loading = false
         })
     }
   }

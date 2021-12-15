@@ -80,7 +80,7 @@ export default {
               type: 'success',
               message: '注册成功，请完善个人信息'
             })
-            this.$ruoter.push({
+            this.$router.push({
               name: 'RegisterInfo',
               params: {
                 id: this.registerForm.id
