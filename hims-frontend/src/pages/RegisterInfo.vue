@@ -18,6 +18,7 @@
             <el-form-item label="出生日期" prop="birthdate"><br/>
               <div class="block">
                 <el-date-picker
+                  value-format="yyyy-MM-dd"
                   v-model="registerInfoForm.birthdate"
                   type="date"
                   placeholder="选择日期"

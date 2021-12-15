@@ -10,6 +10,7 @@
               <el-form-item>
                 <div class="block">
                   <el-date-picker
+                    value-format="yyyy-MM-dd"
                     v-model="date"
                     type="date"
                     placeholder="选择日期">
@@ -64,7 +65,12 @@
               </el-form-item>
               <el-form-item label="日期">
                 <el-col :span="11">
-                  <el-date-picker type="date" placeholder="选择日期" v-model="surveyForm.cur_date" style="width: 100%;"></el-date-picker>
+                  <el-date-picker
+                    value-format="yyyy-MM-dd"
+                    type="date"
+                    placeholder="选择日期"
+                    v-model="surveyForm.cur_date"
+                    style="width: 100%;"></el-date-picker>
                 </el-col>
               </el-form-item>
               <el-form-item label="性别">
@@ -130,6 +136,7 @@
             <el-form-item label="预约日期" :label-width="formLabelWidth">
               <div class="block">
                 <el-date-picker
+                  value-format="yyyy-MM-dd"
                   v-model="appoinmentForm.date"
                   type="date"
                   placeholder="选择日期">
@@ -223,7 +230,7 @@ export default {
         value: '5',
         label: '其他'
       }],
-      dialogFormVisible: true,
+      dialogFormVisible: false,
       appoinmentForm: {
         date: '',
         department: '',
@@ -296,7 +303,8 @@ export default {
             this.dialogFormVisible = true
           } else if (resp.status === 200 && resp.data.hasOwnProperty('risk')) {
             // 转到专门的发热门诊
-
+            this.$message.error('请预约发热门诊')
+            this.$router.push('/feverAppointment')
           }
         })
         .catch((error) => {
