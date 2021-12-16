@@ -96,7 +96,7 @@ export default {
     loadDoctorData () {
       this.$axios
         .get('/getDoctorInfo', {
-          // 怎么获得医生的id
+          // 通过路由传参，获得医生的id
           params: { id: this.$route.params.d_id }
         })
         .then((resp) => {

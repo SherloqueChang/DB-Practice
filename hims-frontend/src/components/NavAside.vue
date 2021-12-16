@@ -15,7 +15,7 @@
         <el-menu-item index="/appointmentOnline" v-if="isPatient || isAdmin">
           <i class="el-icon-circle-plus-outline"></i>线上预约
         </el-menu-item>
-        <el-menu-item index="/prevPatient" v-if="isDoctor || isAdmin">
+        <el-menu-item index="/historyPatient" v-if="isDoctor || isAdmin">
           <i class="el-icon-user-solid"></i>历史患者
         </el-menu-item>
         <el-menu-item index="/appointmentToday" v-if="isDoctor || isAdmin">
@@ -55,6 +55,7 @@ export default {
         this.isDoctor = this.user.u_type === 'doctor'
         this.isLeader = this.user.u_type === 'leader'
         this.isAdmin = this.user.u_type === 'admin'
+        this.isDoctor = true
       }
     }
   }

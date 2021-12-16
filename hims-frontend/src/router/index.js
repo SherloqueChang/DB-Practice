@@ -21,6 +21,7 @@ import MedicalInfo from '../pages/MedicalInfo'
 import AppointmentOnline from '../pages/AppointmentOnline'
 import DoctorInfo from '../pages/DoctorInfo'
 import FeverAppointment from '../pages/FeverAppointment'
+import HistoryPatient from '../pages/HistoryPatient'
 
 Vue.use(Router)
 
@@ -73,6 +74,17 @@ export default new Router({
       name: 'FeverAppointment',
       component: FeverAppointment
     },
+    {
+      path: '/historyPatient',
+      name: 'HistoryPatient',
+      component: HistoryPatient
+    },
+    {
+      path: '/patientInfo/:p_id',
+      name: 'PatientInfo',
+      component: PatientInfo
+    },
+    // ////////////////////////////////
     {
       path: '/workerDataPanel',
       name: 'WorkerDataPanel',
