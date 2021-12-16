@@ -51,6 +51,7 @@ public class LoginController {
         return ResponseEntity.ok(userService.registerinfo(request));
     }
 
+    /*
     @GetMapping("/workerDataPanel")
     public ResponseEntity<?> getWorkerDataPanel(@RequestParam("id") String id,
                                                 @RequestParam("type") String type) {
@@ -136,4 +137,5 @@ public class LoginController {
 //    public ResponseEntity<Map<String, Object>> getFreeNurseData(@RequestParam("h_nurse_id") String h_nurse_id) {
 //        return ResponseEntity.ok(userService.getFreeNurseData(h_nurse_id));
 //    }
+*/
 }

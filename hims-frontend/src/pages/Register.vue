@@ -88,6 +88,13 @@ export default {
             })
             this.reload()
           }
+          else if (resp.status === 200 && resp.data.hasOwnProperty('error')) {
+            this.$message({
+              type: 'error',
+              message: resp.data.error
+            })
+            this.loading = false
+          }
         })
         // 需要根据返回数据判断是否用户已存在
         // eslint-disable-next-line handle-callback-err

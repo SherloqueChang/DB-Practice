@@ -61,22 +61,28 @@ public class UserServiceImpl{
     }
 
     public Map<String, Object> register(String id, String password) {
-        User user = new User();
-        user.setId(id);  user.setPwd(password);
-        user.setU_type("patient");
-        save(user);
         Map<String, Object> map = new HashMap<>();
-        map.put("user",user);
-        return map;
+        User user = find(id);
+        if(user==null) 
+        {
+            user = new User();
+            user.setId(id);  user.setPwd(password);
+            user.setU_type("patient");
+            save(user);
+            map.put("user",user);
+            return map;
+        }
+        else 
+        {
+            map.put("error", "用户名已经存在，请尝试其他用户名");
+            return map;
+        }
     }
 
     public Map<String, Object> registerinfo(RegisterInfoRequest request)
     {
         DateFormat fmt =new SimpleDateFormat("yyyy-MM-dd");
         User user = find(request.getId());
-        System.out.println("!!!");
-        System.out.println(user);
-        System.out.println("!!!");
         try {
             user = new User(user.getId(), user.getPwd(), request.getName(), fmt.parse(request.getBirthdate()), request.getIdcard(), request.getGender(), request.getPhone(), request.getEmail(), user.getU_type());
         } catch (ParseException e) {
@@ -89,7 +95,7 @@ public class UserServiceImpl{
         return map;
     }
 
-
+/*
     public Map<String, Object> getDoctorDataPanel(String id) {
         Map<String, Object> map = new HashMap<>();
         User headNurse = findHeadNurseByDoctorId(Integer.parseInt(id));
@@ -156,7 +162,7 @@ public class UserServiceImpl{
 //        return map;
 //    }
 
-    
+    */
 
     public void save(User user) {
         userRepository.save(user);
@@ -177,7 +183,7 @@ public class UserServiceImpl{
     public List<User> findAll() {
         return userRepository.findAll();
     }
-
+/*
     public User findHeadNurseByDoctorId(int id) {
         return treatmentAreaRepository.findHeadNurseByDoctorId(id);
     }
@@ -231,7 +237,7 @@ public class UserServiceImpl{
     public List<Patient> findPatientByWardId(int id) {
         return patientRepository.findByWardId(id);
     }
-
+*/
     public void modifyUserInfo(String id, String name, String password, String age, String email, String phone) {
         userRepository.update(id, name, password, age, email, phone);
     }

@@ -22,7 +22,7 @@ public class BedServiceImpl{
         this.bedRepository = bedRepository;
         this.userService = userService;
     }
-
+/*
     public Map<String, Object> getBedDataPanelByHNurseId(String id) {
         Map<String, Object> map = new HashMap<>();
         List<Integer> wards = userService.findWardIdByHeadNurseId(Integer.parseInt(id));
@@ -40,4 +40,5 @@ public class BedServiceImpl{
         map.put("bed", beds);
         return map;
     }
+    */
 }

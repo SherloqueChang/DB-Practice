@@ -46,7 +46,7 @@ public class PatientServiceImpl{
         this.bedRepository = bedRepository;
         this.wardNurseAndWardRepository = wardNurseAndWardRepository;
     }
-
+/*
     public Map<String, Object> getPatientDataPanelByHNurseId(String id) {
         Map<String, Object> map = new HashMap<>();
         List<Integer> wards = userService.findWardIdByHeadNurseId(Integer.parseInt(id));
@@ -152,4 +152,5 @@ public class PatientServiceImpl{
         patientRepository.updateTArea(id, 0, 1);
         return "No free ward nurse, transfer to quarantine.";
     }
+    */
 }
