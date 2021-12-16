@@ -52,7 +52,7 @@
                 <template slot-scope="scope">
                   <el-button
                     size="mini"
-                    @click="getDoctorInfo(scope.$idnex, scope.row)"
+                    @click="getDoctorInfo(scope.$index, scope.row)"
                     >详情</el-button>
                 </template>
               </el-table-column>

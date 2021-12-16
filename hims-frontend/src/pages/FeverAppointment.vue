@@ -39,11 +39,11 @@
                 <template slot-scope="scope">
                   <el-button
                     size="mini"
-                    @click="getDoctorInfo(scope.$idnex, scope.row)"
+                    @click="getDoctorInfo(scope.index, scope.row)"
                   >详情</el-button>
                   <el-button
                     size="mini"
-                    @click="dcotorAppointment(scope.$idnex, scope.row)"
+                    @click="dcotorAppointment(scope.index, scope.row)"
                   >预约</el-button>
                 </template>
               </el-table-column>

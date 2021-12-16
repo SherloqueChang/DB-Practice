@@ -125,31 +125,27 @@ export default {
     },
     loadUserData () {
       this.$axios
-        .get('/workerInfo', {
+        .get('/userInfo', {
           params: { id: this.user.id }
         })
         .then((resp) => {
           if (resp.status === 200) {
-            if (resp.data.worker) {
-              this.user.id = resp.data.worker.id
-              this.user.name = resp.data.worker.name
-              this.user.birthdate = resp.data.worker.birthdate
-              this.user.gender = resp.data.worker.gender
-              this.user.password = resp.data.worker.password
-              this.user.email = resp.data.worker.email
-              this.user.phone = resp.data.worker.phone
-              this.user.u_type = resp.data.worker.u_type
-              this.userInfoForm.password = resp.data.worker.password
-              this.userInfoForm.email = resp.data.worker.email
-              this.userInfoForm.phone = resp.data.worker.phone
-              if (this.user.u_type === 'doctor') {
-                this.user.gradSchool = resp.data.worker.gradSchool
-                this.user.degree = resp.data.worker.degree
-                this.user.techTitle = resp.data.worker.techTitle
-                this.user.specialty = resp.data.worker.specialty
-              }
-            } else {
-              this.$message.error('请求错误，请重试')
+            this.user.id = resp.data.user.id
+            this.user.name = resp.data.user.name
+            this.user.birthdate = resp.data.user.birthdate
+            this.user.gender = resp.data.user.gender
+            this.user.password = resp.data.user.password
+            this.user.email = resp.data.user.email
+            this.user.phone = resp.data.user.phone
+            this.user.u_type = resp.data.user.u_type
+            this.userInfoForm.password = resp.data.user.password
+            this.userInfoForm.email = resp.data.user.email
+            this.userInfoForm.phone = resp.data.user.phone
+            if (this.user.u_type === 'doctor') {
+              this.user.gradSchool = resp.data.user.gradSchool
+              this.user.degree = resp.data.user.degree
+              this.user.techTitle = resp.data.user.techTitle
+              this.user.specialty = resp.data.user.specialty
             }
           } else {
             this.$message.error('请求错误，请重试')

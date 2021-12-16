@@ -52,7 +52,7 @@
                 label="医生姓名">
               </el-table-column>
               <el-table-column
-                prop="medicine_id"
+                prop="medicine_name"
                 label="药品编号">
               </el-table-column>
               <el-table-column
@@ -131,7 +131,7 @@ export default {
               this.historyTable.push({
                 date: element.date,
                 doctor: element.doctor,
-                medicine_id: element.medicine_id,
+                medicine_name: element.medicine_name,
                 medicine_num: element.medicine_num
               })
             })

@@ -55,7 +55,7 @@ export default {
         this.isDoctor = this.user.u_type === 'doctor'
         this.isLeader = this.user.u_type === 'leader'
         this.isAdmin = this.user.u_type === 'admin'
-        this.isDoctor = true
+        // this.isDoctor = true
       }
     }
   }
