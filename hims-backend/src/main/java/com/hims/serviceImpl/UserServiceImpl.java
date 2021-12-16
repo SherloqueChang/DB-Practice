@@ -52,7 +52,12 @@ public class UserServiceImpl{
         } else if (!password.equals(user.getPwd())) {
             map.put("error", "用户名或密码错误");
             return map;
-        } else {
+        } else if(user.getName() == null){
+            map.put("needinfo", "请补全您的个人信息");
+            return map;
+        }
+        
+        else{
             // 在这里根据user的相关属性put不同的key来区分登录用户的身份
             map.put("user", user);
 //            map.put("patient", user);
