@@ -26,10 +26,10 @@
         </el-menu-item>
         <!--管理员权限-->
         <el-menu-item index="/patientMng" v-if="isAdmin">
-          <i class="el-icon-s-home"></i>患者管理
+          <i class="el-icon-s-custom"></i>患者管理
         </el-menu-item>
         <el-menu-item index="/doctorMng" v-if="isAdmin">
-          <i class="el-icon-s-home"></i>医生管理
+          <i class="el-icon-menu"></i>医生管理
         </el-menu-item>
         <el-menu-item index="/departmentMng_admin" v-if="isAdmin">
           <i class="el-icon-s-home"></i>科室管理
