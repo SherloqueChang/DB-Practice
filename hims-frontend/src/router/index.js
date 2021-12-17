@@ -28,6 +28,10 @@ import AppointmentToday from '../pages/AppointmentToday'
 import DoctorMedicalHistory from '../pages/DoctorMedicalHistory'
 import DoctorPrescription from '../pages/DoctorPrescription'
 import DepartmentMng from '../pages/DepartmentMng'
+import MedicineMng from '../pages/MedicineMng'
+import PatientMng from '../pages/PatientMng'
+import DoctorMng from '../pages/DoctorMng'
+import DepartmentMng_admin from '../pages/DepartmentMng_admin'
 
 Vue.use(Router)
 
@@ -111,6 +115,11 @@ export default new Router({
       component: DepartmentMng
     },
     {
+      path: '/departmentMng/:d_id',
+      name: 'DepartmentMng',
+      component: DepartmentMng
+    },
+    {
       path: '/checkDoctorMedicalHistory',
       name: 'DoctorMedicalHistory',
       component: DoctorMedicalHistory
@@ -119,6 +128,26 @@ export default new Router({
       path: '/checkDoctorPrescription',
       name: 'DoctorPrescription',
       component: DoctorPrescription
+    },
+    {
+      path: '/medicineMng',
+      name: 'MedicineMng',
+      component: MedicineMng
+    },
+    {
+      path: '/patientMng',
+      name: 'PatientMng',
+      component: PatientMng
+    },
+    {
+      path: '/doctorMng',
+      name: 'DoctorMng',
+      component: DoctorMng
+    },
+    {
+      path: '/departmentMng_admin',
+      name: 'DepartmentMng_admin',
+      component: DepartmentMng_admin
     },
     // ////////////////////////////////
     {

@@ -78,6 +78,10 @@ export default {
       if (this.$store.state.user) {
         this.user = this.$store.state.user
       }
+      if (this.user.u_type === 'admin') {
+        // 不同路由跳转(管理员登录)
+        this.user.id = this.$route.params.d_id
+      }
     },
     loadDepartmentDesc () {
       this.$axios

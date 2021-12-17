@@ -121,6 +121,11 @@ export default {
       if (this.$store.state.user) {
         this.user = this.$store.state.user
         this.isDoctor = this.$store.state.user.u_type === 'doctor'
+        if (this.user.u_type === 'admin') {
+          this.user.id = this.$route.params.id
+          this.isPatient = (this.$route.params.type === 'patient')
+          this.isDoctor = (this.$route.params.type === 'doctor')
+        }
       }
     },
     loadUserData () {
@@ -141,14 +146,12 @@ export default {
             this.userInfoForm.password = resp.data.user.password
             this.userInfoForm.email = resp.data.user.email
             this.userInfoForm.phone = resp.data.user.phone
-            if (this.user.u_type === 'doctor') {
+            if (this.isDoctor) {
               this.user.gradSchool = resp.data.user.gradSchool
               this.user.degree = resp.data.user.degree
               this.user.techTitle = resp.data.user.techTitle
               this.user.specialty = resp.data.user.specialty
             }
-          } else {
-            this.$message.error('请求错误，请重试')
           }
         })
         .catch((error) => {
@@ -170,15 +173,13 @@ export default {
           return '患者'
         case 'leader':
           return '科长'
-        case 'admin':
-          return '管理员'
       }
     },
 
     submitForm (formName) {
       this.loading = true
       this.$axios
-        .get('/modifyUserInfo', {
+        .post('/modifyUserInfo', null, {
           params: {
             id: this.user.id.toString(),
             password: this.userInfoForm.password,

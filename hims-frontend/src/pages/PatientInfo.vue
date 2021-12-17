@@ -177,7 +177,7 @@ export default {
           })
           .then((resp) => {
             resp.data.patientHistoryTable.forEach((element) => {
-              this.$route.params.p_id.push({
+              this.medicalHistoryTable.push({
                 doctor: element.doctor,
                 date: element.date,
                 issue: element.issue,
