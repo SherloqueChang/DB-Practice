@@ -89,7 +89,7 @@ export default {
     dcotorAppointment () {
       // 预约发热门诊医生
       this.$axios
-        .post('/dcotorAppointment', {
+        .post('/dcotorAppointment', null, {
           params: {
             date: this.appoinmentForm.date,
             department: this.appoinmentForm.department,

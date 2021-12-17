@@ -71,10 +71,10 @@ export default {
         })
         .then((resp) => {
           // 这里的对象属性判断可以做路由分支处理（在后端的map数据结构中put不同的key）
-          if(resp.status === 200 && resp.data.hasOwnProperty('needinfo')) {
-            //need more infomation, goto register info
+          if (resp.status === 200 && resp.data.hasOwnProperty('needinfo')) {
+            // need more infomation, goto register info
             this.$store.commit('login', resp.data.user)
-              this.$message({
+            this.$message({
               type: 'success',
               message: resp.data.needinfo
             })
@@ -85,8 +85,7 @@ export default {
               }
             })
             this.reload()
-          }
-          else if (resp.status === 200 && resp.data.hasOwnProperty('user')) {
+          } else if (resp.status === 200 && resp.data.hasOwnProperty('user')) {
             // Save user info
             this.$store.commit('login', resp.data.user)
             this.$message({

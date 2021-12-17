@@ -152,13 +152,13 @@ export default {
         })
         .then((resp) => {
           if (resp.status === 200) {
-            this.patientInfoForm.name = resp.data.name
-            this.patientInfoForm.birthdate = resp.data.birthdate
-            this.patientInfoForm.idcard = resp.data.idcard
-            this.patientInfoForm.gender = resp.data.gender
-            this.patientInfoForm.phone = resp.data.phone
-            this.patientInfoForm.email = resp.data.email
-            this.patientInfoForm.u_type = resp.data.u_type
+            this.patientInfoForm.name = resp.data.patient.name
+            this.patientInfoForm.birthdate = resp.data.patient.birthdate
+            this.patientInfoForm.idcard = resp.data.patient.idcard
+            this.patientInfoForm.gender = resp.data.patient.gender
+            this.patientInfoForm.phone = resp.data.patient.phone
+            this.patientInfoForm.email = resp.data.patient.email
+            this.patientInfoForm.u_type = resp.data.patient.u_type
           } else {
             this.$message.error('请求错误，请重试')
           }
@@ -177,7 +177,7 @@ export default {
           })
           .then((resp) => {
             resp.data.patientHistoryTable.forEach((element) => {
-              this.this.$route.params.p_id.push({
+              this.$route.params.p_id.push({
                 doctor: element.doctor,
                 date: element.date,
                 issue: element.issue,
@@ -196,7 +196,7 @@ export default {
             params: { id: this.$route.params.p_id }
           })
           .then((resp) => {
-            resp.data.patientPrescriptionTable.forEach((element) => {
+            resp.data.patient.patientPrescriptionTable.forEach((element) => {
               this.prescriptionTable.push({
                 doctor: element.doctor,
                 date: element.date,

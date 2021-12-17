@@ -83,7 +83,7 @@ export default {
     submitForm (formName) {
       this.loading = true
       this.$axios
-        .post('/editMedicalRecForm', {
+        .post('/editMedicalRecForm', null, {
           params: {
             d_id: this.user.id,
             p_id: this.$route.params.p_id,

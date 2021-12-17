@@ -279,7 +279,7 @@ export default {
     submitForm () {
       // 提交流调表
       this.$axios
-        .post('/submitSurveyForm', {
+        .post('/submitSurveyForm', null, {
           params: {
             name: this.surveyForm.patient,
             cur_date: this.surveyForm.cur_date,
@@ -318,7 +318,7 @@ export default {
     finalSubmit () {
       // 提交最终的预约信息
       this.$axios
-        .post('/finalSubmit', {
+        .post('/finalSubmit', null, {
           params: {
             date: this.appoinmentForm.date,
             department: this.appoinmentForm.department,

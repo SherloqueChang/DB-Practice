@@ -25,6 +25,9 @@ import HistoryPatient from '../pages/HistoryPatient'
 import MedicalRecForm from '../pages/MedicalRecForm'
 import PrescriptionForm from '../pages/PrescriptionForm'
 import AppointmentToday from '../pages/AppointmentToday'
+import DoctorMedicalHistory from '../pages/DoctorMedicalHistory'
+import DoctorPrescription from '../pages/DoctorPrescription'
+import DepartmentMng from '../pages/DepartmentMng'
 
 Vue.use(Router)
 
@@ -101,6 +104,21 @@ export default new Router({
       path: '/prescriptionForm/:p_id',
       name: 'PrescriptionForm',
       component: PrescriptionForm
+    },
+    {
+      path: '/departmentMng',
+      name: 'DepartmentMng',
+      component: DepartmentMng
+    },
+    {
+      path: '/checkDoctorMedicalHistory',
+      name: 'DoctorMedicalHistory',
+      component: DoctorMedicalHistory
+    },
+    {
+      path: '/checkDoctorPrescription',
+      name: 'DoctorPrescription',
+      component: DoctorPrescription
     },
     // ////////////////////////////////
     {
