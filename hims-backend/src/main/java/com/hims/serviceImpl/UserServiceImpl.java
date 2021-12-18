@@ -104,6 +104,20 @@ public class UserServiceImpl{
         return map;
     }
 
+
+    public Map<String, Object> modifyUserInfo (UserInfoRequest request)
+    {
+        User user = find(request.getId());
+        user = new User(user.getId(), request.getPassword(),user.getName(), user.getBirthdate(), user.getIdcard(), user.getGender(), request.getPhone(), request.getEmail(), user.getU_type());
+        update(user);
+        Map<String, Object> map = new HashMap<>();
+        map.put("user",user);
+        return map;
+    }
+
+
+
+
 /*
     public Map<String, Object> getDoctorDataPanel(String id) {
         Map<String, Object> map = new HashMap<>();
@@ -247,9 +261,6 @@ public class UserServiceImpl{
         return patientRepository.findByWardId(id);
     }
 */
-    public void modifyUserInfo(String id, String name, String password, String age, String email, String phone) {
-        userRepository.update(id, name, password, age, email, phone);
-    }
 
     @Transactional
     public void addWardNurse(String w_id, String name, String age, String email, String phone) {

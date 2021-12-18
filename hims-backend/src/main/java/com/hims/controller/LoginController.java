@@ -53,8 +53,11 @@ public class LoginController {
         return ResponseEntity.ok(userService.registerinfo(request));
     }
 
-   // @GetMapping("/modifyUserInfo")
-    
+   @PostMapping("/modifyUserInfo")
+    ResponseEntity<?> modifyUserInfo(@RequestBody UserInfoRequest request) {
+        System.out.println("\n"+request+"\n");
+        return ResponseEntity.ok(userService.modifyUserInfo(request));
+    }
 
 
 

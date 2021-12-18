@@ -179,14 +179,13 @@ export default {
     submitForm (formName) {
       this.loading = true
       this.$axios
-        .post('/modifyUserInfo', null, {
-          params: {
+        .post('/modifyUserInfo', {
             id: this.user.id.toString(),
             password: this.userInfoForm.password,
             email: this.userInfoForm.email,
             phone: this.userInfoForm.phone
           }
-        })
+         ) 
         .then((resp) => {
           this.loading = false
           if (resp.status === 200) {
