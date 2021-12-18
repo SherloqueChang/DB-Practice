@@ -86,11 +86,12 @@ public class UserServiceImpl{
         }
     }
 
-    public Map<String, Object> registerinfo(RegisterInfoRequest request)
+    public Map<String, Object> registerinfo(UserInfoRequest request)
     {
         DateFormat fmt =new SimpleDateFormat("yyyy-MM-dd");
         User user = find(request.getId());
         try {
+            // TODO check the format of the Idcard, phone, and email addresses
             user = new User(user.getId(), user.getPwd(), request.getName(), fmt.parse(request.getBirthdate()), request.getIdcard(), request.getGender(), request.getPhone(), request.getEmail(), user.getU_type());
             //System.out.println(fmt.parse(request.getBirthdate())+"\n");
         } catch (ParseException e) {

@@ -2,6 +2,7 @@ package com.hims.controller;
 
 import com.hims.controller.request.LoginRequest;
 import com.hims.controller.request.RegisterRequest;
+import com.hims.controller.request.UserInfoRequest;
 import com.hims.controller.request.RegisterInfoRequest;
 import com.hims.domain.User;
 import com.hims.exception.WardNurseDeleteFailureException;
@@ -37,20 +38,25 @@ public class LoginController {
      * @RequestBody: 接受前端传递给后端的json字符串中的数据(post方法),在类中自定义参数类型
      */
     @PostMapping("/login")
-    ResponseEntity<Map<String, Object>> login(@RequestBody LoginRequest request) {
+    ResponseEntity<Map<String, Object>> login(@RequestBody UserInfoRequest request) {
         return ResponseEntity.ok(userService.login(request.getId(), request.getPassword()));
     }
 
     @PostMapping("/register")
-    ResponseEntity<?> register(@RequestBody RegisterRequest request) {
+    ResponseEntity<?> register(@RequestBody UserInfoRequest request) {
         //System.out.println("\n"+request+"\n");
         return ResponseEntity.ok(userService.register(request.getId(), request.getPassword()));
     }
 
     @PostMapping("/registerInfo")
-    ResponseEntity<?> registerInfo(@RequestBody RegisterInfoRequest request) {
+    ResponseEntity<?> registerInfo(@RequestBody UserInfoRequest request) {
         return ResponseEntity.ok(userService.registerinfo(request));
     }
+
+   // @GetMapping("/modifyUserInfo")
+    
+
+
 
     /*
     @GetMapping("/workerDataPanel")
