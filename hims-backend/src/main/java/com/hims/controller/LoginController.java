@@ -22,14 +22,12 @@ public class LoginController {
     private UserServiceImpl userService;
     @Autowired
     private PatientServiceImpl patientService;
-    @Autowired
-    private BedServiceImpl bedService;
+
 
     @Autowired
-    public LoginController(UserServiceImpl userService, PatientServiceImpl patientService, BedServiceImpl bedService) {
+    public LoginController(UserServiceImpl userService, PatientServiceImpl patientService) {
         this.userService = userService;
         this.patientService = patientService;
-        this.bedService = bedService;
     }
 
     /**
