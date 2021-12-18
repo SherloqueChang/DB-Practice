@@ -43,6 +43,7 @@ public class LoginController {
 
     @PostMapping("/register")
     ResponseEntity<?> register(@RequestBody RegisterRequest request) {
+        //System.out.println("\n"+request+"\n");
         return ResponseEntity.ok(userService.register(request.getId(), request.getPassword()));
     }
 

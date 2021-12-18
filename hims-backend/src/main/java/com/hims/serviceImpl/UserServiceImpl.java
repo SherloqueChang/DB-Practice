@@ -46,6 +46,7 @@ public class UserServiceImpl{
     public Map<String, Object> login(String id, String password) {
         User user = find(id);
         Map<String, Object> map = new HashMap<>();
+        // System.out.println(password+"\n");
         if (user == null) {
             map.put("error", "未找到用户名，请检查用户名是否正确");
             return map;
@@ -66,6 +67,7 @@ public class UserServiceImpl{
     }
 
     public Map<String, Object> register(String id, String password) {
+        //System.out.println(password + "\n");
         Map<String, Object> map = new HashMap<>();
         User user = find(id);
         if(user==null) 
@@ -90,6 +92,7 @@ public class UserServiceImpl{
         User user = find(request.getId());
         try {
             user = new User(user.getId(), user.getPwd(), request.getName(), fmt.parse(request.getBirthdate()), request.getIdcard(), request.getGender(), request.getPhone(), request.getEmail(), user.getU_type());
+            //System.out.println(fmt.parse(request.getBirthdate())+"\n");
         } catch (ParseException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();

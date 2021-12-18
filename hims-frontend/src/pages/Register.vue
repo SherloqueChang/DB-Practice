@@ -69,7 +69,7 @@ export default {
     submitForm (formName) {
       this.loading = true
       this.$axios
-        .post('/register', null, {
+        .post('/register', {
           id: this.registerForm.id,
           password: this.registerForm.password
         })
