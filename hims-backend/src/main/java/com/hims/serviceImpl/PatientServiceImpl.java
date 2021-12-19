@@ -47,18 +47,18 @@ public class PatientServiceImpl{
         this.wardNurseAndWardRepository = wardNurseAndWardRepository;
     }
 
-
+    /*
     public Map<String, Object> patientAppointmentInfo(String patientId) {
         Map<String, Object> result = new HashMap<>();
         // TODO
         Patient patient = patientRepository.findOne(patientId);
         result.put("patient", patient);
-        result.put("dailyReports", dailyReportRepository.findByPatient(patient));
+        result.put("dailyReportss", dailyReportRepository.findByPatient(patient));
         result.put("natReports", natReportRepository.findByPatient(patient));
         result.put("treatmentAreas", treatmentAreaRepository.findByPatient(patient));
         return result;
     }
-
+    */
 
 /*
     public Map<String, Object> getPatientDataPanelByHNurseId(String id) {

@@ -1,5 +1,8 @@
 package com.hims.domain;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 import lombok.Data;
@@ -8,7 +11,7 @@ import lombok.Data;
     private String id;
     private String pwd;
     private String name;
-    private Date birthdate;
+    public String birthdate;
     private String idcard;
     private String gender;
     private String phone;
@@ -18,10 +21,10 @@ import lombok.Data;
     public User() {
     }
 
-    public User(String id, String pwd, String name, Date birthdate, String idcard, String gender, String phone, String email, String u_type) {
+    public User(String id, String pwd, String name, String birthdate, String idcard, String gender, String phone, String email, String u_type) {
         this.id = id;
         this.name = name;
-        this.pwd = pwd;
+        this.pwd = pwd; 
         this.birthdate = birthdate;
         this.idcard = idcard;
         this.gender = gender;
@@ -29,5 +32,4 @@ import lombok.Data;
         this.phone = phone;
         this.u_type = u_type;
     }
-
 }

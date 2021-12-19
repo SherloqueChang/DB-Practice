@@ -139,11 +139,11 @@ export default {
             this.user.name = resp.data.user.name
             this.user.birthdate = resp.data.user.birthdate
             this.user.gender = resp.data.user.gender
-            this.user.password = resp.data.user.password
+            this.user.password = resp.data.user.pwd
             this.user.email = resp.data.user.email
             this.user.phone = resp.data.user.phone
             this.user.u_type = resp.data.user.u_type
-            this.userInfoForm.password = resp.data.user.password
+            this.userInfoForm.password = resp.data.user.pwd
             this.userInfoForm.email = resp.data.user.email
             this.userInfoForm.phone = resp.data.user.phone
             if (this.isDoctor) {
@@ -156,7 +156,7 @@ export default {
         })
         .catch((error) => {
           console.log(error)
-          this.$message.error('请求错误，请重试')
+          this.$message.error('请求错误，请重试1')
         })
     },
 
@@ -195,12 +195,12 @@ export default {
               message: '个人信息修改成功！'
             })
           } else {
-            this.$message.error('请求错误，请重试')
+            this.$message.error('请求错误，请重试2')
           }
         })
         .catch((error) => {
           console.log(error)
-          this.$message.error('请求错误，请重试')
+          this.$message.error('请求错误，请重试3')
         })
     }
   }

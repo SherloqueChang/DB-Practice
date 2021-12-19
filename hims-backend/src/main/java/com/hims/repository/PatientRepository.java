@@ -35,7 +35,7 @@ public class PatientRepository {
 //        String sql = "select * from patient where id=?";
 //        return jdbcTemplate.queryForObject(sql, Patient.class, id);
 //    }
-
+/*
     public List<Patient> getToTransfer(String rating) {
         String sql = "select patient.*,bed.w_id,ward.t_area_id from patient left join bed on patient.bed_id=bed.id left join ward on bed.w_id=ward.id where patient.rating = ? and patient.is_to_be_transferred = 1 and patient.bed_id is not null and bed.w_id is not null";
         return jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(Patient.class), rating);
@@ -282,4 +282,5 @@ public class PatientRepository {
             return null;
         }
     }
+    */
 }

@@ -28,9 +28,9 @@ public class AppointmentController {
         this.userService = userService;
         this.patientService = patientService;
     }
-
+    /*
     @GetMapping("/patientAppointmentInfo")
     ResponseEntity<Map<String, Object>> patientAppointmentInfo(@RequestParam("id") String patientId) {
         return ResponseEntity.ok(patientService.patientAppointmentInfo(patientId));
-    }
+    }*/
 }

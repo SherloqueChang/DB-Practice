@@ -11,22 +11,40 @@ import org.springframework.stereotype.Repository;
 
 import java.sql.PreparedStatement;
 import java.sql.Statement;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Objects;
+
 
 @Repository
 public class UserRepository {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
+    Date parse_date(String birthdate)
+    {
+        if(birthdate == null) return null;
+        DateFormat fmt =new SimpleDateFormat("yyyy-MM-dd");  
+        try {
+            return fmt.parse(birthdate);
+        } catch (ParseException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            return null;
+        }
+    }
+
     public void save(User user) {
         String sql = "insert into user(id,pwd,name,birthdate,idcard,gender,phone,email,u_type) values(?,?,?,?,?,?,?,?,?)";
-        jdbcTemplate.update(sql, user.getId(), user.getPwd(), user.getName(), user.getBirthdate(), user.getIdcard(), user.getGender(), user.getPhone(), user.getEmail(), user.getU_type());
+        jdbcTemplate.update(sql, user.getId(), user.getPwd(), user.getName(), parse_date(user.getBirthdate()), user.getIdcard(), user.getGender(), user.getPhone(), user.getEmail(), user.getU_type());
     }
 
     public void update(User user) {
         String sql = "update user set pwd = ?, name = ?, birthdate = ?, idcard = ?, gender = ?, phone = ?, email = ? where id = ?";
-        jdbcTemplate.update(sql, user.getPwd(), user.getName(), user.getBirthdate(), user.getIdcard(), user.getGender(), user.getPhone(), user.getEmail(), user.getId());
+        jdbcTemplate.update(sql, user.getPwd(), user.getName(), parse_date(user.getBirthdate()), user.getIdcard(), user.getGender(), user.getPhone(), user.getEmail(), user.getId());
     }
 
     public int saveWNurse(String name, String age, String email, String phone) {
@@ -59,7 +77,11 @@ public class UserRepository {
     public User find(String id) {
         String sql = "select * from user where id=?";
         try {
-            return jdbcTemplate.queryForObject(sql, new BeanPropertyRowMapper<>(User.class), id);
+            User result = jdbcTemplate.queryForObject(sql, new BeanPropertyRowMapper<>(User.class), id);
+            DateFormat fmt =new SimpleDateFormat("yyyy-MM-dd");  
+            if(result.birthdate == null) return result;
+            result.birthdate = fmt.format(fmt.parse(result.birthdate));
+            return result;
         } catch (Exception e) {
             return null;
         }

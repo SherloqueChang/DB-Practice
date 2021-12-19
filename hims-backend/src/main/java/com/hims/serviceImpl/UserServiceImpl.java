@@ -88,16 +88,8 @@ public class UserServiceImpl{
 
     public Map<String, Object> registerinfo(UserInfoRequest request)
     {
-        DateFormat fmt =new SimpleDateFormat("yyyy-MM-dd");
         User user = find(request.getId());
-        try {
-            // TODO check the format of the Idcard, phone, and email addresses
-            user = new User(user.getId(), user.getPwd(), request.getName(), fmt.parse(request.getBirthdate()), request.getIdcard(), request.getGender(), request.getPhone(), request.getEmail(), user.getU_type());
-            //System.out.println(fmt.parse(request.getBirthdate())+"\n");
-        } catch (ParseException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
+        user = new User(user.getId(), user.getPwd(), request.getName(), request.getBirthdate(), request.getIdcard(), request.getGender(), request.getPhone(), request.getEmail(), user.getU_type());
         update(user);
         Map<String, Object> map = new HashMap<>();
         map.put("user",user);
@@ -115,6 +107,14 @@ public class UserServiceImpl{
         return map;
     }
 
+    public Map<String, Object> getUserInfo (String id)
+    {
+        User user = find(id);
+        Map<String, Object> map = new HashMap<>();
+        System.out.println(user.birthdate);
+        map.put("user",user);
+        return map;
+    }
 
 
 
