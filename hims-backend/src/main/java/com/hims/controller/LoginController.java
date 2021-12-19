@@ -1,9 +1,6 @@
 package com.hims.controller;
 
-import com.hims.controller.request.LoginRequest;
-import com.hims.controller.request.RegisterRequest;
 import com.hims.controller.request.UserInfoRequest;
-import com.hims.controller.request.RegisterInfoRequest;
 import com.hims.domain.User;
 import com.hims.exception.WardNurseDeleteFailureException;
 import com.hims.serviceImpl.BedServiceImpl;
