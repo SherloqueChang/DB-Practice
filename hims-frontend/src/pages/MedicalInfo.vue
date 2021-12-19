@@ -93,53 +93,53 @@ export default {
       }
     },
     handleClick (tab, event) {
-      if (tab.index === '0') {
-        this.loadTableData(0)
-      } else if (tab.index === '1') {
-        this.loadTableData(1)
-      }
+      // if (tab.index === '0') {
+      //   this.loadTableData(0)
+      // } else if (tab.index === '1') {
+      //   this.loadTableData(1)
+      // }
     },
     loadTableData (index) {
-      if (index === 0) {
-        // 病历列表 - historyTable
-        this.$axios
-          .get('/patientHistoryTable', {
-            params: { id: this.user.id }
-          })
-          .then((resp) => {
-            resp.data.patientHistoryTable.forEach((element) => {
-              this.historyTable.push({
-                date: element.date,
-                doctor: element.doctor,
-                issue: element.issue,
-                diagnosed_disease: element.diagnosed_disease,
-                allergens: element.allergens
-              })
+      // if (index === 0) {
+      // 病历列表 - historyTable
+      this.$axios
+        .get('/patientHistoryTable', {
+          params: { id: this.user.id }
+        })
+        .then((resp) => {
+          resp.data.patientHistoryTable.forEach((element) => {
+            this.historyTable.push({
+              date: element.date,
+              doctor: element.doctor,
+              issue: element.issue,
+              diagnosed_disease: element.diagnosed_disease,
+              allergens: element.allergens
             })
           })
-          .catch((error) => {
-            this.$message.error('请求错误，请重试')
-          })
-      } else if (index === 1) {
+        })
+        .catch((error) => {
+          this.$message.error('请求错误，请重试')
+        })
+      // } else if (index === 1) {
         // 处方列表
-        this.$axios
-          .get('/patientPrescriptionTable', {
-            params: { id: this.user.id }
-          })
-          .then((resp) => {
-            resp.data.patientPrescriptionTable.forEach((element) => {
-              this.historyTable.push({
-                date: element.date,
-                doctor: element.doctor,
-                medicine_name: element.medicine_name,
-                medicine_num: element.medicine_num
-              })
+      this.$axios
+        .get('/patientPrescriptionTable', {
+          params: { id: this.user.id }
+        })
+        .then((resp) => {
+          resp.data.patientPrescriptionTable.forEach((element) => {
+            this.prescriptionTable.push({
+              date: element.date,
+              doctor: element.doctor,
+              medicine_name: element.medicine_name,
+              medicine_num: element.medicine_num
             })
           })
-          .catch((error) => {
-            this.$message.error('请求错误，请重试')
-          })
-      }
+        })
+        .catch((error) => {
+          this.$message.error('请求错误，请重试')
+        })
+      // }
     }
   }
 }

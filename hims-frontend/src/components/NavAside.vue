@@ -5,7 +5,7 @@
         <el-menu-item index="/userInfo" v-if="!isAdmin">
           <i class="el-icon-user"></i><span slot="title">个人信息</span>
         </el-menu-item>
-        <el-submenu index="1" v-if="isAdmin">
+        <el-submenu index="1" v-if="isPatient">
           <template slot="title">
             <i class="el-icon-info"></i><span>就医信息</span>
           </template>
@@ -67,7 +67,6 @@ export default {
         this.isDoctor = this.user.u_type === 'doctor'
         this.isLeader = this.user.u_type === 'leader'
         this.isAdmin = this.user.u_type === 'admin'
-        this.isAdmin = true
       }
     }
   }
