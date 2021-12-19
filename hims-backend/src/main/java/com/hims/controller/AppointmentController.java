@@ -15,6 +15,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
+import java.util.ArrayList;
 
 @RestController
 public class AppointmentController {
@@ -28,9 +29,9 @@ public class AppointmentController {
         this.userService = userService;
         this.patientService = patientService;
     }
-    /*
+    
     @GetMapping("/patientAppointmentInfo")
     ResponseEntity<Map<String, Object>> patientAppointmentInfo(@RequestParam("id") String patientId) {
         return ResponseEntity.ok(patientService.patientAppointmentInfo(patientId));
-    }*/
+    }
 }

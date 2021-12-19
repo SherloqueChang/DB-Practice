@@ -108,6 +108,18 @@ CREATE TABLE num_appointed(
     num int NOT NULL COMMENT 'number of patient already appointed'
     #FOREIGN KEY (doctor_id) REFERENCES doctor(id) ON DELETE CASCADE
 ) DEFAULT CHARSET UTF8 COMMENT '';
+
+CREATE TABLE appointed_info(
+    doctor_id VARCHAR(50) NOT NULL COMMENT 'id of the doctor',
+    appointment_date date NOT NULL COMMENT 'date of the record',
+    department VARCHAR(50) NOT NULL COMMENT 'department name',
+    patient_id VARCHAR(50) NOT NULL COMMENT 'id of the patient',
+    appointment_status ENUM('Not Coming','In Treatment','Done') NOT NULL COMMENT 'status of the appointment'
+    #FOREIGN KEY (doctor_id) REFERENCES doctor(id) ON DELETE CASCADE,
+    #FOREIGN KEY (patient_id) REFERENCES patient(id) ON DELETE CASCADE
+) DEFAULT CHARSET UTF8 COMMENT '';
+
+
 ```
 
 

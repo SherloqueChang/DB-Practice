@@ -3,6 +3,7 @@ package com.hims.serviceImpl;
 import com.hims.controller.request.*;
 import com.hims.domain.Patient;
 import com.hims.domain.User;
+import com.hims.domain.Appointment;
 import com.hims.exception.BadCredentialsException;
 import com.hims.exception.UserNotFoundException;
 import com.hims.exception.WardNurseDeleteFailureException;
@@ -24,6 +25,8 @@ public class UserServiceImpl{
     @Autowired
     private UserRepository userRepository;
     @Autowired
+    private AppointmentRepository appointmentRepository;
+    @Autowired
     private TreatmentAreaRepository treatmentAreaRepository;
     @Autowired
     private WardRepository wardRepository;
@@ -33,10 +36,11 @@ public class UserServiceImpl{
     private WardNurseAndWardRepository wardNurseAndWardRepository;
 
     @Autowired
-    public UserServiceImpl(UserRepository userRepository, TreatmentAreaRepository treatmentAreaRepository,
+    public UserServiceImpl(UserRepository userRepository, AppointmentRepository appointmentRepository, TreatmentAreaRepository treatmentAreaRepository,
                            WardRepository wardRepository, PatientRepository patientRepository,
                            WardNurseAndWardRepository wardNurseAndWardRepository) {
         this.userRepository = userRepository;
+        this.appointmentRepository = appointmentRepository;
         this.treatmentAreaRepository = treatmentAreaRepository;
         this.wardRepository = wardRepository;
         this.patientRepository = patientRepository;
@@ -206,6 +210,13 @@ public class UserServiceImpl{
     public List<User> findAll() {
         return userRepository.findAll();
     }
+
+    public List<Appointment> findAppointmentByPatientId(String id) {
+        return appointmentRepository.findAppointmentByPatientId(id);
+    }
+
+
+
 /*
     public User findHeadNurseByDoctorId(int id) {
         return treatmentAreaRepository.findHeadNurseByDoctorId(id);

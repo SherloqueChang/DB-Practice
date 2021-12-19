@@ -1,9 +1,12 @@
 package com.hims.serviceImpl;
 
 import com.hims.domain.Bed;
+import com.hims.domain.User;
+import com.hims.domain.Appointment;
 import com.hims.domain.NatReport;
 import com.hims.domain.Patient;
 import com.hims.repository.*;
+import com.hims.controller.request.AppointmentRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -47,18 +50,28 @@ public class PatientServiceImpl{
         this.wardNurseAndWardRepository = wardNurseAndWardRepository;
     }
 
-    /*
+
     public Map<String, Object> patientAppointmentInfo(String patientId) {
-        Map<String, Object> result = new HashMap<>();
-        // TODO
-        Patient patient = patientRepository.findOne(patientId);
-        result.put("patient", patient);
-        result.put("dailyReportss", dailyReportRepository.findByPatient(patient));
-        result.put("natReports", natReportRepository.findByPatient(patient));
-        result.put("treatmentAreas", treatmentAreaRepository.findByPatient(patient));
-        return result;
+      
+        Map<String, Object> map = new HashMap<>();
+        List<Appointment> appointments = userService.findAppointmentByPatientId(patientId);
+        List<AppointmentRequest> appointmentRequests = new ArrayList<AppointmentRequest>();
+        for (Appointment app : appointments) {
+            appointmentRequests.add(changeApp2Request(app));
+        }
+        map.put("patientAppointment", appointmentRequests);
+        return map;
     }
-    */
+    
+    public AppointmentRequest changeApp2Request(Appointment appointment) {
+        AppointmentRequest appointmentRequest = new AppointmentRequest();
+        appointmentRequest.setDate(appointment.getAppointment_date());
+        appointmentRequest.setDepartment(appointment.getDepartment());
+        appointmentRequest.setDoctor(userService.find(appointment.getDoctor_id()).getName());
+        appointmentRequest.setStatus(appointment.getAppointment_status());
+        return appointmentRequest;
+    }
+
 
 /*
     public Map<String, Object> getPatientDataPanelByHNurseId(String id) {
