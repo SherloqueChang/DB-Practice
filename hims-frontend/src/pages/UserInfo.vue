@@ -180,20 +180,21 @@ export default {
       this.loading = true
       this.$axios
         .post('/modifyUserInfo', {
-            id: this.user.id.toString(),
-            password: this.userInfoForm.password,
-            email: this.userInfoForm.email,
-            phone: this.userInfoForm.phone
-          }
-         ) 
+          id: this.user.id.toString(),
+          password: this.userInfoForm.password,
+          email: this.userInfoForm.email,
+          phone: this.userInfoForm.phone
+        }
+        )
         .then((resp) => {
           this.loading = false
           if (resp.status === 200) {
-            this.$router.push('/userInfo')
             this.$message({
               type: 'success',
               message: '个人信息修改成功！'
             })
+            this.isReading = true
+            this.isUpdating = false
           } else {
             this.$message.error('请求错误，请重试2')
           }
