@@ -115,7 +115,16 @@ CREATE TABLE appointed_info(
     #FOREIGN KEY (patient_id) REFERENCES patient(id) ON DELETE CASCADE
 ) DEFAULT CHARSET UTF8 COMMENT '';
 
-
+CREATE TABLE patient_history (
+    patient_id VARCHAR(50) NOT NULL COMMENT 'id of the patient',
+    doctor_id VARCHAR(50) NOT NULL COMMENT 'id of the doctor',
+    treat_date DATE NOT NULL COMMENT 'date of the treatment',
+    treat_issue VARCHAR(200) NOT NULL COMMENT 'comment of the doctor',
+    diagnosed_disease VARCHAR(200) NOT NULL COMMENT 'disease names',
+    allergens VARCHAR(200) NOT NULL COMMENT 'allergens'
+    #FOREIGN KEY (doctor_id) REFERENCES doctor(id) ON DELETE CASCADE,
+    #FOREIGN KEY (patient_id) REFERENCES patient(id) ON DELETE CASCADE
+) DEFAULT CHARSET UTF8 COMMENT '';
 ```
 
 
@@ -135,7 +144,7 @@ CREATE TABLE appointed_info(
 管理员对用户的修改只是简单地复用了`UserInfo`的内容，没有涉及到数据库全部信息的修改；
 
 # 进度
-
+## 前端
 前端基本的页面都已编写完成，但很多地方都只是做了简单化处理，同时也有很多较细节的地方存在着bug（因为不能与后端协同所以不方便调试）
 
 后端主要的工作就是针对所有的`this.$axios`的`post`和`get`请求编写相应的处理函数，`get`请求直接通过`@RequestParam`获取传参，返回的`map`对象，`key`值可以作为一个标识性质的内容用于前端逻辑判断，`value`的话则是一个实例化对象，对应于定义的`Java`类（不过这里为了省事，可以传回一个列表之类的数据结构，在前端直接用索引去读取值，这时数据的顺序就很重要）；
@@ -145,3 +154,23 @@ CREATE TABLE appointed_info(
 # TODO
 
 医生在编辑病人处方的时候依据传入参数，将对应种类数量的药品信息填写提交，在查看和修改处方的页面中单纯把表中每条数据（一个元组对应只有一种药品）作为表格的一行内容
+
+## 后端
+后端架构基本上是按照sprint boot的架构来的，`@Repository`是数据层，直接和数据库进行数据交互；`@Service`是服务层，接受`@Controller`发来的请求，调用数据层的接口进行操作（隔离机制）
+### 后端已完成的工作：
+* 用户注册
+* 用户登录
+* 用户查询&修改个人信息
+* 病人查询个人病历
+* 病人查询个人处方
+
+TODO    
+* 病人查询医生及诊室信息
+* 病人新建预约
+* 病人新建流凋表
+* 医生部分
+* ddd
+  
+### 后端说明
+* 预约部分单独模块
+* 处方和病历在medical中
