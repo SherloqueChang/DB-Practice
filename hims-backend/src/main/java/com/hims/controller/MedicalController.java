@@ -32,4 +32,9 @@ public class MedicalController {
     ResponseEntity<Map<String, Object>> patientPrescriptionTable(@RequestParam("id") String patientId) {
         return ResponseEntity.ok(medicalService.getPrescriptionTable(patientId));
     }
+
+    @GetMapping("/patientHistoryTable")
+    ResponseEntity<Map<String, Object>> patientHistoryTable(@RequestParam("id") String patientId) {
+        return ResponseEntity.ok(medicalService.getHistoryTable(patientId));
+    }
 }

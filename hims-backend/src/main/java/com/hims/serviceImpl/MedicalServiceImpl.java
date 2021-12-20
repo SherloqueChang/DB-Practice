@@ -3,10 +3,12 @@ package com.hims.serviceImpl;
 import com.hims.domain.Bed;
 import com.hims.domain.User;
 import com.hims.domain.Prescription;
+import com.hims.domain.PatientHistory;
 import com.hims.domain.NatReport;
 import com.hims.domain.Patient;
 import com.hims.repository.*;
 import com.hims.controller.request.PrescriptionRequest;
+import com.hims.controller.request.PatientHistoryRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -56,15 +58,30 @@ public class MedicalServiceImpl{
         Map<String, Object> map = new HashMap<>();
         List<Prescription> prescriptions = findPrescriptionByPatientId(patientId);
         List<PrescriptionRequest> patientPrescriptionTable = new ArrayList<PrescriptionRequest>();
-        for (Prescription app : prescriptions) {
-            patientPrescriptionTable.add(changePre2Request(app));
+        for (Prescription pre : prescriptions) {
+            patientPrescriptionTable.add(changePre2Request(pre));
         }
         map.put("patientPrescriptionTable", patientPrescriptionTable);
         return map;
     }
 
+    public Map<String, Object> getHistoryTable(String patientId) {
+        Map<String, Object> map = new HashMap<>();
+        List<PatientHistory> patientHistory = findPatientHistoryByPatientId(patientId);
+        List<PatientHistoryRequest> patientHistoryTable = new ArrayList<PatientHistoryRequest>();
+        for (PatientHistory pathis : patientHistory) {
+            patientHistoryTable.add(changePathis2Request(pathis));
+        }
+        map.put("patientHistoryTable", patientHistoryTable);
+        return map;
+    }
+
     public List<Prescription> findPrescriptionByPatientId(String patientId) {
         return medicalRepository.findPrescriptionByPatientId(patientId);
+    }
+
+    public List<PatientHistory> findPatientHistoryByPatientId(String patientId) {
+        return medicalRepository.findPatientHistoryByPatientId(patientId);
     }
 
     
@@ -75,6 +92,16 @@ public class MedicalServiceImpl{
         prescriptionRequest.setDoctor(userService.find(prescription.getDoctor_id()).getName());
         prescriptionRequest.setMedicine_num(prescription.getMedicine_num());
         return prescriptionRequest;
+    }
+
+    public PatientHistoryRequest changePathis2Request(PatientHistory patientHistory) {
+        PatientHistoryRequest patientHistoryRequest = new PatientHistoryRequest();
+        patientHistoryRequest.setDate(patientHistory.getTreat_date());
+        patientHistoryRequest.setDoctor(userService.find(patientHistory.getDoctor_id()).getName());
+        patientHistoryRequest.setIssue(patientHistory.getTreat_issue());
+        patientHistoryRequest.setDiagnosed_disease(patientHistory.getDiagnosed_disease());
+        patientHistoryRequest.setAllergens(patientHistory.getAllergens());
+        return patientHistoryRequest;
     }
 
 }
