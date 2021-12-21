@@ -29,11 +29,32 @@
                   </el-date-picker>
                 </div>
               </el-form-item>
-              <el-form-item label="药品名称" prop="medicine_name">
-                <el-input v-model="prescriptionForm.issue"></el-input>
+              <el-form-item label="药品种类数量">
+                <el-input  v-model="total_m_num"></el-input>
               </el-form-item>
-              <el-form-item label="药品数量" prop="medicine_num">
-                <el-input v-model="prescriptionForm.diagnosed_disease"></el-input>
+              <el-form-item label="药品名称" prop="medicine_name1" v-if="parseInt(total_m_num)>0">
+                <el-input v-model="prescriptionForm.medicine_name1"></el-input>
+              </el-form-item>
+              <el-form-item label="药品数量" prop="medicine_num1" v-if="parseInt(total_m_num)>0">
+                <el-input v-model="prescriptionForm.medicine_num1"></el-input>
+              </el-form-item>
+              <el-form-item label="药品名称" prop="medicine_name2" v-if="parseInt(total_m_num)>1">
+                <el-input v-model="prescriptionForm.medicine_name2"></el-input>
+              </el-form-item>
+              <el-form-item label="药品数量" prop="medicine_num2" v-if="parseInt(total_m_num)>1">
+                <el-input v-model="prescriptionForm.medicine_num2"></el-input>
+              </el-form-item>
+              <el-form-item label="药品名称" prop="medicine_name3" v-if="parseInt(total_m_num)>2">
+                <el-input v-model="prescriptionForm.medicine_name3"></el-input>
+              </el-form-item>
+              <el-form-item label="药品数量" prop="medicine_num3" v-if="parseInt(total_m_num)>2">
+                <el-input v-model="prescriptionForm.medicine_num3"></el-input>
+              </el-form-item>
+              <el-form-item label="药品名称" prop="medicine_name4" v-if="parseInt(total_m_num)>3">
+                <el-input v-model="prescriptionForm.medicine_name4"></el-input>
+              </el-form-item>
+              <el-form-item label="药品数量" prop="medicine_num4" v-if="parseInt(total_m_num)>3">
+                <el-input v-model="prescriptionForm.medicine_num4"></el-input>
               </el-form-item>
               <el-form-item>
                 <el-button
@@ -66,9 +87,16 @@ export default {
         patient: '',
         date: '',
         // TODO: 处方作为多值属性如何在表格中表示(暂时以分隔符区分)
-        medicine_name: '',
-        medicine_num: ''
-      }
+        medicine_name1: '',
+        medicine_num1: '',
+        medicine_name2: '',
+        medicine_num2: '',
+        medicine_name3: '',
+        medicine_num3: '',
+        medicine_name4: '',
+        medicine_num4: ''
+      },
+      total_m_num: '0'
     }
   },
   created () {
@@ -89,8 +117,15 @@ export default {
             p_id: this.$route.params.p_id,
             doctor: this.prescriptionForm.doctor,
             patient: this.prescriptionForm.patient,
-            medicine_name: this.prescriptionForm.medicine_name,
-            medicine_num: this.prescriptionForm.medicine_num
+            total_m_num: this.total_m_num,
+            medicine_name1: this.prescriptionForm.medicine_name1,
+            medicine_num1: this.prescriptionForm.medicine_num1,
+            medicine_name2: this.prescriptionForm.medicine_name2,
+            medicine_num2: this.prescriptionForm.medicine_num2,
+            medicine_name3: this.prescriptionForm.medicine_name3,
+            medicine_num3: this.prescriptionForm.medicine_num3,
+            medicine_name4: this.prescriptionForm.medicine_name4,
+            medicine_num4: this.prescriptionForm.medicine_num4
           }
         })
         .then((resp) => {

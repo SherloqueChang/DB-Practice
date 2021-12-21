@@ -88,11 +88,17 @@ export default {
     },
     editMedicalForm (index, row) {
       // 编辑病历表
-      this.$router.push('/medicalRecForm' + row.id)
+      this.$router.push({
+        name: 'MedicalRecForm',
+        params: { p_id: row.id }
+      })
     },
     editPrescriptionForm (index, row) {
       // 编辑处方
-      this.$router.push('/prescriptionForm' + row.id)
+      this.$router.push({
+        name: 'PrescriptionForm',
+        params: { p_id: row.id }
+      })
     }
   }
 }
