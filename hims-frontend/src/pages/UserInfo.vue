@@ -120,6 +120,7 @@ export default {
     handleUserData () {
       if (this.$store.state.user) {
         this.user = this.$store.state.user
+        this.isPatient = this.$store.state.user.u_type === 'patient'
         this.isDoctor = this.$store.state.user.u_type === 'doctor'
         if (this.user.u_type === 'admin') {
           this.user.id = this.$route.params.id
@@ -156,7 +157,7 @@ export default {
         })
         .catch((error) => {
           console.log(error)
-          this.$message.error('请求错误，请重试1')
+          this.$message.error('请求错误，请重试')
         })
     },
 
@@ -195,13 +196,11 @@ export default {
             })
             this.isReading = true
             this.isUpdating = false
-          } else {
-            this.$message.error('请求错误，请重试2')
           }
         })
         .catch((error) => {
           console.log(error)
-          this.$message.error('请求错误，请重试3')
+          this.$message.error('请求错误，请重试')
         })
     }
   }
