@@ -109,9 +109,9 @@ export default {
         .then((resp) => {
           resp.data.patientHistoryTable.forEach((element) => {
             this.historyTable.push({
-              date: element.date,
-              doctor: element.doctor,
-              issue: element.issue,
+              date: element.treat_date,
+              doctor: element.doctor_id,
+              issue: element.treat_issue,
               diagnosed_disease: element.diagnosed_disease,
               allergens: element.allergens
             })

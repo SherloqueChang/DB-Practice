@@ -68,11 +68,12 @@ public class MedicalServiceImpl{
     public Map<String, Object> getHistoryTable(String patientId) {
         Map<String, Object> map = new HashMap<>();
         List<PatientHistory> patientHistory = findPatientHistoryByPatientId(patientId);
-        List<PatientHistoryRequest> patientHistoryTable = new ArrayList<PatientHistoryRequest>();
-        for (PatientHistory pathis : patientHistory) {
-            patientHistoryTable.add(changePathis2Request(pathis));
-        }
-        map.put("patientHistoryTable", patientHistoryTable);
+//        List<PatientHistoryRequest> patientHistoryTable = new ArrayList<>();
+//        for (PatientHistory pathis : patientHistory) {
+//            patientHistoryTable.add(changePathis2Request(pathis));
+//        }
+//        map.put("patientHistoryTable", patientHistoryTable);
+        map.put("patientHistoryTable", patientHistory);
         return map;
     }
 

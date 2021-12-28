@@ -69,6 +69,7 @@ export default {
         patient: '',
         date: '',
         issue: '',
+        // TODO: 待删除属性
         diagnosed_disease: '',
         allergens: ''
       }
