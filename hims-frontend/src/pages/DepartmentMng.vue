@@ -43,6 +43,11 @@
                     size="mini"
                     @click="checkDoctorPrescription(scope.index, scope.row)"
                   >处方</el-button>
+                  <el-button
+                    size="mini"
+                    @click="setDeptLeader(scope.index, scope.row)"
+                    v-if="(this.user.u_type === 'admin')"
+                  >设为科长</el-button>
                 </template>
               </el-table-column>
             </el-table>
@@ -136,13 +141,31 @@ export default {
     },
     getDoctorInfo (index, row) {
       // 查看表中某一医生的详细信息
-      this.$router.push('/doctorInfo' + row.id)
+      this.$router.push({
+        name: 'DoctorInfo',
+        params: { d_id: row.id }
+      })
     },
     checkDoctorMedicalHistory (index, row) {
       this.$router.push('/checkDoctorMedicalHistory')
     },
     checkDoctorPrescription (index, row) {
       this.$router.push('/checkDoctorPrescription')
+    },
+    setDeptLeader (index, row) {
+      this.$axios
+        .post('/setDeptLeader', null, {
+          // 请求参数：医生id，医生所在科室名称
+          params: { id: row.id, department: this.$route.params.dept }
+        })
+        .then((resp) => {
+          if (resp.status === 200) {
+            this.$message({
+              type: 'success',
+              message: '设置科长成功！'
+            })
+          }
+        })
     }
   }
 }

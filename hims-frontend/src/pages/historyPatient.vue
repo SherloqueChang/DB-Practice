@@ -79,7 +79,10 @@ export default {
         })
     },
     getPatientInfo (index, row) {
-      this.$router.push('/patientInfo' + row.id)
+      this.$router.push({
+        name: 'PatientInfo',
+        params: { p_id: row.id }
+      })
     }
   }
 }

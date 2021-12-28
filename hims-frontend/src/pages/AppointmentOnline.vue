@@ -274,7 +274,12 @@ export default {
     },
     getDoctorInfo (index, row) {
       // 查看表中某一医生的详细信息
-      this.$router.push('/doctorInfo' + row.id)
+      this.$router.push({
+        name: 'DoctorInfo',
+        params: {
+          d_id: row.id
+        }
+      })
     },
     submitForm () {
       // 提交流调表

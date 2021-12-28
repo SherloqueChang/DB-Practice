@@ -84,7 +84,10 @@ export default {
     },
     getDoctorInfo (index, row) {
       // 查看发热门诊中某一医生的详细信息
-      this.$router.push('/doctorInfo' + row.id)
+      this.$router.push({
+        name: 'DoctorInfo',
+        params: { d_id: row.id }
+      })
     },
     dcotorAppointment () {
       // 预约发热门诊医生

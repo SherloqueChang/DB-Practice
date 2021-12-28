@@ -33,7 +33,7 @@
                   native-type="submit"
                   type="primary"
                   @click="submitForm('userInfoForm')"
-                  >提交个人信息</el-button
+                  >提交信息</el-button
                 >
               </el-form-item>
             </el-form>
@@ -72,7 +72,7 @@
                 {{ this.user.specialty }}
               </el-form-item>
               <el-form-item>
-                <el-button @click="handleUpdate">修改个人信息</el-button>
+                <el-button @click="handleUpdate">修改信息</el-button>
               </el-form-item>
             </el-form>
           </el-col>

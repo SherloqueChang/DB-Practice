@@ -133,7 +133,7 @@ export default {
   methods: {
     goBack () {
       // this.$router.push('/appointmentOnline')
-      this.$router.back(-1)
+      this.$router.go(-1)
     },
     handleClick (tab, event) {
       if (tab.index === '0') {
@@ -159,8 +159,6 @@ export default {
             this.patientInfoForm.phone = resp.data.patient.phone
             this.patientInfoForm.email = resp.data.patient.email
             this.patientInfoForm.u_type = resp.data.patient.u_type
-          } else {
-            this.$message.error('请求错误，请重试')
           }
         })
         .catch((error) => {

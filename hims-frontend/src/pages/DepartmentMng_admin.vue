@@ -72,7 +72,13 @@ export default {
         .then((resp) => {
           if (resp.status === 200) {
             this.d_id = resp.data.leader.d_id
-            this.$router.push('/departmentMng' + this.d_id)
+            this.$router.push({
+              name: 'DepartmentMng',
+              params: {
+                id: this.d_id,
+                dept: row.name
+              }
+            })
           }
         })
     }
