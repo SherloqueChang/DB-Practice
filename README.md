@@ -69,17 +69,6 @@ CREATE TABLE prescription(
     #FOREIGN KEY (medicine_name) REFERENCES medicine(name) ON DELETE NO ACTION
 ) DEFAULT CHARSET UTF8 COMMENT '';
 
-CREATE TABLE Medical_records(
-    doctor_id VARCHAR(50) NOT NULL COMMENT 'id of the doctor',
-    patient_id VARCHAR(50) NOT NULL COMMENT 'id of the patient',
-    see_doctor_date DATE NOT NULL COMMENT 'date of the the record',
-    issue VARCHAR(200) NOT NULL COMMENT 'issue of the patient',
-    diagnosed_disease VARCHAR(200) COMMENT 'The doctor diagnosed the disease',
-    allergens VARCHAR(200) COMMENT 'determined allergens of this record',
-    #FOREIGN KEY (doctor_id) REFERENCES doctor(id) ON DELETE NO ACTION,
-    #FOREIGN KEY (patient_id) REFERENCES patient(id) ON DELETE NO ACTION,
-) DEFAULT CHARSET UTF8 COMMENT '';
-
 CREATE TABLE Coronavirus_Survey_Form(
     patient_id VARCHAR(50) NOT NULL COMMENT 'Who fills the table',
     fill_time DATETIME NOT NULL COMMENT 'time of the form finished',
@@ -121,7 +110,6 @@ CREATE TABLE patient_history (
     doctor_id VARCHAR(50) NOT NULL COMMENT 'id of the doctor',
     treat_date DATE NOT NULL COMMENT 'date of the treatment',
     treat_issue VARCHAR(200) NOT NULL COMMENT 'comment of the doctor',
-    diagnosed_disease VARCHAR(200) NOT NULL COMMENT 'disease names',
     allergens VARCHAR(200) NOT NULL COMMENT 'allergens'
     #FOREIGN KEY (doctor_id) REFERENCES doctor(id) ON DELETE CASCADE,
     #FOREIGN KEY (patient_id) REFERENCES patient(id) ON DELETE CASCADE
