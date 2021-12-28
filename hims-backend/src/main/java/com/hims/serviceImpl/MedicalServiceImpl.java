@@ -68,11 +68,6 @@ public class MedicalServiceImpl{
     public Map<String, Object> getHistoryTable(String patientId) {
         Map<String, Object> map = new HashMap<>();
         List<PatientHistory> patientHistory = findPatientHistoryByPatientId(patientId);
-//        List<PatientHistoryRequest> patientHistoryTable = new ArrayList<>();
-//        for (PatientHistory pathis : patientHistory) {
-//            patientHistoryTable.add(changePathis2Request(pathis));
-//        }
-//        map.put("patientHistoryTable", patientHistoryTable);
         map.put("patientHistoryTable", patientHistory);
         return map;
     }
@@ -94,15 +89,4 @@ public class MedicalServiceImpl{
         prescriptionRequest.setMedicine_num(prescription.getMedicine_num());
         return prescriptionRequest;
     }
-
-    public PatientHistoryRequest changePathis2Request(PatientHistory patientHistory) {
-        PatientHistoryRequest patientHistoryRequest = new PatientHistoryRequest();
-        patientHistoryRequest.setDate(patientHistory.getTreat_date());
-        patientHistoryRequest.setDoctor(userService.find(patientHistory.getDoctor_id()).getName());
-        patientHistoryRequest.setIssue(patientHistory.getTreat_issue());
-        patientHistoryRequest.setDiagnosed_disease(patientHistory.getDiagnosed_disease());
-        patientHistoryRequest.setAllergens(patientHistory.getAllergens());
-        return patientHistoryRequest;
-    }
-
 }
