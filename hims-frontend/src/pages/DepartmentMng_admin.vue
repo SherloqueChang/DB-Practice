@@ -23,6 +23,10 @@
                 size="mini"
                 @click="checkDepartment(scope.index, scope.row)"
               >详情</el-button>
+              <el-button
+                size="mini"
+                @click="deleteDepartment(scope.index, scope.row)"
+              >删除</el-button>
             </template>
           </el-table-column>
         </el-table>
@@ -39,6 +43,7 @@ import NavAside from '../components/NavAside'
 export default {
   name: 'DepartmentMng_admin',
   components: {NavAside, NavHeader},
+  inject: ['reload'],
   data () {
     return {
       d_id: '',
@@ -79,6 +84,21 @@ export default {
                 dept: row.name
               }
             })
+          }
+        })
+    },
+    deleteDepartment (index, row) {
+      this.$axios
+        .post('/getDepartmentLeader', null, {
+          params: { name: row.name }
+        })
+        .then((resp) => {
+          if (resp.status === 200) {
+            this.$message({
+              type: 'success',
+              message: '删除成功'
+            })
+            this.reload()
           }
         })
     }

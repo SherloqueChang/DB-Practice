@@ -23,6 +23,10 @@
                 size="mini"
                 @click="checkDoctor(scope.index, scope.row)"
               >详情</el-button>
+              <el-button
+                size="mini"
+                @click="deleteDoctor(scope.index, scope.row)"
+              >删除</el-button>
             </template>
           </el-table-column>
         </el-table>
@@ -39,6 +43,7 @@ import NavAside from '../components/NavAside'
 export default {
   name: 'DoctorMng',
   components: {NavAside, NavHeader},
+  inject: ['reload'],
   data () {
     return {
       doctorTable: []
@@ -68,6 +73,21 @@ export default {
         id: row.id,
         type: 'doctor'
       })
+    },
+    deleteDoctor (index, row) {
+      this.$axios
+        .post('/deleteDoctor', null, {
+          params: { id: row.id }
+        })
+        .then((resp) => {
+          if (resp.status === 200) {
+            this.$message({
+              type: 'success',
+              message: '删除成功'
+            })
+            this.reload()
+          }
+        })
     }
   }
 }
