@@ -114,6 +114,81 @@ CREATE TABLE patient_history (
     #FOREIGN KEY (doctor_id) REFERENCES doctor(id) ON DELETE CASCADE,
     #FOREIGN KEY (patient_id) REFERENCES patient(id) ON DELETE CASCADE
 ) DEFAULT CHARSET UTF8 COMMENT '';
+
+INSERT INTO user(id, pwd, name, birthdate, idcard, gender, phone, email, u_type) VALUES
+    ('patient_1', '123456', 'Alice', '1999-10-21', '110101199003075672', 'male', '13673183017', 'keajo@sina.com', 'patient');
+
+
+INSERT INTO medicine(name) VALUES
+('盘尼西林'),('胰岛素'),('感冒软胶囊'),('阿莫西林'),('布洛芬'),('头孢拉定');
+
+INSERT INTO user(id, pwd, name, birthdate, idcard, gender, phone, email, u_type) VALUES
+('patient_0','123456','许洁','1970-03-05','260257696184556740','male','15250420736','iELWWtk1bp@163.com','patient'),
+('patient_1','123456','居梅','1971-09-01','901470558715503816','male','18518198333','O7XX8gypG@qq.com','patient'),
+('patient_2','123456','胡秀梅','1972-08-20','366917378552141665','male','17563818580','nKwclSz2b@126.com','patient'),
+('patient_3','123456','王鹏','1973-10-22','992054715332884198','male','18839832244','m5FDGqM@189.com','patient'),
+('patient_4','123456','张东','1974-11-23','847968411146988453','male','13387502172','C3eihzjOp2@qq.com','patient'),
+('patient_5','123456','刘娜','1975-04-21','917793855498840806','male','13579988542','tOh5n8R8UJ@qq.com','patient'),
+('patient_6','123456','明晶','1976-09-17','695540694701683237','male','14597788113','o3uMI4B@qq.com','patient'),
+('patient_7','123456','赵亮','1977-02-01','732669868594512144','male','14526817801','yTgT@163.com','patient'),
+('patient_8','123456','何淑兰','1978-02-23','134602792143300299','male','18448822335','qbHIbtjqqw@163.com','patient'),
+('patient_9','123456','徐秀芳','1979-05-25','903604877903673342','male','17734712774','uYNCzX@163.com','patient'),
+('patient_10','123456','朱晶','1980-03-11','991400750666841155','female','17581877118','evLduqKW7@qq.com','patient'),
+('patient_11','123456','丁莉','1981-12-18','974193335288657463','female','14594092942','FLiOI98@163.com','patient'),
+('patient_12','123456','康柳','1982-03-14','330530442884122354','female','18958794851','exZ2@189.com','patient'),
+('patient_13','123456','钟秀荣','1983-06-28','324684551069741282','female','13168660074','zZDGq3AHx@189.com','patient'),
+('patient_14','123456','孔宇','1984-11-28','209404071572082370','female','15185032141','KNCMjXnH4v@126.com','patient'),
+('patient_15','123456','唐鑫','1985-03-18','941491167429870060','female','18973926099','ZTDDL0G22d@126.com','patient'),
+('patient_16','123456','王琴','1986-04-21','636097330419334982','female','15066577644','vVWFG2Iq5@qq.com','patient'),
+('patient_17','123456','邹云','1987-03-07','434117793600523104','female','15387376897','AkgINH@qq.com','patient'),
+('patient_18','123456','叶莉','1988-03-07','336354224170920555','female','15512990614','1zBS@189.com','patient'),
+('patient_19','123456','苗淑英','1989-12-24','359382517084969076','female','14756410348','GDhDoD6@189.com','patient'),
+('patient_20','123456','梁利','1990-09-01','296840048396371758','female','17837379057','Hg4LYhGtw@qq.com','patient');
+
+INSERT INTO user(id, pwd, name, birthdate, idcard, gender, phone, email, u_type) VALUES
+('doctor_0','123456','胡英','1970-12-12','628467450802777538','male','18697413175','KD8z@qq.com','doctor'),
+('doctor_1','123456','陈平','1971-11-08','607000945111179023','male','17381542623','c2ymsup@qq.com','doctor'),
+('doctor_2','123456','黄玉英','1972-07-06','765491670370761754','male','18859655126','W2JekWBN7t@qq.com','doctor'),
+('doctor_3','123456','尤淑华','1973-02-16','944340060065317220','male','14912652788','ISGep1@163.com','doctor'),
+('doctor_4','123456','唐波','1974-06-02','940150755170446573','male','15379854738','IYx1@qq.com','doctor'),
+('doctor_5','123456','邓伟','1975-04-25','880358642081559180','male','15655263219','G8kHqpMEcw@163.com','doctor'),
+('doctor_6','123456','任梅','1976-09-25','185221618301954229','male','14987844999','P2HiU@qq.com','doctor'),
+('doctor_7','123456','赵桂芳','1977-06-26','689302954786220191','male','13770124683','jsAATiJOP@163.com','doctor'),
+('doctor_8','123456','王佳','1978-05-10','538116742538312483','female','15537853707','x6vwe@qq.com','doctor'),
+('doctor_9','123456','芦东','1979-01-27','933420296412375319','female','13660375162','qVZVoO@qq.com','doctor'),
+('doctor_10','123456','桑娟','1980-09-24','998557510062935564','female','17026920583','Cr3W7@163.com','doctor'),
+('doctor_11','123456','郑波','1981-06-11','798408810571537324','female','13715446342','FNJDG15@189.com','doctor'),
+('doctor_12','123456','王莹','1982-11-17','999344313710452606','female','14792258746','nTWwLWi@qq.com','doctor'),
+('doctor_13','123456','程岩','1983-01-04','970933886805506682','female','17088531599','Cb1D1PLs6@189.com','doctor'),
+('doctor_14','123456','陈玉珍','1984-04-01','409149555922238501','female','18587676456','kj5GLR@189.com','doctor'),
+('doctor_15','123456','李娟','1985-04-04','932660963646907176','female','15562690370','sx8v@126.com','doctor');
+
+INSERT INTO doctor (id, department, graduate_school, job_title, specialties) VALUES
+('doctor_0','内科','北京大学','医师','xxx'),
+('doctor_1','内科','清华大学','药师','xxx'),
+('doctor_2','内科','南开大学','技师','xxx'),
+('doctor_3','儿科','中国人民大学','医师','xxx'),
+('doctor_4','儿科','复旦大学','药师','xxx'),
+('doctor_5','儿科','上海交通大学','技师','xxx'),
+('doctor_6','妇产科','同济大学','医师','xxx'),
+('doctor_7','妇产科','天津大学','药师','xxx'),
+('doctor_8','妇产科','南京大学','技师','xxx'),
+('doctor_9','外科','四川大学','医师','xxx'),
+('doctor_10','外科','西安交通大学','药师','xxx'),
+('doctor_11','外科','华南理工大学','技师','xxx'),
+('doctor_12','发热门诊','浙江大学','医师','xxx'),
+('doctor_13','发热门诊','西北工业大学','药师','xxx'),
+('doctor_14','发热门诊','吉林大学','技师','xxx'),
+('doctor_15', '发热门诊', '南京大学', '药师', 'xxx');
+
+INSERT INTO department(name, leader_id, dept_description) VALUES
+('内科','doctor_0','xxx'),
+('儿科','doctor_3','xxx'),
+('妇产科','doctor_6','xxx'),
+('外科','doctor_9','xxx'),
+('发热门诊','doctor_12','xxx');
+
+
 ```
 
 在登录界面添加病人注册界面的router，设置submitForm方法向数据库插入数据
