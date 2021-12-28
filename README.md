@@ -33,7 +33,8 @@ CREATE TABLE user(
 
 CREATE TABLE department( 
     name VARCHAR(50) NOT NULL PRIMARY KEY COMMENT 'Name of department',
-    leader_id VARCHAR(50) COMMENT 'Leader id of the department'
+    leader_id VARCHAR(50) COMMENT 'Leader id of the department',
+    dept_description VARCHAR(255) COMMENT 'Description of the department'
 ) DEFAULT CHARSET UTF8 COMMENT '';
 
 CREATE TABLE doctor(
