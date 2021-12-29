@@ -25,9 +25,18 @@ public class MedicalRepository {
     }
 
     public List<PatientHistory> findPatientHistoryByPatientId(String patientId) {
-        String sql = "select * from patient_history where patient_id = ?";
+        String sql = "select * from patient_history where patient_id = ? order by treat_date desc";
         try {
             return jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(PatientHistory.class), patientId);
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
+    public List<PatientHistory> findPatientHistoryByDoctorId(String doctorId) {
+        String sql = "select * from patient_history where doctor_id = ? order by treat_date desc";
+        try {
+            return jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(PatientHistory.class), doctorId);
         } catch (Exception e) {
             return null;
         }

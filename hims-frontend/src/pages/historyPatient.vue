@@ -67,9 +67,9 @@ export default {
         .then((resp) => {
           resp.data.historyPatient.forEach((element) => {
             this.historyPatientForm.push({
-              id: element.id,
-              name: element.name,
-              date: element.date
+              id: element.patient_id,
+              name: element.patient_name,
+              date: element.treat_date
             })
           })
         })

@@ -37,7 +37,7 @@ public class MedicalServiceImpl{
         return map;
     }
 
-    public Map<String, Object> getHistoryTable(String patientId) {
+    public Map<String, Object> getHistoryTable_by_patient(String patientId) {
         Map<String, Object> map = new HashMap<>();
         List<PatientHistory> patientHistory = findPatientHistoryByPatientId(patientId);
         for(PatientHistory his : patientHistory){
@@ -46,6 +46,18 @@ public class MedicalServiceImpl{
 
         }
         map.put("patientHistoryTable", patientHistory);
+        return map;
+    }
+
+    public Map<String, Object> getHistoryTable_by_doctor(String doctorId) {
+        Map<String, Object> map = new HashMap<>();
+        List<PatientHistory> patientHistory = findPatientHistoryByDoctorId(doctorId);
+        for(PatientHistory his : patientHistory){
+            his.setDoctor_name(userService.find(his.getDoctor_id()).getName());
+            his.setPatient_name(userService.find(his.getPatient_id()).getName());
+            System.out.println(his);
+        }
+        map.put("historyPatient", patientHistory);
         return map;
     }
 
@@ -59,6 +71,9 @@ public class MedicalServiceImpl{
         return medicalRepository.findPatientHistoryByPatientId(patientId);
     }
 
+    public List<PatientHistory> findPatientHistoryByDoctorId(String doctor) {
+        return medicalRepository.findPatientHistoryByDoctorId(doctor);
+    }
     
 
 }

@@ -194,7 +194,7 @@ export default {
             params: { id: this.$route.params.p_id }
           })
           .then((resp) => {
-            resp.data.patient.patientPrescriptionTable.forEach((element) => {
+            resp.data.patientPrescriptionTable.forEach((element) => {
               this.prescriptionTable.push({
                 doctor: element.doctor_name,
                 date: element.pres_date,
@@ -204,6 +204,7 @@ export default {
             })
           })
           .catch((error) => {
+            console.log(error)
             this.$message.error('请求错误，请重试')
           })
       }

@@ -99,6 +99,20 @@ public class UserServiceImpl{
         return map;
     }
 
+
+    public Object getuserInfo(String userId)
+    {
+        User user = find(userId);
+        Userinfo result = new Userinfo();
+        result.load_from_user(user);
+        if(user.getU_type().equals("doctor") || user.getU_type().equals("leader"))
+        {
+            Doctor doctor = doctorRepository.find(result.getId());
+            result.load_from_doctor(doctor);
+        }
+        return result;
+
+    }
     public void save(User user) {
         userRepository.save(user);
     }
