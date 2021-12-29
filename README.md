@@ -55,7 +55,8 @@ CREATE TABLE doctor(
 
 
 CREATE TABLE medicine(
-    name VARCHAR(50) NOT NULL PRIMARY KEY COMMENT 'medicine name'
+    name VARCHAR(50) NOT NULL PRIMARY KEY COMMENT 'medicine name',
+    num INTEGER NOT NULL COMMENT 'number of medicine'
 ) DEFAULT CHARSET UTF8 COMMENT '';
 
 CREATE TABLE prescription(
@@ -117,8 +118,11 @@ CREATE TABLE patient_history (
 ) DEFAULT CHARSET UTF8 COMMENT '';
 
 
-INSERT INTO medicine(name) VALUES
-('盘尼西林'),('胰岛素'),('感冒软胶囊'),('阿莫西林'),('布洛芬'),('头孢拉定');
+INSERT INTO medicine(name, num) VALUES
+('盘尼西林', 100),('胰岛素', 100),('感冒软胶囊', 100),('阿莫西林', 100),('布洛芬', 100),('头孢拉定', 100);
+
+INSERT INTO user(id, pwd, name, birthdate, idcard, gender, phone, email, u_type) VALUES
+('admin', '123456', '管理员', '1999-01-01', '260257697148274013', 'male', '18811344695', 'admin@pku.com', 'admin');
 
 INSERT INTO user(id, pwd, name, birthdate, idcard, gender, phone, email, u_type) VALUES
 ('patient_0','123456','许洁','1970-03-05','260257696184556740','male','15250420736','iELWWtk1bp@163.com','patient'),
