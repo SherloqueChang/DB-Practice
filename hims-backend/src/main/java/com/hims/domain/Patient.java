@@ -1,7 +1,15 @@
 package com.hims.domain;
-import com.hims.domain.User;
 import lombok.Data;
 
-public class Patient extends User {
+@Data public class Patient{
+    private String id;
+    private String pwd;
+    private String name;
+    public String birthdate;
+    private String idcard;
+    private String gender;
+    private String phone;
+    private String email;
+    private String u_type;
 
 }

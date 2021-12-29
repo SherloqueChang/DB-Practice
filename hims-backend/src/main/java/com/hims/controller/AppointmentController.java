@@ -1,29 +1,19 @@
 package com.hims.controller;
 
-import com.hims.controller.request.UserInfoRequest;
-import com.hims.domain.User;
-import com.hims.exception.WardNurseDeleteFailureException;
-import com.hims.serviceImpl.BedServiceImpl;
 import com.hims.serviceImpl.PatientServiceImpl;
-import com.hims.serviceImpl.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
-import java.util.ArrayList;
 
 @RestController
 public class AppointmentController {
     @Autowired
-    private UserServiceImpl userService;
-    @Autowired
     private PatientServiceImpl patientService;
     
     @Autowired
-    public AppointmentController(UserServiceImpl userService, PatientServiceImpl patientService) {
-        this.userService = userService;
+    public AppointmentController(PatientServiceImpl patientService) {
         this.patientService = patientService;
     }
     

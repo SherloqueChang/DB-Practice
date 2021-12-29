@@ -31,7 +31,6 @@ public class UserRepository {
         try {
             return fmt.parse(birthdate);
         } catch (ParseException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
             return null;
         }

@@ -39,8 +39,8 @@
               </el-form-item>
               <el-form-item label="毕业院校">
                 {{ this.doctorInfoForm.gradSchool }}
-              </el-form-item><el-form-item label="学位">
-              {{ this.doctorInfoForm.degree }}
+              </el-form-item><el-form-item label="部门">
+              {{ this.doctorInfoForm.department }}
             </el-form-item><el-form-item label="技术职称">
               {{ this.doctorInfoForm.techTitle }}
             </el-form-item><el-form-item label="专业特长">
@@ -73,7 +73,7 @@ export default {
         email: '',
         u_type: '',
         gradSchool: '',
-        degree: '',
+        department: '',
         techTitle: '',
         specialty: ''
       }
@@ -109,7 +109,7 @@ export default {
             this.doctorInfoForm.email = resp.data.email
             this.doctorInfoForm.u_type = resp.data.u_type
             this.doctorInfoForm.gradSchool = resp.data.gradSchool
-            this.doctorInfoForm.degree = resp.data.degree
+            this.doctorInfoForm.department = resp.data.department
             this.doctorInfoForm.techTitle = resp.data.techTitle
             this.doctorInfoForm.specialty = resp.data.specialty
           } else {
