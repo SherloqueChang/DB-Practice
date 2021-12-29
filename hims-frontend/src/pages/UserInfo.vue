@@ -89,6 +89,7 @@ import NavAside from '../components/NavAside'
 export default {
   name: 'UserInfo',
   components: { NavHeader, NavAside },
+  inject: ['reload'],
   data () {
     return {
       user: [],
@@ -122,6 +123,7 @@ export default {
         this.user = this.$store.state.user
         this.isPatient = this.$store.state.user.u_type === 'patient'
         this.isDoctor = this.$store.state.user.u_type === 'doctor'
+        this.isLeader = this.$store.state.user.u_type === 'leader'
         if (this.user.u_type === 'admin') {
           this.user.id = this.$route.params.id
           this.isPatient = (this.$route.params.type === 'patient')
@@ -137,7 +139,7 @@ export default {
         .then((resp) => {
           if (resp.status === 200) {
             this.user.id = resp.data.user.id
-            this.user.name = resp.data.user.name //this.isDoctor
+            this.user.name = resp.data.user.name
             this.user.birthdate = resp.data.user.birthdate
             this.user.gender = resp.data.user.gender
             this.user.password = resp.data.user.pwd
@@ -147,12 +149,11 @@ export default {
             this.userInfoForm.password = resp.data.user.pwd
             this.userInfoForm.email = resp.data.user.email
             this.userInfoForm.phone = resp.data.user.phone
-            if (this.isDoctor) {
-              this.user.gradSchool = resp.data.user.graduate_school
-              this.user.department = resp.data.user.department
-              this.user.techTitle = resp.data.user.job_title
-              this.user.specialty = resp.data.user.specialties
-            }
+            this.user.gradSchool = resp.data.user.graduate_school
+            this.user.department = resp.data.user.department
+            this.user.techTitle = resp.data.user.job_title
+            this.user.specialty = resp.data.user.specialties
+            this.reload()
           }
         })
         .catch((error) => {
