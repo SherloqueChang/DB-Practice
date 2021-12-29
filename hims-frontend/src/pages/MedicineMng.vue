@@ -28,16 +28,16 @@
         </el-table>
         <el-dialog title="编辑药品" :visible.sync="dialogFormVisible">
           <el-form :model="itemForm" :inline="true">
-            <el-form-item label="药品名称" :label-width="formLabelWidth">
+            <el-form-item label="药品名称:">
               <div>{{this.itemForm.name}}</div>
             </el-form-item>
-            <el-form-item label="药品数量" :label-width="formLabelWidth">
+            <el-form-item label="药品数量:">
               <el-input v-model="itemForm.num" autocomplete="off"></el-input>
             </el-form-item>
           </el-form>
           <div slot="footer" class="dialog-footer">
             <el-button @click="dialogFormVisible = false">取 消</el-button>
-            <el-button type="primary" @click="submitItem">确 定</el-button>
+            <el-button type="primary" @click="submitChange">确 定</el-button>
           </div>
         </el-dialog>
       </el-main>
@@ -53,6 +53,7 @@ import NavAside from '../components/NavAside'
 export default {
   name: 'MedicineMng',
   components: {NavAside, NavHeader},
+  inject: ['reload'],
   data () {
     return {
       user: {},
@@ -90,7 +91,7 @@ export default {
     submitChange () {
       this.$axios
         .post('/editMedicine', null, {
-          param: {
+          params: {
             name: this.itemForm.name,
             num: this.itemForm.num
           }
@@ -102,6 +103,7 @@ export default {
               message: '编辑成功'
             })
             this.dialogFormVisible = false
+            this.reload()
           }
         })
     }

@@ -65,8 +65,17 @@ public class UserRepository {
         }
     }
 
-    public List<User> findAll() {
-        String sql = "select * from user";
+    public List<User> findAllPatient() {
+        String sql = "select * from user where u_type='patient'";
+        try {
+            return jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(User.class));
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
+    public List<User> findAllDoctor() {
+        String sql = "select * from user where u_type='doctor'";
         try {
             return jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(User.class));
         } catch (Exception e) {

@@ -9,6 +9,7 @@ import com.hims.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -111,8 +112,8 @@ public class UserServiceImpl{
             result.load_from_doctor(doctor);
         }
         return result;
-
     }
+
     public void save(User user) {
         userRepository.save(user);
     }
@@ -129,8 +130,8 @@ public class UserServiceImpl{
         return userRepository.find(id);
     }
 
-    public List<User> findAll() {
-        return userRepository.findAll();
+    public List<User> findAllPatient() {
+        return userRepository.findAllPatient();
     }
 
     public List<Appointment> findAppointmentByPatientId(String id) {

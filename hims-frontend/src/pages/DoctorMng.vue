@@ -68,11 +68,31 @@ export default {
         })
     },
     checkDoctor (index, row) {
-      this.$router.push({
-        name: 'UserInfo',
-        id: row.id,
-        type: 'doctor'
-      })
+      this.$axios
+        .get('/getDoctorInfo', {
+          params: { id: row.id }
+        })
+        .then((resp) => {
+          if (resp.status === 200) {
+            this.$router.push({
+              name: 'UserInfo',
+              params: {
+                id: row.id,
+                name: resp.data.doctor.name,
+                birthdate: resp.data.doctor.birthdate,
+                idcard: resp.data.doctor.idcard,
+                gender: resp.data.doctor.gender,
+                phone: resp.data.doctor.phone,
+                email: resp.data.doctor.email,
+                u_type: resp.data.doctor.u_type,
+                graduate_school: resp.data.doctor.graduate_school,
+                department: resp.data.doctor.department,
+                job_title: resp.data.doctor.job_title,
+                specialties: resp.data.doctor.specialties
+              }
+            })
+          }
+        })
     },
     deleteDoctor (index, row) {
       this.$axios

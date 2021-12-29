@@ -9,66 +9,66 @@
             <el-form
               v-if="isUpdating"
               @submit.native.prevent
-              :model="userInfoForm"
+              :model="userInfo"
               :rules="rules"
               status-icon
-              ref="userInfoForm"
+              ref="userInfo"
             >
               <el-form-item label="密码" prop="password">
                 <el-input
                   type="password"
-                  v-model="userInfoForm.password"
+                  v-model="userInfo.password"
                   autocomplete="off"
                 ></el-input>
               </el-form-item>
               <el-form-item label="电话" prop="phone">
-                <el-input v-model="userInfoForm.phone"></el-input>
+                <el-input v-model="userInfo.phone"></el-input>
               </el-form-item>
               <el-form-item label="Email" prop="email">
-                <el-input v-model="userInfoForm.email"></el-input>
+                <el-input v-model="userInfo.email"></el-input>
               </el-form-item>
               <el-form-item>
                 <el-button
                   native-type="submit"
                   type="primary"
-                  @click="submitForm('userInfoForm')"
+                  @click="submitForm('userInfo')"
                   >提交信息</el-button
                 >
               </el-form-item>
             </el-form>
             <el-form v-if="isReading">
-              <el-form-item label="用户名">
-                {{ this.user.id }}
+              <el-form-item label="用户名" prop="id">
+                {{ this.userInfo.id }}
               </el-form-item>
-              <el-form-item label="姓名">
-                {{ this.user.name }}
+              <el-form-item label="姓名" prop="name">
+                {{ this.userInfo.name }}
               </el-form-item>
               <el-form-item label="出生日期">
-                {{ this.user.birthdate }}
+                {{ this.userInfo.birthdate }}
               </el-form-item>
               <el-form-item label="身份证号">
-                {{ this.user.idcard }}
+                {{ this.userInfo.idcard }}
               </el-form-item>
               <el-form-item label="性别">
-                {{ this.user.gender }}
+                {{ this.userInfo.gender }}
               </el-form-item>
               <el-form-item label="电话">
-                {{ this.user.phone }}
+                {{ this.userInfo.phone }}
               </el-form-item>
               <el-form-item label="Email">
-                {{ this.user.email }}
+                {{ this.userInfo.email }}
               </el-form-item>
               <el-form-item label="身份">
-                {{ this.parseUType(this.user.u_type) }}
+                {{ this.parseUType(this.userInfo.u_type) }}
               </el-form-item>
               <el-form-item label="毕业院校" v-if="isDoctor">
-                {{ this.user.graduate_school }}
+                {{ this.userInfo.graduate_school }}
               </el-form-item><el-form-item label="部门" v-if="isDoctor">
-                {{ this.user.department }}
+                {{ this.userInfo.department }}
               </el-form-item><el-form-item label="技术职称" v-if="isDoctor">
-                {{ this.user.job_title }}
+                {{ this.userInfo.job_title }}
               </el-form-item><el-form-item label="专业特长" v-if="isDoctor">
-                {{ this.user.specialties }}
+                {{ this.userInfo.specialties }}
               </el-form-item>
               <el-form-item>
                 <el-button @click="handleUpdate">修改信息</el-button>
@@ -94,14 +94,20 @@ export default {
       user: [],
       isUpdating: false,
       isReading: true,
-      isPatient: false,
       isDoctor: false,
-      isLeader: false,
-
-      userInfoForm: {
-        password: '',
+      userInfo: {
+        id: '',
+        name: '',
+        birthdate: '',
+        idcard: '',
+        gender: '',
         phone: '',
-        email: ''
+        email: '',
+        u_type: '',
+        graduate_school: '',
+        department: '',
+        job_title: '',
+        specialties: ''
       },
       rules: {
         password: { required: true, message: '请输入密码', blur: 'change' },
@@ -118,14 +124,34 @@ export default {
     handleUserData () {
       if (this.$store.state.user) {
         this.user = this.$store.state.user
-        this.isPatient = this.$store.state.user.u_type === 'patient'
-        this.isDoctor = this.$store.state.user.u_type === 'doctor'
-        this.isLeader = this.$store.state.user.u_type === 'leader'
-        this.isAdmin = this.$store.state.user.u_type === 'admin'
-        if (this.user.u_type === 'admin') {
-          this.user.id = this.$route.params.id
-          this.isPatient = (this.$route.params.type === 'patient')
-          this.isDoctor = (this.$route.params.type === 'doctor')
+        if (this.$route.params.u_type !== undefined && this.$route.params.u_type !== 'admin') {
+          this.userInfo.id = this.$route.params.id,
+          this.userInfo.name = this.$route.params.name,
+          this.userInfo.birthdate = this.$route.params.birthdate,
+          this.userInfo.idcard = this.$route.params.idcard,
+          this.userInfo.gender = this.$route.params.gender,
+          this.userInfo.phone = this.$route.params.phone,
+          this.userInfo.email = this.$route.params.email,
+          this.userInfo.u_type = this.$route.params.u_type,
+          this.userInfo.graduate_school = this.$route.params.graduate_school,
+          this.userInfo.department = this.$route.params.department,
+          this.userInfo.job_title = this.$route.params.job_title,
+          this.userInfo.specialties = this.$route.params.specialties
+          this.isDoctor = (this.$route.params.u_type === 'doctor')
+        }  else {
+          this.userInfo.id = this.$store.state.user.id
+          this.userInfo.name = this.$store.state.user.name
+          this.userInfo.birthdate = this.$store.state.user.birthdate
+          this.userInfo.idcard = this.$store.state.user.idcard
+          this.userInfo.gender = this.$store.state.user.gender
+          this.userInfo.phone = this.$store.state.user.phone
+          this.userInfo.email = this.$store.state.user.email
+          this.userInfo.u_type = this.$store.state.user.u_type
+          this.userInfo.graduate_school = this.$store.state.user.graduate_school
+          this.userInfo.department = this.$store.state.user.department
+          this.userInfo.job_title = this.$store.state.user.job_title
+          this.userInfo.specialties = this.$store.state.user.specialties
+          this.isDoctor = (this.user.u_type === 'doctor')
         }
       }
     },
@@ -152,9 +178,9 @@ export default {
       this.$axios
         .post('/modifyUserInfo', {
           id: this.user.id.toString(),
-          password: this.userInfoForm.password,
-          email: this.userInfoForm.email,
-          phone: this.userInfoForm.phone
+          password: this.userInfo.password,
+          email: this.userInfo.email,
+          phone: this.userInfo.phone
         }
         )
         .then((resp) => {

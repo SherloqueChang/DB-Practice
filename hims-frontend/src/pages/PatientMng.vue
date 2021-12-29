@@ -63,11 +63,31 @@ export default {
         })
     },
     checkPatient (index, row) {
-      this.$router.push({
-        name: 'UserInfo',
-        id: row.id,
-        type: 'patient'
-      })
+      this.$axios
+        .get('/getPatientInfo', {
+          params: { id: row.id }
+        })
+        .then((resp) => {
+          if (resp.status === 200) {
+            this.$router.push({
+              name: 'UserInfo',
+              params: {
+                id: row.id,
+                name: resp.data.patient.name,
+                birthdate: resp.data.patient.birthdate,
+                idcard: resp.data.patient.idcard,
+                gender: resp.data.patient.gender,
+                phone: resp.data.patient.phone,
+                email: resp.data.patient.email,
+                u_type: resp.data.patient.u_type,
+                graduate_school: null,
+                department: null,
+                job_title: null,
+                specialties: null
+              }
+            })
+          }
+        })
     }
   }
 }

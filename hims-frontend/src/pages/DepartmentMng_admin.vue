@@ -14,6 +14,10 @@
             label="科室名称">
           </el-table-column>
           <el-table-column
+            prop="id"
+            label="科长">
+          </el-table-column>
+          <el-table-column
             prop="doctor_num"
             label="医生数量">
           </el-table-column>
@@ -62,6 +66,7 @@ export default {
             resp.data.department.forEach(element => {
               this.departmentTable.push({
                 name: element.name,
+                id: element.id,
                 doctor_num: element.doctor_num
               })
             })
