@@ -54,4 +54,8 @@ public class DoctorServiceImpl {
         map.put("appointmentQuery",doctorInfo);
         return map;
     }
+    public Map<String, Object> addmedicalinfo(String doctorId, String patientId, String issue, String diagnosed_disease, String allergens) {
+        Map<String, Object> map = new HashMap<>();
+        return map;
+    }
 }
