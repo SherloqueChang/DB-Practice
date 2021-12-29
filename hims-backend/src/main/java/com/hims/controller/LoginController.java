@@ -1,13 +1,8 @@
 package com.hims.controller;
 
 import com.hims.controller.request.UserInfoRequest;
-import com.hims.domain.User;
-import com.hims.exception.WardNurseDeleteFailureException;
-import com.hims.serviceImpl.BedServiceImpl;
-import com.hims.serviceImpl.PatientServiceImpl;
 import com.hims.serviceImpl.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,14 +12,11 @@ import java.util.Map;
 public class LoginController {
     @Autowired
     private UserServiceImpl userService;
-    @Autowired
-    private PatientServiceImpl patientService;
 
 
     @Autowired
-    public LoginController(UserServiceImpl userService, PatientServiceImpl patientService) {
+    public LoginController(UserServiceImpl userService) {
         this.userService = userService;
-        this.patientService = patientService;
     }
 
     /**

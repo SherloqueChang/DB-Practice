@@ -1,10 +1,5 @@
 package com.hims.domain;
 
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.*;
-
 import lombok.Data;
 
 @Data public class User {

@@ -115,9 +115,6 @@ CREATE TABLE patient_history (
     #FOREIGN KEY (patient_id) REFERENCES patient(id) ON DELETE CASCADE
 ) DEFAULT CHARSET UTF8 COMMENT '';
 
-INSERT INTO user(id, pwd, name, birthdate, idcard, gender, phone, email, u_type) VALUES
-    ('patient_1', '123456', 'Alice', '1999-10-21', '110101199003075672', 'male', '13673183017', 'keajo@sina.com', 'patient');
-
 
 INSERT INTO medicine(name) VALUES
 ('盘尼西林'),('胰岛素'),('感冒软胶囊'),('阿莫西林'),('布洛芬'),('头孢拉定');

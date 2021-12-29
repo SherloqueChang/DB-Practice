@@ -64,8 +64,8 @@
               </el-form-item>
               <el-form-item label="毕业院校" v-if="isDoctor">
                 {{ this.user.gradSchool }}
-              </el-form-item><el-form-item label="学位" v-if="isDoctor">
-                {{ this.user.degree }}
+              </el-form-item><el-form-item label="部门" v-if="isDoctor">
+                {{ this.user.department }}
               </el-form-item><el-form-item label="技术职称" v-if="isDoctor">
                 {{ this.user.techTitle }}
               </el-form-item><el-form-item label="专业特长" v-if="isDoctor">
@@ -148,10 +148,10 @@ export default {
             this.userInfoForm.email = resp.data.user.email
             this.userInfoForm.phone = resp.data.user.phone
             if (this.isDoctor) {
-              this.user.gradSchool = resp.data.user.gradSchool
-              this.user.degree = resp.data.user.degree
-              this.user.techTitle = resp.data.user.techTitle
-              this.user.specialty = resp.data.user.specialty
+              this.user.gradSchool = resp.data.user.graduate_school
+              this.user.department = resp.data.user.department
+              this.user.techTitle = resp.data.user.job_title
+              this.user.specialty = resp.data.user.specialties
             }
           }
         })
