@@ -13,22 +13,6 @@
               ref="medicalRecForm"
               v-loading="loading"
             >
-              <el-form-item label="医生" prop="doctor">
-                <el-input v-model="medicalRecForm.doctor"></el-input>
-              </el-form-item>
-              <el-form-item label="患者" prop="patient">
-                <el-input v-model="medicalRecForm.patient"></el-input>
-              </el-form-item>
-              <el-form-item label="日期" prop="date">
-                <div class="block">
-                  <el-date-picker
-                    value-format="yyyy-MM-dd"
-                    v-model="medicalRecForm.date"
-                    type="date"
-                    placeholder="选择日期">
-                  </el-date-picker>
-                </div>
-              </el-form-item>
               <el-form-item label="诊断结果" prop="issue">
                 <el-input v-model="medicalRecForm.issue"></el-input>
               </el-form-item>
@@ -65,9 +49,6 @@ export default {
     return {
       user: {},
       medicalRecForm: {
-        doctor: this.$route.params.d_id,
-        patient: this.$route.params.p_id,
-        date: '',
         issue: '',
         diagnosed_disease: '',
         allergens: ''
@@ -90,8 +71,6 @@ export default {
           params: {
             d_id: this.user.id,
             p_id: this.$route.params.p_id,
-            doctor: this.medicalRecForm.doctor,
-            patient: this.medicalRecForm.patient,
             issue: this.medicalRecForm.issue,
             diagnosed_disease: this.medicalRecForm.diagnosed_disease,
             allergens: this.medicalRecForm.allergens

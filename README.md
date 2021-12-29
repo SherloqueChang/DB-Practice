@@ -111,7 +111,7 @@ CREATE TABLE patient_history (
     doctor_id VARCHAR(50) NOT NULL COMMENT 'id of the doctor',
     treat_date DATE NOT NULL COMMENT 'date of the treatment',
     treat_issue VARCHAR(200) NOT NULL COMMENT 'comment of the doctor',
-    diagnosised_disease VARCHAR(200) NOT NULL COMMENT 'diagnosised disease',
+    diagnosed_disease VARCHAR(200) NOT NULL COMMENT 'diagnosised disease',
     allergens VARCHAR(200) NOT NULL COMMENT 'allergens'
     #FOREIGN KEY (doctor_id) REFERENCES doctor(id) ON DELETE CASCADE,
     #FOREIGN KEY (patient_id) REFERENCES patient(id) ON DELETE CASCADE
@@ -255,7 +255,10 @@ INSERT INTO appointed_info(doctor_id, appointment_date, department, patient_id, 
 ('doctor_2','2020-11-01','妇产科','patient_20','Done'),
 ('doctor_2','2020-06-24','外科','patient_20','Done');
 
-INSERT INTO patient_history(patient_id, doctor_id, treat_date, treat_issue, diagnosised_disease, allergens) VALUES
+INSERT INTO appointed_info(doctor_id, appointment_date, department, patient_id,  appointment_status) VALUES
+('doctor_1','2021-12-29','内科','patient_1','Todo');
+
+INSERT INTO patient_history(patient_id, doctor_id, treat_date, treat_issue, diagnosed_disease, allergens) VALUES
 ('patient_0','doctor_9','2020-04-08','xxx','xxx','xxx'),
 ('patient_0','doctor_4','2020-10-14','xxx','xxx','xxx'),
 ('patient_0','doctor_9','2020-03-08','xxx','xxx','xxx'),

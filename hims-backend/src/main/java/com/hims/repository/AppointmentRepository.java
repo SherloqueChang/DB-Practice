@@ -29,7 +29,6 @@ public class AppointmentRepository {
         SimpleDateFormat sdf = new SimpleDateFormat();// 格式化时间 
         sdf.applyPattern("yyyy-MM-dd"); 
         Date date = new Date();// 获取当前时间 
-        System.out.println("现在时间：" + sdf.format(date));
         return jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(Appointment.class), doctorId, sdf.format(date));
     }
 

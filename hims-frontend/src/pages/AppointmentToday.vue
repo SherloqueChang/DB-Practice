@@ -84,7 +84,7 @@ export default {
               this.appointmentTodayTable.push({
                 id: element.patient_id,
                 name: element.patient_name,
-                status: element.status
+                status: element.appointment_status
               })
             })
           }

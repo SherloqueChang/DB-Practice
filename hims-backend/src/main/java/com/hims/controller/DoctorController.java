@@ -34,4 +34,13 @@ public class DoctorController {
     ResponseEntity<Map<String, Object>> PatientTodayInfo(@RequestParam("id") String doctorId) {
         return ResponseEntity.ok(doctorService.get_todayPatientInfo(doctorId));
     }
+
+    @PostMapping("/editMedicalRecForm")
+    ResponseEntity<Map<String, Object>> editMedicalRecForm(@RequestParam("d_id") String doctorId, 
+                                                           @RequestParam("p_id") String patientId, 
+                                                           @RequestParam("issue") String issue, 
+                                                           @RequestParam("diagnosed_disease") String diagnosed_disease, 
+                                                           @RequestParam("allergens") String allergens) {
+        return ResponseEntity.ok(doctorService.addmedicalinfo(doctorId, patientId, issue, diagnosed_disease, allergens));
+    }
 }
