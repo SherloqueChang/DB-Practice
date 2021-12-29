@@ -33,4 +33,9 @@ public class AppointmentRepository {
         return jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(Appointment.class), doctorId, sdf.format(date));
     }
 
+    public List<Appointment> findAppointmentByDoctorIDAndDate(String doctorId, String date) {
+        String sql = "select * from appointed_info where doctor_id = ? and appointment_date = ?";
+        return jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(Appointment.class), doctorId, date);
+    }
+
 }
