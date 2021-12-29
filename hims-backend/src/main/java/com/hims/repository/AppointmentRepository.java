@@ -6,6 +6,8 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 @Repository
@@ -20,6 +22,15 @@ public class AppointmentRepository {
         } catch (Exception e) {
             return null;
         }
+    }
+
+    public List<Appointment> findTodayAppointmentByDoctorID(String doctorId){
+        String sql = "select * from appointed_info where doctor_id = ? and appointment_date = ?";
+        SimpleDateFormat sdf = new SimpleDateFormat();// 格式化时间 
+        sdf.applyPattern("yyyy-MM-dd"); 
+        Date date = new Date();// 获取当前时间 
+        System.out.println("现在时间：" + sdf.format(date));
+        return jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(Appointment.class), doctorId, sdf.format(date));
     }
 
 }

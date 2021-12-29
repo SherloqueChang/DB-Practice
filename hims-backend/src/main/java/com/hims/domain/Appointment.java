@@ -9,6 +9,7 @@ import lombok.Data;
     private String patient_id;
     private String department;
     private String appointment_status;
+    private String patient_name;
 
     public Appointment() {
     }

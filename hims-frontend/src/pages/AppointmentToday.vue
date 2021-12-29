@@ -67,19 +67,20 @@ export default {
       this.$axios
         .get('/getPatientTodayInfo', {
           // 通过路由传参，获得患者的id
-          params: { p_id: this.$route.params.p_id, d_id: this.user.id }
+          params: {id: this.user.id }
         })
         .then((resp) => {
           if (resp.status === 200) {
             resp.data.patientToday.forEach((element) => {
               this.appointmentTodayTable.push({
-                id: element.id,
-                name: element.name
+                id: element.patient_id,
+                name: element.patient_name
               })
             })
           }
         })
         .catch((error) => {
+          console.log(error)
           this.$message.error('请求错误，请重试')
         })
     },

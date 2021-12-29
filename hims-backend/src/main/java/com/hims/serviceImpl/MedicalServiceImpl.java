@@ -55,7 +55,7 @@ public class MedicalServiceImpl{
         for(PatientHistory his : patientHistory){
             his.setDoctor_name(userService.find(his.getDoctor_id()).getName());
             his.setPatient_name(userService.find(his.getPatient_id()).getName());
-            System.out.println(his);
+            //System.out.println(his);
         }
         map.put("historyPatient", patientHistory);
         return map;

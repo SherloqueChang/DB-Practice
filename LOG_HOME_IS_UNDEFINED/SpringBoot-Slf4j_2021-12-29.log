@@ -853,3 +853,850 @@ Using generated security password: 06a649e0-b4c0-492c-932c-f67c82adf842
 2021-12-29 16:46:43 Shutting down ExecutorService 'applicationTaskExecutor'
 2021-12-29 16:46:43 HikariPool-1 - Shutdown initiated...
 2021-12-29 16:46:43 HikariPool-1 - Shutdown completed.
+2021-12-29 18:00:33 Starting HimsApplication using Java 1.8.0_312 on NOCTLI-MB0 with PID 6430 (/Users/lizongjia/Desktop/数据库大作业/DB-Practice/hims-backend/target/classes started by lizongjia in /Users/lizongjia/Desktop/数据库大作业/DB-Practice)
+2021-12-29 18:00:33 No active profile set, falling back to default profiles: default
+2021-12-29 18:00:33 Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-12-29 18:00:33 For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-12-29 18:00:34 Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@66532aea' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-12-29 18:00:34 Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-12-29 18:00:35 Tomcat initialized with port(s): 8080 (http)
+2021-12-29 18:00:35 Initializing ProtocolHandler ["http-nio-8080"]
+2021-12-29 18:00:35 Starting service [Tomcat]
+2021-12-29 18:00:35 Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-12-29 18:00:35 Initializing Spring embedded WebApplicationContext
+2021-12-29 18:00:35 Root WebApplicationContext: initialization completed in 1525 ms
+2021-12-29 18:00:36 Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-12-29 18:00:36 
+
+Using generated security password: ef1578c8-68e3-4dc6-a67f-751df9460788
+
+2021-12-29 18:00:36 Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@39dc304c, org.springframework.security.web.context.SecurityContextPersistenceFilter@6caa0868, org.springframework.security.web.header.HeaderWriterFilter@9193819, org.springframework.security.web.authentication.logout.LogoutFilter@2aa2f5fd, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7ee5530e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6e60b69f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2fe9ec53, org.springframework.security.web.session.SessionManagementFilter@56259d3a, org.springframework.security.web.access.ExceptionTranslationFilter@d011695, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@617a379a]
+2021-12-29 18:00:36 Initializing ExecutorService 'applicationTaskExecutor'
+2021-12-29 18:00:37 LiveReload server is running on port 35729
+2021-12-29 18:00:37 Starting ProtocolHandler ["http-nio-8080"]
+2021-12-29 18:00:37 Tomcat started on port(s): 8080 (http) with context path ''
+2021-12-29 18:00:37 Context refreshed
+2021-12-29 18:00:37 Found 1 custom documentation plugin(s)
+2021-12-29 18:00:37 Scanning for api listing references
+2021-12-29 18:00:37 Started HimsApplication in 4.307 seconds (JVM running for 4.768)
+2021-12-29 18:00:54 Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-12-29 18:00:54 Initializing Servlet 'dispatcherServlet'
+2021-12-29 18:00:54 Completed initialization in 1 ms
+2021-12-29 18:00:54 HikariPool-1 - Starting...
+2021-12-29 18:00:54 HikariPool-1 - Start completed.
+2021-12-29 18:04:26 Shutting down ExecutorService 'applicationTaskExecutor'
+2021-12-29 18:04:26 HikariPool-1 - Shutdown initiated...
+2021-12-29 18:04:26 HikariPool-1 - Shutdown completed.
+2021-12-29 18:04:27 Starting HimsApplication using Java 1.8.0_312 on NOCTLI-MB0 with PID 6430 (/Users/lizongjia/Desktop/数据库大作业/DB-Practice/hims-backend/target/classes started by lizongjia in /Users/lizongjia/Desktop/数据库大作业/DB-Practice)
+2021-12-29 18:04:27 No active profile set, falling back to default profiles: default
+2021-12-29 18:04:27 Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@5dc1441e' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-12-29 18:04:27 Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-12-29 18:04:27 Tomcat initialized with port(s): 8080 (http)
+2021-12-29 18:04:27 Initializing ProtocolHandler ["http-nio-8080"]
+2021-12-29 18:04:27 Starting service [Tomcat]
+2021-12-29 18:04:27 Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-12-29 18:04:27 Initializing Spring embedded WebApplicationContext
+2021-12-29 18:04:27 Root WebApplicationContext: initialization completed in 414 ms
+2021-12-29 18:04:27 Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-12-29 18:04:27 
+
+Using generated security password: 0129d554-c9c5-4804-b5e8-a0078ae46ded
+
+2021-12-29 18:04:27 Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@32a1b665, org.springframework.security.web.context.SecurityContextPersistenceFilter@6edaf736, org.springframework.security.web.header.HeaderWriterFilter@3ce28e9c, org.springframework.security.web.authentication.logout.LogoutFilter@e3ff303, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@a799b16, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@224772ab, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7fb479c3, org.springframework.security.web.session.SessionManagementFilter@32f4e87d, org.springframework.security.web.access.ExceptionTranslationFilter@4a35de4d, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@39358e1a]
+2021-12-29 18:04:27 Initializing ExecutorService 'applicationTaskExecutor'
+2021-12-29 18:04:27 LiveReload server is running on port 35729
+2021-12-29 18:04:27 Starting ProtocolHandler ["http-nio-8080"]
+2021-12-29 18:04:27 Tomcat started on port(s): 8080 (http) with context path ''
+2021-12-29 18:04:27 Context refreshed
+2021-12-29 18:04:27 Found 1 custom documentation plugin(s)
+2021-12-29 18:04:27 Scanning for api listing references
+2021-12-29 18:04:28 Started HimsApplication in 1.191 seconds (JVM running for 235.279)
+2021-12-29 18:04:28 Condition evaluation unchanged
+2021-12-29 18:04:30 Shutting down ExecutorService 'applicationTaskExecutor'
+2021-12-29 18:04:30 Starting HimsApplication using Java 1.8.0_312 on NOCTLI-MB0 with PID 6430 (/Users/lizongjia/Desktop/数据库大作业/DB-Practice/hims-backend/target/classes started by lizongjia in /Users/lizongjia/Desktop/数据库大作业/DB-Practice)
+2021-12-29 18:04:30 No active profile set, falling back to default profiles: default
+2021-12-29 18:04:30 Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@1d87e692' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-12-29 18:04:30 Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-12-29 18:04:30 Tomcat initialized with port(s): 8080 (http)
+2021-12-29 18:04:30 Initializing ProtocolHandler ["http-nio-8080"]
+2021-12-29 18:04:30 Starting service [Tomcat]
+2021-12-29 18:04:30 Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-12-29 18:04:30 Initializing Spring embedded WebApplicationContext
+2021-12-29 18:04:30 Root WebApplicationContext: initialization completed in 316 ms
+2021-12-29 18:04:31 Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-12-29 18:04:31 
+
+Using generated security password: e8a8c5df-3fc5-4921-9c34-7dae124f2452
+
+2021-12-29 18:04:31 Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@69ff6d5, org.springframework.security.web.context.SecurityContextPersistenceFilter@28678c1c, org.springframework.security.web.header.HeaderWriterFilter@76bfe074, org.springframework.security.web.authentication.logout.LogoutFilter@1961b03, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@121469, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@9a7e85f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1f7e082, org.springframework.security.web.session.SessionManagementFilter@2a56cd0d, org.springframework.security.web.access.ExceptionTranslationFilter@681808b9, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@28b62211]
+2021-12-29 18:04:31 Initializing ExecutorService 'applicationTaskExecutor'
+2021-12-29 18:04:31 LiveReload server is running on port 35729
+2021-12-29 18:04:31 Starting ProtocolHandler ["http-nio-8080"]
+2021-12-29 18:04:31 Tomcat started on port(s): 8080 (http) with context path ''
+2021-12-29 18:04:31 Context refreshed
+2021-12-29 18:04:31 Found 1 custom documentation plugin(s)
+2021-12-29 18:04:31 Scanning for api listing references
+2021-12-29 18:04:31 Started HimsApplication in 0.686 seconds (JVM running for 238.56)
+2021-12-29 18:04:31 Condition evaluation unchanged
+2021-12-29 18:04:37 Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-12-29 18:04:37 Initializing Servlet 'dispatcherServlet'
+2021-12-29 18:04:37 Completed initialization in 1 ms
+2021-12-29 18:04:37 HikariPool-2 - Starting...
+2021-12-29 18:04:37 HikariPool-2 - Start completed.
+2021-12-29 18:06:21 Shutting down ExecutorService 'applicationTaskExecutor'
+2021-12-29 18:06:21 HikariPool-2 - Shutdown initiated...
+2021-12-29 18:06:21 HikariPool-2 - Shutdown completed.
+2021-12-29 18:06:22 Starting HimsApplication using Java 1.8.0_312 on NOCTLI-MB0 with PID 6430 (/Users/lizongjia/Desktop/数据库大作业/DB-Practice/hims-backend/target/classes started by lizongjia in /Users/lizongjia/Desktop/数据库大作业/DB-Practice)
+2021-12-29 18:06:22 No active profile set, falling back to default profiles: default
+2021-12-29 18:06:22 Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@36a16b9' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-12-29 18:06:22 Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-12-29 18:06:22 Tomcat initialized with port(s): 8080 (http)
+2021-12-29 18:06:22 Initializing ProtocolHandler ["http-nio-8080"]
+2021-12-29 18:06:22 Starting service [Tomcat]
+2021-12-29 18:06:22 Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-12-29 18:06:22 Initializing Spring embedded WebApplicationContext
+2021-12-29 18:06:22 Root WebApplicationContext: initialization completed in 308 ms
+2021-12-29 18:06:22 Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-12-29 18:06:22 
+
+Using generated security password: 97a219e0-38e2-454a-bddc-d7cf5b6664d5
+
+2021-12-29 18:06:22 Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@79d99d6b, org.springframework.security.web.context.SecurityContextPersistenceFilter@24fe3531, org.springframework.security.web.header.HeaderWriterFilter@4d549ce0, org.springframework.security.web.authentication.logout.LogoutFilter@7605869a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5a91c144, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@33cbf56a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6fbb442, org.springframework.security.web.session.SessionManagementFilter@3a655722, org.springframework.security.web.access.ExceptionTranslationFilter@3759291b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@cf1cb00]
+2021-12-29 18:06:22 Initializing ExecutorService 'applicationTaskExecutor'
+2021-12-29 18:06:22 LiveReload server is running on port 35729
+2021-12-29 18:06:22 Starting ProtocolHandler ["http-nio-8080"]
+2021-12-29 18:06:22 Tomcat started on port(s): 8080 (http) with context path ''
+2021-12-29 18:06:22 Context refreshed
+2021-12-29 18:06:22 Found 1 custom documentation plugin(s)
+2021-12-29 18:06:22 Scanning for api listing references
+2021-12-29 18:06:22 Started HimsApplication in 1.009 seconds (JVM running for 350.032)
+2021-12-29 18:06:22 Condition evaluation unchanged
+2021-12-29 18:12:09 Shutting down ExecutorService 'applicationTaskExecutor'
+2021-12-29 18:12:10 Starting HimsApplication using Java 1.8.0_312 on NOCTLI-MB0 with PID 6430 (/Users/lizongjia/Desktop/数据库大作业/DB-Practice/hims-backend/target/classes started by lizongjia in /Users/lizongjia/Desktop/数据库大作业/DB-Practice)
+2021-12-29 18:12:10 No active profile set, falling back to default profiles: default
+2021-12-29 18:12:11 Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@76223ce' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-12-29 18:12:11 Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-12-29 18:12:11 Tomcat initialized with port(s): 8080 (http)
+2021-12-29 18:12:11 Initializing ProtocolHandler ["http-nio-8080"]
+2021-12-29 18:12:11 Starting service [Tomcat]
+2021-12-29 18:12:11 Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-12-29 18:12:11 Initializing Spring embedded WebApplicationContext
+2021-12-29 18:12:11 Root WebApplicationContext: initialization completed in 385 ms
+2021-12-29 18:12:11 Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-12-29 18:12:11 
+
+Using generated security password: c5100d00-7db2-46f3-b9d3-75f71e5718f8
+
+2021-12-29 18:12:11 Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@139c947d, org.springframework.security.web.context.SecurityContextPersistenceFilter@620f940b, org.springframework.security.web.header.HeaderWriterFilter@3cf53803, org.springframework.security.web.authentication.logout.LogoutFilter@7ba74432, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@543a2d5c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@411a22f8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@45467b3, org.springframework.security.web.session.SessionManagementFilter@c2501a5, org.springframework.security.web.access.ExceptionTranslationFilter@27323620, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7b3021b2]
+2021-12-29 18:12:11 Initializing ExecutorService 'applicationTaskExecutor'
+2021-12-29 18:12:11 LiveReload server is running on port 35729
+2021-12-29 18:12:11 Starting ProtocolHandler ["http-nio-8080"]
+2021-12-29 18:12:11 Tomcat started on port(s): 8080 (http) with context path ''
+2021-12-29 18:12:11 Context refreshed
+2021-12-29 18:12:11 Found 1 custom documentation plugin(s)
+2021-12-29 18:12:11 Scanning for api listing references
+2021-12-29 18:12:11 Started HimsApplication in 1.165 seconds (JVM running for 698.611)
+2021-12-29 18:12:11 Condition evaluation unchanged
+2021-12-29 18:13:52 Shutting down ExecutorService 'applicationTaskExecutor'
+2021-12-29 18:13:53 Starting HimsApplication using Java 1.8.0_312 on NOCTLI-MB0 with PID 6430 (/Users/lizongjia/Desktop/数据库大作业/DB-Practice/hims-backend/target/classes started by lizongjia in /Users/lizongjia/Desktop/数据库大作业/DB-Practice)
+2021-12-29 18:13:53 No active profile set, falling back to default profiles: default
+2021-12-29 18:13:54 Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@a911a19' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-12-29 18:13:54 Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-12-29 18:13:54 Tomcat initialized with port(s): 8080 (http)
+2021-12-29 18:13:54 Initializing ProtocolHandler ["http-nio-8080"]
+2021-12-29 18:13:54 Starting service [Tomcat]
+2021-12-29 18:13:54 Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-12-29 18:13:54 Initializing Spring embedded WebApplicationContext
+2021-12-29 18:13:54 Root WebApplicationContext: initialization completed in 295 ms
+2021-12-29 18:13:54 Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-12-29 18:13:54 
+
+Using generated security password: 244df48c-3dcb-4946-82f1-89c907622e81
+
+2021-12-29 18:13:54 Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@375f10f5, org.springframework.security.web.context.SecurityContextPersistenceFilter@1118709f, org.springframework.security.web.header.HeaderWriterFilter@4890f31e, org.springframework.security.web.authentication.logout.LogoutFilter@5f9ad36e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@785152b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@48c20ec6, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@36432633, org.springframework.security.web.session.SessionManagementFilter@5a83ea1f, org.springframework.security.web.access.ExceptionTranslationFilter@53a8a46b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@ab42629]
+2021-12-29 18:13:54 Initializing ExecutorService 'applicationTaskExecutor'
+2021-12-29 18:13:54 LiveReload server is running on port 35729
+2021-12-29 18:13:54 Starting ProtocolHandler ["http-nio-8080"]
+2021-12-29 18:13:54 Tomcat started on port(s): 8080 (http) with context path ''
+2021-12-29 18:13:54 Context refreshed
+2021-12-29 18:13:54 Found 1 custom documentation plugin(s)
+2021-12-29 18:13:54 Scanning for api listing references
+2021-12-29 18:13:54 Started HimsApplication in 1.632 seconds (JVM running for 801.625)
+2021-12-29 18:13:54 Condition evaluation unchanged
+2021-12-29 18:17:12 Shutting down ExecutorService 'applicationTaskExecutor'
+2021-12-29 18:17:12 Starting HimsApplication using Java 1.8.0_312 on NOCTLI-MB0 with PID 6430 (/Users/lizongjia/Desktop/数据库大作业/DB-Practice/hims-backend/target/classes started by lizongjia in /Users/lizongjia/Desktop/数据库大作业/DB-Practice)
+2021-12-29 18:17:12 No active profile set, falling back to default profiles: default
+2021-12-29 18:17:12 Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@5be1622b' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-12-29 18:17:12 Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-12-29 18:17:12 Tomcat initialized with port(s): 8080 (http)
+2021-12-29 18:17:12 Initializing ProtocolHandler ["http-nio-8080"]
+2021-12-29 18:17:12 Starting service [Tomcat]
+2021-12-29 18:17:12 Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-12-29 18:17:12 Initializing Spring embedded WebApplicationContext
+2021-12-29 18:17:12 Root WebApplicationContext: initialization completed in 203 ms
+2021-12-29 18:17:12 Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'doctorController' defined in file [/Users/lizongjia/Desktop/数据库大作业/DB-Practice/hims-backend/target/classes/com/hims/controller/DoctorController.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.hims.controller.DoctorController]: Constructor threw exception; nested exception is java.lang.Error: Unresolved compilation problem: 
+	DoctorServiceImpl cannot be resolved to a type
+
+2021-12-29 18:17:12 Stopping service [Tomcat]
+2021-12-29 18:17:12 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-12-29 18:17:12 Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'doctorController' defined in file [/Users/lizongjia/Desktop/数据库大作业/DB-Practice/hims-backend/target/classes/com/hims/controller/DoctorController.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.hims.controller.DoctorController]: Constructor threw exception; nested exception is java.lang.Error: Unresolved compilation problem: 
+	DoctorServiceImpl cannot be resolved to a type
+
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:315)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:296)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1356)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1206)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:571)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:944)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:923)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:588)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:767)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:759)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:426)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:326)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1309)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1298)
+	at com.hims.HimsApplication.main(HimsApplication.java:11)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.hims.controller.DoctorController]: Constructor threw exception; nested exception is java.lang.Error: Unresolved compilation problem: 
+	DoctorServiceImpl cannot be resolved to a type
+
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:225)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:117)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:311)
+	... 25 common frames omitted
+Caused by: java.lang.Error: Unresolved compilation problem: 
+	DoctorServiceImpl cannot be resolved to a type
+
+	at com.hims.controller.DoctorController.<init>(DoctorController.java:17)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:212)
+	... 27 common frames omitted
+2021-12-29 18:21:07 Starting HimsApplication using Java 1.8.0_312 on NOCTLI-MB0 with PID 6430 (/Users/lizongjia/Desktop/数据库大作业/DB-Practice/hims-backend/target/classes started by lizongjia in /Users/lizongjia/Desktop/数据库大作业/DB-Practice)
+2021-12-29 18:21:07 No active profile set, falling back to default profiles: default
+2021-12-29 18:21:07 Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@4574c922' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-12-29 18:21:07 Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-12-29 18:21:07 Tomcat initialized with port(s): 8080 (http)
+2021-12-29 18:21:07 Initializing ProtocolHandler ["http-nio-8080"]
+2021-12-29 18:21:07 Starting service [Tomcat]
+2021-12-29 18:21:07 Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-12-29 18:21:07 Initializing Spring embedded WebApplicationContext
+2021-12-29 18:21:07 Root WebApplicationContext: initialization completed in 305 ms
+2021-12-29 18:21:07 Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-12-29 18:21:07 
+
+Using generated security password: b893d0c9-2253-49a9-a263-913d26f34705
+
+2021-12-29 18:21:07 Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@12d086ae, org.springframework.security.web.context.SecurityContextPersistenceFilter@3389873f, org.springframework.security.web.header.HeaderWriterFilter@7e67ab2c, org.springframework.security.web.authentication.logout.LogoutFilter@18c09a97, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@b2372d4, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@485e9657, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@f179355, org.springframework.security.web.session.SessionManagementFilter@6e3828d2, org.springframework.security.web.access.ExceptionTranslationFilter@71d9397b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3566b72d]
+2021-12-29 18:21:07 Initializing ExecutorService 'applicationTaskExecutor'
+2021-12-29 18:21:07 LiveReload server is running on port 35729
+2021-12-29 18:21:07 Starting ProtocolHandler ["http-nio-8080"]
+2021-12-29 18:21:07 Tomcat started on port(s): 8080 (http) with context path ''
+2021-12-29 18:21:07 Context refreshed
+2021-12-29 18:21:07 Found 1 custom documentation plugin(s)
+2021-12-29 18:21:07 Scanning for api listing references
+2021-12-29 18:21:07 Started HimsApplication in 0.742 seconds (JVM running for 1235.188)
+2021-12-29 18:21:07 Condition evaluation unchanged
+2021-12-29 18:21:15 Shutting down ExecutorService 'applicationTaskExecutor'
+2021-12-29 18:21:15 Starting HimsApplication using Java 1.8.0_312 on NOCTLI-MB0 with PID 6430 (/Users/lizongjia/Desktop/数据库大作业/DB-Practice/hims-backend/target/classes started by lizongjia in /Users/lizongjia/Desktop/数据库大作业/DB-Practice)
+2021-12-29 18:21:15 No active profile set, falling back to default profiles: default
+2021-12-29 18:21:15 Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@6f96363c' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-12-29 18:21:15 Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-12-29 18:21:15 Tomcat initialized with port(s): 8080 (http)
+2021-12-29 18:21:15 Initializing ProtocolHandler ["http-nio-8080"]
+2021-12-29 18:21:15 Starting service [Tomcat]
+2021-12-29 18:21:15 Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-12-29 18:21:15 Initializing Spring embedded WebApplicationContext
+2021-12-29 18:21:15 Root WebApplicationContext: initialization completed in 231 ms
+2021-12-29 18:21:15 Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'doctorController': Unsatisfied dependency expressed through field 'doctorService'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'doctorServiceImpl' defined in file [/Users/lizongjia/Desktop/数据库大作业/DB-Practice/hims-backend/target/classes/com/hims/serviceImpl/DoctorServiceImpl.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.hims.serviceImpl.DoctorServiceImpl]: Constructor threw exception; nested exception is java.lang.Error: Unresolved compilation problem: 
+	Syntax error on token "Invalid Character", delete this token
+
+2021-12-29 18:21:15 Stopping service [Tomcat]
+2021-12-29 18:21:15 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-12-29 18:21:15 Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'doctorController': Unsatisfied dependency expressed through field 'doctorService'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'doctorServiceImpl' defined in file [/Users/lizongjia/Desktop/数据库大作业/DB-Practice/hims-backend/target/classes/com/hims/serviceImpl/DoctorServiceImpl.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.hims.serviceImpl.DoctorServiceImpl]: Constructor threw exception; nested exception is java.lang.Error: Unresolved compilation problem: 
+	Syntax error on token "Invalid Character", delete this token
+
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1415)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:608)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:944)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:923)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:588)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:767)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:759)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:426)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:326)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1309)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1298)
+	at com.hims.HimsApplication.main(HimsApplication.java:11)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'doctorServiceImpl' defined in file [/Users/lizongjia/Desktop/数据库大作业/DB-Practice/hims-backend/target/classes/com/hims/serviceImpl/DoctorServiceImpl.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.hims.serviceImpl.DoctorServiceImpl]: Constructor threw exception; nested exception is java.lang.Error: Unresolved compilation problem: 
+	Syntax error on token "Invalid Character", delete this token
+
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:315)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:296)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1356)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1206)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:571)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1367)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1287)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	... 25 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.hims.serviceImpl.DoctorServiceImpl]: Constructor threw exception; nested exception is java.lang.Error: Unresolved compilation problem: 
+	Syntax error on token "Invalid Character", delete this token
+
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:225)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:117)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:311)
+	... 38 common frames omitted
+Caused by: java.lang.Error: Unresolved compilation problem: 
+	Syntax error on token "Invalid Character", delete this token
+
+	at com.hims.serviceImpl.DoctorServiceImpl.<init>(DoctorServiceImpl.java:9)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:212)
+	... 40 common frames omitted
+2021-12-29 18:21:24 Starting HimsApplication using Java 1.8.0_312 on NOCTLI-MB0 with PID 6430 (/Users/lizongjia/Desktop/数据库大作业/DB-Practice/hims-backend/target/classes started by lizongjia in /Users/lizongjia/Desktop/数据库大作业/DB-Practice)
+2021-12-29 18:21:24 No active profile set, falling back to default profiles: default
+2021-12-29 18:21:24 Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@739aecd5' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-12-29 18:21:24 Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-12-29 18:21:24 Tomcat initialized with port(s): 8080 (http)
+2021-12-29 18:21:24 Initializing ProtocolHandler ["http-nio-8080"]
+2021-12-29 18:21:24 Starting service [Tomcat]
+2021-12-29 18:21:24 Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-12-29 18:21:24 Initializing Spring embedded WebApplicationContext
+2021-12-29 18:21:24 Root WebApplicationContext: initialization completed in 201 ms
+2021-12-29 18:21:24 Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-12-29 18:21:24 
+
+Using generated security password: 1011297d-1677-4b3f-8a09-4d7c2b7c924a
+
+2021-12-29 18:21:24 Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@25e3cbb, org.springframework.security.web.context.SecurityContextPersistenceFilter@36dd6a43, org.springframework.security.web.header.HeaderWriterFilter@5e5aeb8f, org.springframework.security.web.authentication.logout.LogoutFilter@7532d8f4, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@35580edf, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3cd79d68, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2d5a6044, org.springframework.security.web.session.SessionManagementFilter@446a1922, org.springframework.security.web.access.ExceptionTranslationFilter@3c67ec33, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4a0c7957]
+2021-12-29 18:21:24 Initializing ExecutorService 'applicationTaskExecutor'
+2021-12-29 18:21:24 LiveReload server is running on port 35729
+2021-12-29 18:21:24 Starting ProtocolHandler ["http-nio-8080"]
+2021-12-29 18:21:24 Tomcat started on port(s): 8080 (http) with context path ''
+2021-12-29 18:21:24 Context refreshed
+2021-12-29 18:21:24 Found 1 custom documentation plugin(s)
+2021-12-29 18:21:24 Scanning for api listing references
+2021-12-29 18:21:24 Started HimsApplication in 0.459 seconds (JVM running for 1252.095)
+2021-12-29 18:21:24 Condition evaluation unchanged
+2021-12-29 18:21:42 Shutting down ExecutorService 'applicationTaskExecutor'
+2021-12-29 18:21:42 Starting HimsApplication using Java 1.8.0_312 on NOCTLI-MB0 with PID 6430 (/Users/lizongjia/Desktop/数据库大作业/DB-Practice/hims-backend/target/classes started by lizongjia in /Users/lizongjia/Desktop/数据库大作业/DB-Practice)
+2021-12-29 18:21:42 No active profile set, falling back to default profiles: default
+2021-12-29 18:21:42 Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@54407924' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-12-29 18:21:42 Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-12-29 18:21:42 Tomcat initialized with port(s): 8080 (http)
+2021-12-29 18:21:42 Initializing ProtocolHandler ["http-nio-8080"]
+2021-12-29 18:21:42 Starting service [Tomcat]
+2021-12-29 18:21:42 Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-12-29 18:21:42 Initializing Spring embedded WebApplicationContext
+2021-12-29 18:21:42 Root WebApplicationContext: initialization completed in 202 ms
+2021-12-29 18:21:42 Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-12-29 18:21:42 
+
+Using generated security password: 7f3bcb64-8f9e-4640-ba68-625100b27fba
+
+2021-12-29 18:21:42 Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4e1744de, org.springframework.security.web.context.SecurityContextPersistenceFilter@5eeccfd3, org.springframework.security.web.header.HeaderWriterFilter@37e78dc1, org.springframework.security.web.authentication.logout.LogoutFilter@4f5cddd5, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@19cc82ab, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@12ce9dd6, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6c6c10f3, org.springframework.security.web.session.SessionManagementFilter@36fa74f4, org.springframework.security.web.access.ExceptionTranslationFilter@3bef8104, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3aa13e6a]
+2021-12-29 18:21:42 Initializing ExecutorService 'applicationTaskExecutor'
+2021-12-29 18:21:42 LiveReload server is running on port 35729
+2021-12-29 18:21:43 Starting ProtocolHandler ["http-nio-8080"]
+2021-12-29 18:21:43 Tomcat started on port(s): 8080 (http) with context path ''
+2021-12-29 18:21:43 Context refreshed
+2021-12-29 18:21:43 Found 1 custom documentation plugin(s)
+2021-12-29 18:21:43 Scanning for api listing references
+2021-12-29 18:21:43 Started HimsApplication in 0.442 seconds (JVM running for 1270.303)
+2021-12-29 18:21:43 Condition evaluation unchanged
+2021-12-29 18:22:07 Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-12-29 18:22:07 Initializing Servlet 'dispatcherServlet'
+2021-12-29 18:22:07 Completed initialization in 1 ms
+2021-12-29 18:22:07 HikariPool-3 - Starting...
+2021-12-29 18:22:07 HikariPool-3 - Start completed.
+2021-12-29 18:22:08 Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'id' is not present]
+2021-12-29 18:22:42 Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'id' is not present]
+2021-12-29 18:27:33 Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.jdbc.BadSqlGrammarException: PreparedStatementCallback; bad SQL grammar [select * from appointed_info where doctorId = ? and appointment_date = ?]; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'doctorId' in 'where clause'] with root cause
+java.sql.SQLSyntaxErrorException: Unknown column 'doctorId' in 'where clause'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeQuery(ClientPreparedStatement.java:1003)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeQuery(HikariProxyPreparedStatement.java)
+	at org.springframework.jdbc.core.JdbcTemplate$1.doInPreparedStatement(JdbcTemplate.java:722)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:651)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:713)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:744)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:757)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:815)
+	at com.hims.repository.AppointmentRepository.findTodayAppointmentByDoctorID(AppointmentRepository.java:33)
+	at com.hims.repository.AppointmentRepository$$FastClassBySpringCGLIB$$983f287f.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:771)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:691)
+	at com.hims.repository.AppointmentRepository$$EnhancerBySpringCGLIB$$686704a1.findTodayAppointmentByDoctorID(<generated>)
+	at com.hims.serviceImpl.DoctorServiceImpl.get_todayPatientInfo(DoctorServiceImpl.java:21)
+	at com.hims.controller.DoctorController.PatientTodayInfo(DoctorController.java:35)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:197)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:141)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:894)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1061)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:961)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:327)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:119)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:113)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:110)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:80)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:888)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1597)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2021-12-29 18:27:39 Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.jdbc.BadSqlGrammarException: PreparedStatementCallback; bad SQL grammar [select * from appointed_info where doctorId = ? and appointment_date = ?]; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'doctorId' in 'where clause'] with root cause
+java.sql.SQLSyntaxErrorException: Unknown column 'doctorId' in 'where clause'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeQuery(ClientPreparedStatement.java:1003)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeQuery(HikariProxyPreparedStatement.java)
+	at org.springframework.jdbc.core.JdbcTemplate$1.doInPreparedStatement(JdbcTemplate.java:722)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:651)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:713)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:744)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:757)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:815)
+	at com.hims.repository.AppointmentRepository.findTodayAppointmentByDoctorID(AppointmentRepository.java:33)
+	at com.hims.repository.AppointmentRepository$$FastClassBySpringCGLIB$$983f287f.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:771)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:691)
+	at com.hims.repository.AppointmentRepository$$EnhancerBySpringCGLIB$$686704a1.findTodayAppointmentByDoctorID(<generated>)
+	at com.hims.serviceImpl.DoctorServiceImpl.get_todayPatientInfo(DoctorServiceImpl.java:21)
+	at com.hims.controller.DoctorController.PatientTodayInfo(DoctorController.java:35)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:197)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:141)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:894)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1061)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:961)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:327)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:119)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:113)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:110)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:80)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:888)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1597)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2021-12-29 18:28:30 Shutting down ExecutorService 'applicationTaskExecutor'
+2021-12-29 18:28:30 HikariPool-3 - Shutdown initiated...
+2021-12-29 18:28:30 HikariPool-3 - Shutdown completed.
+2021-12-29 18:28:32 Starting HimsApplication using Java 1.8.0_312 on NOCTLI-MB0 with PID 6430 (/Users/lizongjia/Desktop/数据库大作业/DB-Practice/hims-backend/target/classes started by lizongjia in /Users/lizongjia/Desktop/数据库大作业/DB-Practice)
+2021-12-29 18:28:32 No active profile set, falling back to default profiles: default
+2021-12-29 18:28:32 Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@4b05b62a' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-12-29 18:28:32 Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-12-29 18:28:32 Tomcat initialized with port(s): 8080 (http)
+2021-12-29 18:28:32 Initializing ProtocolHandler ["http-nio-8080"]
+2021-12-29 18:28:32 Starting service [Tomcat]
+2021-12-29 18:28:32 Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-12-29 18:28:32 Initializing Spring embedded WebApplicationContext
+2021-12-29 18:28:32 Root WebApplicationContext: initialization completed in 281 ms
+2021-12-29 18:28:32 Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-12-29 18:28:32 
+
+Using generated security password: 138d61a4-c9c4-40de-ab96-e3b7b861f6b1
+
+2021-12-29 18:28:32 Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4b88aa3c, org.springframework.security.web.context.SecurityContextPersistenceFilter@36efc2fe, org.springframework.security.web.header.HeaderWriterFilter@4319f7d, org.springframework.security.web.authentication.logout.LogoutFilter@349b5acd, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5985dc82, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@51c76ab8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4c710467, org.springframework.security.web.session.SessionManagementFilter@ab4feaa, org.springframework.security.web.access.ExceptionTranslationFilter@28e8fdbc, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@67a1d2a9]
+2021-12-29 18:28:32 Initializing ExecutorService 'applicationTaskExecutor'
+2021-12-29 18:28:32 LiveReload server is running on port 35729
+2021-12-29 18:28:32 Starting ProtocolHandler ["http-nio-8080"]
+2021-12-29 18:28:32 Tomcat started on port(s): 8080 (http) with context path ''
+2021-12-29 18:28:32 Context refreshed
+2021-12-29 18:28:32 Found 1 custom documentation plugin(s)
+2021-12-29 18:28:32 Scanning for api listing references
+2021-12-29 18:28:32 Started HimsApplication in 1.515 seconds (JVM running for 1679.87)
+2021-12-29 18:28:32 Condition evaluation unchanged
+2021-12-29 18:28:40 Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-12-29 18:28:40 Initializing Servlet 'dispatcherServlet'
+2021-12-29 18:28:40 Completed initialization in 1 ms
+2021-12-29 18:28:40 HikariPool-4 - Starting...
+2021-12-29 18:28:40 HikariPool-4 - Start completed.
+2021-12-29 18:31:08 Shutting down ExecutorService 'applicationTaskExecutor'
+2021-12-29 18:31:08 HikariPool-4 - Shutdown initiated...
+2021-12-29 18:31:08 HikariPool-4 - Shutdown completed.
+2021-12-29 18:31:08 Starting HimsApplication using Java 1.8.0_312 on NOCTLI-MB0 with PID 6430 (/Users/lizongjia/Desktop/数据库大作业/DB-Practice/hims-backend/target/classes started by lizongjia in /Users/lizongjia/Desktop/数据库大作业/DB-Practice)
+2021-12-29 18:31:08 No active profile set, falling back to default profiles: default
+2021-12-29 18:31:08 Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@7d44b9d4' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-12-29 18:31:08 Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-12-29 18:31:08 Tomcat initialized with port(s): 8080 (http)
+2021-12-29 18:31:08 Initializing ProtocolHandler ["http-nio-8080"]
+2021-12-29 18:31:08 Starting service [Tomcat]
+2021-12-29 18:31:08 Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-12-29 18:31:09 Initializing Spring embedded WebApplicationContext
+2021-12-29 18:31:09 Root WebApplicationContext: initialization completed in 249 ms
+2021-12-29 18:31:09 Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-12-29 18:31:09 
+
+Using generated security password: ebdd422e-a42c-4f8d-9780-4bb832a0dadc
+
+2021-12-29 18:31:09 Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@51ab1cc8, org.springframework.security.web.context.SecurityContextPersistenceFilter@10622281, org.springframework.security.web.header.HeaderWriterFilter@5ae735e, org.springframework.security.web.authentication.logout.LogoutFilter@61b3b719, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3c7092f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7505be8a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@29fe5350, org.springframework.security.web.session.SessionManagementFilter@51889b93, org.springframework.security.web.access.ExceptionTranslationFilter@480b67ad, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@39e6e249]
+2021-12-29 18:31:09 Initializing ExecutorService 'applicationTaskExecutor'
+2021-12-29 18:31:09 LiveReload server is running on port 35729
+2021-12-29 18:31:09 Starting ProtocolHandler ["http-nio-8080"]
+2021-12-29 18:31:09 Tomcat started on port(s): 8080 (http) with context path ''
+2021-12-29 18:31:09 Context refreshed
+2021-12-29 18:31:09 Found 1 custom documentation plugin(s)
+2021-12-29 18:31:09 Scanning for api listing references
+2021-12-29 18:31:09 Started HimsApplication in 0.636 seconds (JVM running for 1836.492)
+2021-12-29 18:31:09 Condition evaluation unchanged
+2021-12-29 18:31:11 Shutting down ExecutorService 'applicationTaskExecutor'
+2021-12-29 18:31:11 Starting HimsApplication using Java 1.8.0_312 on NOCTLI-MB0 with PID 6430 (/Users/lizongjia/Desktop/数据库大作业/DB-Practice/hims-backend/target/classes started by lizongjia in /Users/lizongjia/Desktop/数据库大作业/DB-Practice)
+2021-12-29 18:31:11 No active profile set, falling back to default profiles: default
+2021-12-29 18:31:12 Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@10eb246' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-12-29 18:31:12 Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-12-29 18:31:12 Tomcat initialized with port(s): 8080 (http)
+2021-12-29 18:31:12 Initializing ProtocolHandler ["http-nio-8080"]
+2021-12-29 18:31:12 Starting service [Tomcat]
+2021-12-29 18:31:12 Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-12-29 18:31:12 Initializing Spring embedded WebApplicationContext
+2021-12-29 18:31:12 Root WebApplicationContext: initialization completed in 311 ms
+2021-12-29 18:31:12 Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-12-29 18:31:12 
+
+Using generated security password: 40dc10b6-0524-4c3f-8397-685ea1a3cefb
+
+2021-12-29 18:31:12 Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1f0af6cc, org.springframework.security.web.context.SecurityContextPersistenceFilter@77d550d9, org.springframework.security.web.header.HeaderWriterFilter@5f76310a, org.springframework.security.web.authentication.logout.LogoutFilter@31cb75f6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1b203926, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@75b0b529, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4f195c14, org.springframework.security.web.session.SessionManagementFilter@4f4ac4d4, org.springframework.security.web.access.ExceptionTranslationFilter@192eb6eb, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7042dca7]
+2021-12-29 18:31:12 Initializing ExecutorService 'applicationTaskExecutor'
+2021-12-29 18:31:12 LiveReload server is running on port 35729
+2021-12-29 18:31:12 Starting ProtocolHandler ["http-nio-8080"]
+2021-12-29 18:31:12 Tomcat started on port(s): 8080 (http) with context path ''
+2021-12-29 18:31:12 Context refreshed
+2021-12-29 18:31:12 Found 1 custom documentation plugin(s)
+2021-12-29 18:31:12 Scanning for api listing references
+2021-12-29 18:31:12 Started HimsApplication in 0.675 seconds (JVM running for 1839.79)
+2021-12-29 18:31:12 Condition evaluation unchanged
+2021-12-29 18:31:19 Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-12-29 18:31:19 Initializing Servlet 'dispatcherServlet'
+2021-12-29 18:31:19 Completed initialization in 1 ms
+2021-12-29 18:31:19 HikariPool-5 - Starting...
+2021-12-29 18:31:19 HikariPool-5 - Start completed.
+2021-12-29 18:33:12 Shutting down ExecutorService 'applicationTaskExecutor'
+2021-12-29 18:33:12 HikariPool-5 - Shutdown initiated...
+2021-12-29 18:33:12 HikariPool-5 - Shutdown completed.
+2021-12-29 18:33:12 Starting HimsApplication using Java 1.8.0_312 on NOCTLI-MB0 with PID 6430 (/Users/lizongjia/Desktop/数据库大作业/DB-Practice/hims-backend/target/classes started by lizongjia in /Users/lizongjia/Desktop/数据库大作业/DB-Practice)
+2021-12-29 18:33:12 No active profile set, falling back to default profiles: default
+2021-12-29 18:33:12 Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@42af202c' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-12-29 18:33:12 Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-12-29 18:33:12 Tomcat initialized with port(s): 8080 (http)
+2021-12-29 18:33:12 Initializing ProtocolHandler ["http-nio-8080"]
+2021-12-29 18:33:12 Starting service [Tomcat]
+2021-12-29 18:33:12 Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-12-29 18:33:12 Initializing Spring embedded WebApplicationContext
+2021-12-29 18:33:12 Root WebApplicationContext: initialization completed in 207 ms
+2021-12-29 18:33:12 Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-12-29 18:33:12 
+
+Using generated security password: 03576b1c-da95-49ce-89d6-cbefc8ee1644
+
+2021-12-29 18:33:12 Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5a460ac3, org.springframework.security.web.context.SecurityContextPersistenceFilter@3803dba4, org.springframework.security.web.header.HeaderWriterFilter@4b0fa633, org.springframework.security.web.authentication.logout.LogoutFilter@46734b0d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@560901de, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@60810b12, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3511055f, org.springframework.security.web.session.SessionManagementFilter@18f31f2e, org.springframework.security.web.access.ExceptionTranslationFilter@3b6aa1c3, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@578e901b]
+2021-12-29 18:33:12 Initializing ExecutorService 'applicationTaskExecutor'
+2021-12-29 18:33:12 LiveReload server is running on port 35729
+2021-12-29 18:33:12 Starting ProtocolHandler ["http-nio-8080"]
+2021-12-29 18:33:12 Tomcat started on port(s): 8080 (http) with context path ''
+2021-12-29 18:33:12 Context refreshed
+2021-12-29 18:33:12 Found 1 custom documentation plugin(s)
+2021-12-29 18:33:12 Scanning for api listing references
+2021-12-29 18:33:12 Started HimsApplication in 0.552 seconds (JVM running for 1959.919)
+2021-12-29 18:33:12 Condition evaluation unchanged
+2021-12-29 18:35:10 Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-12-29 18:35:10 Initializing Servlet 'dispatcherServlet'
+2021-12-29 18:35:10 Completed initialization in 1 ms
+2021-12-29 18:35:10 HikariPool-6 - Starting...
+2021-12-29 18:35:10 HikariPool-6 - Start completed.
+2021-12-29 18:36:00 Shutting down ExecutorService 'applicationTaskExecutor'
+2021-12-29 18:36:00 HikariPool-6 - Shutdown initiated...
+2021-12-29 18:36:00 HikariPool-6 - Shutdown completed.
+2021-12-29 18:36:00 Starting HimsApplication using Java 1.8.0_312 on NOCTLI-MB0 with PID 6430 (/Users/lizongjia/Desktop/数据库大作业/DB-Practice/hims-backend/target/classes started by lizongjia in /Users/lizongjia/Desktop/数据库大作业/DB-Practice)
+2021-12-29 18:36:00 No active profile set, falling back to default profiles: default
+2021-12-29 18:36:01 Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@3f27e4a7' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-12-29 18:36:01 Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-12-29 18:36:01 Tomcat initialized with port(s): 8080 (http)
+2021-12-29 18:36:01 Initializing ProtocolHandler ["http-nio-8080"]
+2021-12-29 18:36:01 Starting service [Tomcat]
+2021-12-29 18:36:01 Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-12-29 18:36:01 Initializing Spring embedded WebApplicationContext
+2021-12-29 18:36:01 Root WebApplicationContext: initialization completed in 267 ms
+2021-12-29 18:36:01 Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-12-29 18:36:01 
+
+Using generated security password: 7a69b70f-5971-42aa-9909-5e7964de82a9
+
+2021-12-29 18:36:01 Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@11fec877, org.springframework.security.web.context.SecurityContextPersistenceFilter@6e257838, org.springframework.security.web.header.HeaderWriterFilter@4d2dddbd, org.springframework.security.web.authentication.logout.LogoutFilter@521c7b83, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3799f5df, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@147a06a4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3eb74be5, org.springframework.security.web.session.SessionManagementFilter@6a6d353a, org.springframework.security.web.access.ExceptionTranslationFilter@234f5546, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@21459c96]
+2021-12-29 18:36:01 Initializing ExecutorService 'applicationTaskExecutor'
+2021-12-29 18:36:01 LiveReload server is running on port 35729
+2021-12-29 18:36:01 Starting ProtocolHandler ["http-nio-8080"]
+2021-12-29 18:36:01 Tomcat started on port(s): 8080 (http) with context path ''
+2021-12-29 18:36:01 Context refreshed
+2021-12-29 18:36:01 Found 1 custom documentation plugin(s)
+2021-12-29 18:36:01 Scanning for api listing references
+2021-12-29 18:36:01 Started HimsApplication in 0.625 seconds (JVM running for 2128.581)
+2021-12-29 18:36:01 Condition evaluation unchanged
+2021-12-29 18:41:07 Shutting down ExecutorService 'applicationTaskExecutor'
+2021-12-29 18:41:07 Starting HimsApplication using Java 1.8.0_312 on NOCTLI-MB0 with PID 6430 (/Users/lizongjia/Desktop/数据库大作业/DB-Practice/hims-backend/target/classes started by lizongjia in /Users/lizongjia/Desktop/数据库大作业/DB-Practice)
+2021-12-29 18:41:07 No active profile set, falling back to default profiles: default
+2021-12-29 18:41:07 Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@5a830938' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-12-29 18:41:07 Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-12-29 18:41:07 Tomcat initialized with port(s): 8080 (http)
+2021-12-29 18:41:07 Initializing ProtocolHandler ["http-nio-8080"]
+2021-12-29 18:41:07 Starting service [Tomcat]
+2021-12-29 18:41:07 Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-12-29 18:41:07 Initializing Spring embedded WebApplicationContext
+2021-12-29 18:41:07 Root WebApplicationContext: initialization completed in 186 ms
+2021-12-29 18:41:07 Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-12-29 18:41:07 
+
+Using generated security password: 1f27cfac-d3f5-4430-8337-13adef5ffd0c
+
+2021-12-29 18:41:07 Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6dc36d01, org.springframework.security.web.context.SecurityContextPersistenceFilter@2dc4cbe0, org.springframework.security.web.header.HeaderWriterFilter@5b8b28eb, org.springframework.security.web.authentication.logout.LogoutFilter@6d40754e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@143238af, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@167c96b2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3ff5d147, org.springframework.security.web.session.SessionManagementFilter@7b9169a3, org.springframework.security.web.access.ExceptionTranslationFilter@3701d9de, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@13f732f1]
+2021-12-29 18:41:07 Initializing ExecutorService 'applicationTaskExecutor'
+2021-12-29 18:41:07 LiveReload server is running on port 35729
+2021-12-29 18:41:07 Starting ProtocolHandler ["http-nio-8080"]
+2021-12-29 18:41:07 Tomcat started on port(s): 8080 (http) with context path ''
+2021-12-29 18:41:07 Context refreshed
+2021-12-29 18:41:07 Found 1 custom documentation plugin(s)
+2021-12-29 18:41:07 Scanning for api listing references
+2021-12-29 18:41:08 Started HimsApplication in 0.426 seconds (JVM running for 2435.166)
+2021-12-29 18:41:08 Condition evaluation unchanged
+2021-12-29 18:41:27 Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-12-29 18:41:27 Initializing Servlet 'dispatcherServlet'
+2021-12-29 18:41:27 Completed initialization in 1 ms
+2021-12-29 18:41:27 HikariPool-7 - Starting...
+2021-12-29 18:41:27 HikariPool-7 - Start completed.
+2021-12-29 18:42:30 Shutting down ExecutorService 'applicationTaskExecutor'
+2021-12-29 18:42:30 HikariPool-7 - Shutdown initiated...
+2021-12-29 18:42:30 HikariPool-7 - Shutdown completed.
+2021-12-29 18:42:30 Starting HimsApplication using Java 1.8.0_312 on NOCTLI-MB0 with PID 6430 (/Users/lizongjia/Desktop/数据库大作业/DB-Practice/hims-backend/target/classes started by lizongjia in /Users/lizongjia/Desktop/数据库大作业/DB-Practice)
+2021-12-29 18:42:30 No active profile set, falling back to default profiles: default
+2021-12-29 18:42:30 Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@78558056' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-12-29 18:42:30 Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-12-29 18:42:30 Tomcat initialized with port(s): 8080 (http)
+2021-12-29 18:42:30 Initializing ProtocolHandler ["http-nio-8080"]
+2021-12-29 18:42:30 Starting service [Tomcat]
+2021-12-29 18:42:30 Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-12-29 18:42:30 Initializing Spring embedded WebApplicationContext
+2021-12-29 18:42:30 Root WebApplicationContext: initialization completed in 225 ms
+2021-12-29 18:42:30 Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-12-29 18:42:30 
+
+Using generated security password: 25cd0fdb-6b19-40b8-9dbe-889e6e6ca9bf
+
+2021-12-29 18:42:30 Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@61f15ad0, org.springframework.security.web.context.SecurityContextPersistenceFilter@66d742cd, org.springframework.security.web.header.HeaderWriterFilter@4bc9dec1, org.springframework.security.web.authentication.logout.LogoutFilter@14ab986a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@718220a4, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@74b8c783, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@75db5058, org.springframework.security.web.session.SessionManagementFilter@4b3ef19e, org.springframework.security.web.access.ExceptionTranslationFilter@1e2c40f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@754337e6]
+2021-12-29 18:42:30 Initializing ExecutorService 'applicationTaskExecutor'
+2021-12-29 18:42:30 LiveReload server is running on port 35729
+2021-12-29 18:42:30 Starting ProtocolHandler ["http-nio-8080"]
+2021-12-29 18:42:30 Tomcat started on port(s): 8080 (http) with context path ''
+2021-12-29 18:42:30 Context refreshed
+2021-12-29 18:42:30 Found 1 custom documentation plugin(s)
+2021-12-29 18:42:30 Scanning for api listing references
+2021-12-29 18:42:30 Started HimsApplication in 0.598 seconds (JVM running for 2518.069)
+2021-12-29 18:42:30 Condition evaluation unchanged
+2021-12-29 18:42:35 Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-12-29 18:42:35 Initializing Servlet 'dispatcherServlet'
+2021-12-29 18:42:35 Completed initialization in 1 ms
+2021-12-29 18:42:35 HikariPool-8 - Starting...
+2021-12-29 18:42:35 HikariPool-8 - Start completed.
+2021-12-29 18:43:46 Shutting down ExecutorService 'applicationTaskExecutor'
+2021-12-29 18:43:46 HikariPool-8 - Shutdown initiated...
+2021-12-29 18:43:46 HikariPool-8 - Shutdown completed.
