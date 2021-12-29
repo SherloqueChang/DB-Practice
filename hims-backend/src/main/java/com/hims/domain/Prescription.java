@@ -8,6 +8,8 @@ import lombok.Data;
     private String pres_date;
     private String medicine_name;
     private String medicine_num;
+    private String doctor_name;
+    private String patient_name;
     public Prescription() {
     }
     public Prescription( String doctor_id, String patient_id, String pres_date, String medicine_name, String medicine_num) {

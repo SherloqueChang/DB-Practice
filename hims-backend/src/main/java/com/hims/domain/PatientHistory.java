@@ -10,6 +10,8 @@ import lombok.Data;
     private String treat_issue;
     private String diagnosed_disease;
     private String allergens;
+    private String patient_name;
+    private String doctor_name;
 
     public PatientHistory() {
     }

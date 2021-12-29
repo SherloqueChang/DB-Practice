@@ -46,11 +46,6 @@ public class LoginController {
         return ResponseEntity.ok(userService.modifyUserInfo(request));
     }
 
-    @GetMapping("/userInfo")
-    public ResponseEntity<?> getWorkerDataPanel(@RequestParam("id") String id) {
-        return ResponseEntity.ok(userService.getUserInfo(id));
-    }
-
 
     /*
     @GetMapping("/workerDataPanel")

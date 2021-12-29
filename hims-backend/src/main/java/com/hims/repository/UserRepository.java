@@ -4,19 +4,14 @@ import com.hims.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.PreparedStatementCreator;
-import org.springframework.jdbc.support.GeneratedKeyHolder;
-import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
-import java.sql.PreparedStatement;
-import java.sql.Statement;
+
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
-import java.util.Objects;
 
 
 @Repository
@@ -46,22 +41,6 @@ public class UserRepository {
         jdbcTemplate.update(sql, user.getPwd(), user.getName(), parse_date(user.getBirthdate()), user.getIdcard(), user.getGender(), user.getPhone(), user.getEmail(), user.getId());
     }
 
-    public int saveWNurse(String name, String age, String email, String phone) {
-        String sql = "insert into user(name,password,age,email,phone,u_type) values(?,?,?,?,?,?)";
-        KeyHolder keyHolder = new GeneratedKeyHolder();
-        PreparedStatementCreator preparedStatementCreator = con -> {
-            PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-            ps.setString(1, name);
-            ps.setString(2, "123456");
-            ps.setString(3, age);
-            ps.setString(4, email);
-            ps.setString(5, phone);
-            ps.setString(6, "w_nurse");
-            return ps;
-        };
-        jdbcTemplate.update(preparedStatementCreator, keyHolder);
-        return Objects.requireNonNull(keyHolder.getKey()).intValue();
-    }
 
     public void delete(String id) {
         String sql = "delete from user where id=?";
@@ -69,7 +48,7 @@ public class UserRepository {
     }
 
     public void update(String id, String name, String password, String age, String email, String phone) {
-        String sql = "update user set name=?,password=?,age=?,email=?,phone=? where id=?";
+        String sql = "update user set name=?,pwd=?,age=?,email=?,phone=? where id=?";
         jdbcTemplate.update(sql, name, password, age, email, phone, id);
     }
 

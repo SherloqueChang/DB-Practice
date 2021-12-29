@@ -62,13 +62,13 @@
                 {{ this.parseUType(this.user.u_type) }}
               </el-form-item>
               <el-form-item label="毕业院校" v-if="isDoctor">
-                {{ this.user.gradSchool }}
+                {{ this.user.graduate_school }}
               </el-form-item><el-form-item label="部门" v-if="isDoctor">
                 {{ this.user.department }}
               </el-form-item><el-form-item label="技术职称" v-if="isDoctor">
-                {{ this.user.techTitle }}
+                {{ this.user.job_title }}
               </el-form-item><el-form-item label="专业特长" v-if="isDoctor">
-                {{ this.user.specialty }}
+                {{ this.user.specialties }}
               </el-form-item>
               <el-form-item>
                 <el-button @click="handleUpdate">修改信息</el-button>

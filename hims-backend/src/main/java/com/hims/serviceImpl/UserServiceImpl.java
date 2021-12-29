@@ -46,8 +46,14 @@ public class UserServiceImpl{
         
         else{
             // 在这里根据user的相关属性put不同的key来区分登录用户的身份
-
-            map.put("user", user);
+            Userinfo result = new Userinfo();
+            result.load_from_user(user);
+            if(user.getU_type().equals("doctor") || user.getU_type().equals("leader"))
+            {
+                Doctor doctor = doctorRepository.find(result.getId());
+                result.load_from_doctor(doctor);
+            }
+            map.put("user",result);
             return map;
         }
     }
@@ -90,23 +96,6 @@ public class UserServiceImpl{
         update(user);
         Map<String, Object> map = new HashMap<>();
         map.put("user",user);
-        return map;
-    }
-
-    public Map<String, Object> getUserInfo (String id)
-    {
-        User user = find(id);
-        Userinfo result = new Userinfo();
-        result.load_from_user(user);
-        if(user.getU_type().equals("doctor") || user.getU_type().equals("leader"))
-        {
-            System.out.println("!!!");
-            Doctor doctor = doctorRepository.find(result.getId());
-            result.load_from_doctor(doctor);
-        }
-        System.out.println(result);
-        Map<String, Object> map = new HashMap<>();
-        map.put("user",result);
         return map;
     }
 
