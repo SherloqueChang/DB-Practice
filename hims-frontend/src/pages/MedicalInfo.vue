@@ -22,11 +22,11 @@
                 label="医生姓名">
               </el-table-column>
               <el-table-column
-                prop="issue"
+                prop="diagnosed_disease"
                 label="评估诊断">
               </el-table-column>
               <el-table-column
-                prop="diagnosed_disease"
+                prop="issue"
                 label="既往史">
               </el-table-column>
               <el-table-column
@@ -110,7 +110,7 @@ export default {
           resp.data.patientHistoryTable.forEach((element) => {
             this.historyTable.push({
               date: element.treat_date,
-              doctor: element.doctor_id,
+              doctor: element.doctor_name,
               issue: element.treat_issue,
               diagnosed_disease: element.diagnosed_disease,
               allergens: element.allergens
@@ -129,8 +129,8 @@ export default {
         .then((resp) => {
           resp.data.patientPrescriptionTable.forEach((element) => {
             this.prescriptionTable.push({
-              date: element.date,
-              doctor: element.doctor,
+              date: element.pres_date,
+              doctor: element.doctor_name,
               medicine_name: element.medicine_name,
               medicine_num: element.medicine_num
             })
