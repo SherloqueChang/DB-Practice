@@ -117,7 +117,6 @@ export default {
   methods: {
     handleUserData () {
       if (this.$store.state.user) {
-        console.log(this.$store.state.user)
         this.user = this.$store.state.user
         this.isPatient = this.$store.state.user.u_type === 'patient'
         this.isDoctor = this.$store.state.user.u_type === 'doctor'

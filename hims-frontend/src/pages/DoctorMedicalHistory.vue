@@ -50,8 +50,11 @@
         </el-table>
         <el-dialog title="编辑病历" :visible.sync="dialogFormVisible">
           <el-form :model="itemForm" :inline="true">
-            <el-form-item label="诊断结果" :label-width="formLabelWidth">
+            <el-form-item label="既往史" :label-width="formLabelWidth">
               <el-input v-model="itemForm.issue" autocomplete="off"></el-input>
+            </el-form-item>
+            <el-form-item label="评估诊断" prop="diagnosed_disease">
+              <el-input v-model="itemForm.diagnosed_disease"></el-input>
             </el-form-item>
             <el-form-item label="过敏史" :label-width="formLabelWidth">
               <el-input v-model="itemForm.allergens" autocomplete="off"></el-input>
@@ -81,6 +84,7 @@ export default {
       medicalHistoryTable: [],
       itemForm: {
         issue: '',
+        diagnosed_disease: '',
         allergens: ''
       },
       dialogFormVisible: false,
@@ -113,6 +117,7 @@ export default {
                 date: element.date,
                 p_id: element.p_id,
                 issue: element.issue,
+                diagnosed_disease: element.diagnosed_disease,
                 allergens: element.allergens
               })
             })
@@ -121,6 +126,7 @@ export default {
     },
     editItem (index, row) {
       this.itemForm.issue = row.issue
+      this.itemForm.diagnosed_disease = row.diagnosed_disease
       this.itemForm.allergens = row.allergens
       this.dialogFormVisible = true
     },
@@ -149,6 +155,7 @@ export default {
           id: this.user.id,
           p_id: this.medicalHistoryTable.p_id,
           issue: this.itemForm.issue,
+          diagnosed_disease: this.itemForm.diagnosed_disease,
           allergens: this.itemForm.allergens
         })
         .then((resp) => {
