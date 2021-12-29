@@ -137,7 +137,7 @@ export default {
         .then((resp) => {
           if (resp.status === 200) {
             this.user.id = resp.data.user.id
-            this.user.name = resp.data.user.name
+            this.user.name = resp.data.user.name //this.isDoctor
             this.user.birthdate = resp.data.user.birthdate
             this.user.gender = resp.data.user.gender
             this.user.password = resp.data.user.pwd

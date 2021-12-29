@@ -2,7 +2,8 @@ package com.hims.domain;
 
 import lombok.Data;
 
-@Data class Doctor{
+@Data
+public class Doctor{
     private String id;
     private String department;
     private String graduate_school;

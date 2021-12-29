@@ -3,6 +3,8 @@ package com.hims.serviceImpl;
 import com.hims.controller.request.*;
 import com.hims.domain.User;
 import com.hims.domain.Appointment;
+import com.hims.domain.Userinfo;
+import com.hims.domain.Doctor;
 import com.hims.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,11 +19,14 @@ public class UserServiceImpl{
     private UserRepository userRepository;
     @Autowired
     private AppointmentRepository appointmentRepository;
+    @Autowired
+    private DoctorRepository doctorRepository;
 
     @Autowired
-    public UserServiceImpl(UserRepository userRepository, AppointmentRepository appointmentRepository) {
+    public UserServiceImpl(UserRepository userRepository, AppointmentRepository appointmentRepository, DoctorRepository doctorRepository) {
         this.userRepository = userRepository;
         this.appointmentRepository = appointmentRepository;
+        this.doctorRepository = doctorRepository;
     }
 
     public Map<String, Object> login(String id, String password) {
@@ -41,8 +46,8 @@ public class UserServiceImpl{
         
         else{
             // 在这里根据user的相关属性put不同的key来区分登录用户的身份
+
             map.put("user", user);
-//            map.put("patient", user);
             return map;
         }
     }
@@ -91,9 +96,17 @@ public class UserServiceImpl{
     public Map<String, Object> getUserInfo (String id)
     {
         User user = find(id);
+        Userinfo result = new Userinfo();
+        result.load_from_user(user);
+        if(user.getU_type().equals("doctor") || user.getU_type().equals("leader"))
+        {
+            System.out.println("!!!");
+            Doctor doctor = doctorRepository.find(result.getId());
+            result.load_from_doctor(doctor);
+        }
+        System.out.println(result);
         Map<String, Object> map = new HashMap<>();
-        System.out.println(user.birthdate);
-        map.put("user",user);
+        map.put("user",result);
         return map;
     }
 

@@ -2,7 +2,8 @@ package com.hims.domain;
 
 import lombok.Data;
 
-@Data class Userinfo {
+@Data
+public class Userinfo {
     private String id;
     private String pwd;
     private String name;
