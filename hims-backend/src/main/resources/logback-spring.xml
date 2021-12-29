@@ -1,32 +1,39 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="GBK"?>
 <configuration debug="false">
-<!--å®šä¹‰æ—¥å¿—æ–‡ä»¶çš„å­˜å‚¨åœ°å€ å‹¿åœ¨ LogBack çš„é…ç½®ä¸­ä½¿ç”¨ç›¸å¯¹è·¯å¾„-->
+<!--¶¨ÒåÈÕÖ¾ÎÄ¼þµÄ´æ´¢µØÖ· ÎðÔÚ LogBack µÄÅäÖÃÖÐÊ¹ÓÃÏà¶ÔÂ·¾¶-->
 <property name="LOG_NAME" value="E:/changwenhui/mylogs"/>
-<!-- å®šä¹‰æ—¥å¿—æ ¼å¼  -->
+<!-- ¶¨ÒåÈÕÖ¾¸ñÊ½  -->
 <property name="LOG_PATTERN" value="%d{yyyy-MM-dd HH:mm:ss} %msg%n"/>
-<!-- æŒ‰ç…§æ¯å¤©ç”Ÿæˆæ—¥å¿—æ–‡ä»¶ -->
+<!-- ¿ØÖÆÌ¨Êä³ö -->
+<appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+        <!--¸ñÊ½»¯Êä³ö£º%d±íÊ¾ÈÕÆÚ£¬%thread±íÊ¾Ïß³ÌÃû£¬%-5level£º¼¶±ð´Ó×óÏÔÊ¾5¸ö×Ö·û¿í¶È%msg£ºÈÕÖ¾ÏûÏ¢£¬%nÊÇ»»ÐÐ·û-->
+        <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>
+    </encoder>
+</appender>
+<!-- °´ÕÕÃ¿ÌìÉú³ÉÈÕÖ¾ÎÄ¼þ -->
 <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
     <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-        <!--æ—¥å¿—æ–‡ä»¶è¾“å‡ºçš„æ–‡ä»¶å-->
+        <!--ÈÕÖ¾ÎÄ¼þÊä³öµÄÎÄ¼þÃû-->
         <FileNamePattern>${LOG_HOME}/SpringBoot-Slf4j_%d{yyyy-MM-dd}.log</FileNamePattern>
-        <!--æ—¥å¿—æ–‡ä»¶ä¿ç•™å¤©æ•°-->
+        <!--ÈÕÖ¾ÎÄ¼þ±£ÁôÌìÊý-->
         <MaxHistory>30</MaxHistory>
     </rollingPolicy>
     <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
-        <!--æ ¼å¼åŒ–è¾“å‡ºï¼š%dè¡¨ç¤ºæ—¥æœŸï¼Œ%threadè¡¨ç¤ºçº¿ç¨‹åï¼Œ%-5levelï¼šçº§åˆ«ä»Žå·¦æ˜¾ç¤º5ä¸ªå­—ç¬¦å®½åº¦%msgï¼šæ—¥å¿—æ¶ˆæ¯ï¼Œ%næ˜¯æ¢è¡Œç¬¦-->
+        <!--¸ñÊ½»¯Êä³ö£º%d±íÊ¾ÈÕÆÚ£¬%thread±íÊ¾Ïß³ÌÃû£¬%-5level£º¼¶±ð´Ó×óÏÔÊ¾5¸ö×Ö·û¿í¶È%msg£ºÈÕÖ¾ÏûÏ¢£¬%nÊÇ»»ÐÐ·û-->
         <pattern>%d{yyyy-MM-dd HH:mm:ss} %msg%n</pattern>
     </encoder>
-    <!--æ—¥å¿—æ–‡ä»¶æœ€å¤§çš„å¤§å°-->
+    <!--ÈÕÖ¾ÎÄ¼þ×î´óµÄ´óÐ¡-->
     <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
         <MaxFileSize>10MB</MaxFileSize>
     </triggeringPolicy>
 </appender>
 
-<!-- æ—¥å¿—è¾“å‡ºçº§åˆ« -->
+<!-- ÈÕÖ¾Êä³ö¼¶±ð -->
 <logger name="org.springframework" level="INFO"/>
 <logger name="com.hl.magic" level="INFO"/>
 <root level="INFO">
-<!--    <appender-ref ref="CONSOLE"/>-->
+    <appender-ref ref="CONSOLE"/>
     <appender-ref ref="FILE"/>
 </root>
 </configuration>
