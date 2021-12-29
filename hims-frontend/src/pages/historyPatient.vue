@@ -1,7 +1,7 @@
 <template>
   <el-container>
     <el-header><NavHeader></NavHeader></el-header>
-    <el-container>
+    <el-container style="height: 100%">
       <el-aside><NavAside></NavAside></el-aside>
       <el-main>
         <el-table

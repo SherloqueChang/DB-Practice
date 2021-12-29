@@ -149,7 +149,7 @@
                 <el-option label="外科" value="d2"></el-option>
                 <el-option label="妇产科" value="d3"></el-option>
                 <el-option label="儿科" value="d4"></el-option>
-                <el-option label="其他" value="d5"></el-option>
+                <el-option label="发热门诊" value="d5"></el-option>
               </el-select>
             </el-form-item>
             <el-form-item label="预约医生" :label-width="formLabelWidth">
@@ -228,7 +228,7 @@ export default {
         label: '儿科'
       }, {
         value: '5',
-        label: '其他'
+        label: '发热门诊'
       }],
       dialogFormVisible: false,
       appoinmentForm: {
