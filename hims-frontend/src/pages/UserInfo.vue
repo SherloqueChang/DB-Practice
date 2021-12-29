@@ -13,7 +13,6 @@
               :rules="rules"
               status-icon
               ref="userInfoForm"
-              v-loading="loading"
             >
               <el-form-item label="密码" prop="password">
                 <el-input
@@ -114,12 +113,11 @@ export default {
   },
   created () {
     this.handleUserData()
-    // 做分支，依据用户身份
-    this.loadUserData()
   },
   methods: {
     handleUserData () {
       if (this.$store.state.user) {
+        console.log(this.$store.state.user)
         this.user = this.$store.state.user
         this.isPatient = this.$store.state.user.u_type === 'patient'
         this.isDoctor = this.$store.state.user.u_type === 'doctor'
@@ -130,36 +128,6 @@ export default {
           this.isDoctor = (this.$route.params.type === 'doctor')
         }
       }
-    },
-    loadUserData () {
-      this.$axios
-        .get('/userInfo', {
-          params: { id: this.user.id }
-        })
-        .then((resp) => {
-          if (resp.status === 200) {
-            this.user.id = resp.data.user.id
-            this.user.name = resp.data.user.name
-            this.user.birthdate = resp.data.user.birthdate
-            this.user.gender = resp.data.user.gender
-            this.user.password = resp.data.user.pwd
-            this.user.email = resp.data.user.email
-            this.user.phone = resp.data.user.phone
-            this.user.u_type = resp.data.user.u_type
-            this.userInfoForm.password = resp.data.user.pwd
-            this.userInfoForm.email = resp.data.user.email
-            this.userInfoForm.phone = resp.data.user.phone
-            this.user.gradSchool = resp.data.user.graduate_school
-            this.user.department = resp.data.user.department
-            this.user.techTitle = resp.data.user.job_title
-            this.user.specialty = resp.data.user.specialties
-            this.reload()
-          }
-        })
-        .catch((error) => {
-          console.log(error)
-          this.$message.error('请求错误，请重试')
-        })
     },
 
     handleUpdate () {
@@ -179,7 +147,6 @@ export default {
     },
 
     submitForm (formName) {
-      this.loading = true
       this.$axios
         .post('/modifyUserInfo', {
           id: this.user.id.toString(),
@@ -189,7 +156,6 @@ export default {
         }
         )
         .then((resp) => {
-          this.loading = false
           if (resp.status === 200) {
             this.$message({
               type: 'success',

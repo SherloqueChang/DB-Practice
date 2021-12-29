@@ -86,9 +86,8 @@ export default {
                 id: this.registerForm.id
               }
             })
-            this.reload()
-          }
-          else if (resp.status === 200 && resp.data.hasOwnProperty('error')) {
+            // this.reload()
+          } else if (resp.status === 200 && resp.data.hasOwnProperty('error')) {
             this.$message({
               type: 'error',
               message: resp.data.error

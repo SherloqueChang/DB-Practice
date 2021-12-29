@@ -124,7 +124,7 @@ export default {
               message: '提交成功，欢迎登录！'
             })
             this.$router.push('/login')
-            this.reload()
+            // this.reload()
           }
         })
         // eslint-disable-next-line handle-callback-err
