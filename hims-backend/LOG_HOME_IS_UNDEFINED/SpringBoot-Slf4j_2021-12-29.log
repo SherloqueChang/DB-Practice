@@ -1,0 +1,52 @@
+2021-12-29 15:05:37 Starting HimsApplicationTests using Java 1.8.0_202 on DESKTOP-D3HDJN8 with PID 3656 (started by tsr in E:\changwenhui\¥ÛÀƒ…œ\ ˝æ›ø‚∏≈¬€\◊˜“µ\ µœ∞\HIMS\hims-backend)
+2021-12-29 15:05:37 No active profile set, falling back to default profiles: default
+2021-12-29 15:05:38 Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@7eae3764' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-12-29 15:05:38 Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-12-29 15:05:39 Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-12-29 15:05:40 
+
+Using generated security password: ba07282e-c29c-4365-b9e6-bc7c7980bc91
+
+2021-12-29 15:05:40 Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1903b5d, org.springframework.security.web.context.SecurityContextPersistenceFilter@7e1ffe70, org.springframework.security.web.header.HeaderWriterFilter@306c7bf6, org.springframework.security.web.authentication.logout.LogoutFilter@3332c7a5, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1235151c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5529ff44, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4041739c, org.springframework.security.web.session.SessionManagementFilter@36776c32, org.springframework.security.web.access.ExceptionTranslationFilter@16c1519e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4dcbae55]
+2021-12-29 15:05:40 Initializing ExecutorService 'applicationTaskExecutor'
+2021-12-29 15:05:40 Context refreshed
+2021-12-29 15:05:40 Found 1 custom documentation plugin(s)
+2021-12-29 15:05:40 Scanning for api listing references
+2021-12-29 15:05:41 Started HimsApplicationTests in 3.795 seconds (JVM running for 4.599)
+2021-12-29 15:05:41 Shutting down ExecutorService 'applicationTaskExecutor'
+2021-12-29 15:05:44 Starting HimsApplication using Java 1.8.0_202 on DESKTOP-D3HDJN8 with PID 15836 (E:\changwenhui\Â§ßÂõõ‰∏ä\Êï∞ÊçÆÂ∫ìÊ¶ÇËÆ∫\‰Ωú‰∏ö\ÂÆû‰π†\HIMS\hims-backend\target\classes started by tsr in E:\changwenhui\Â§ßÂõõ‰∏ä\Êï∞ÊçÆÂ∫ìÊ¶ÇËÆ∫\‰Ωú‰∏ö\ÂÆû‰π†\HIMS\hims-backend)
+2021-12-29 15:05:44 No active profile set, falling back to default profiles: default
+2021-12-29 15:05:44 Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-12-29 15:05:44 For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-12-29 15:05:45 Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@4162bcbc' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-12-29 15:05:45 Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-12-29 15:05:45 Tomcat initialized with port(s): 8080 (http)
+2021-12-29 15:05:45 Initializing ProtocolHandler ["http-nio-8080"]
+2021-12-29 15:05:45 Starting service [Tomcat]
+2021-12-29 15:05:45 Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-12-29 15:05:45 Initializing Spring embedded WebApplicationContext
+2021-12-29 15:05:45 Root WebApplicationContext: initialization completed in 949 ms
+2021-12-29 15:05:46 Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-12-29 15:05:46 
+
+Using generated security password: a694bd13-ebd5-4dd9-8c47-a3c3fa79b0ff
+
+2021-12-29 15:05:46 Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@57637afb, org.springframework.security.web.context.SecurityContextPersistenceFilter@3114dec1, org.springframework.security.web.header.HeaderWriterFilter@c075cc, org.springframework.security.web.authentication.logout.LogoutFilter@24e22d39, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@18125775, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7ec40947, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6003252e, org.springframework.security.web.session.SessionManagementFilter@6432924b, org.springframework.security.web.access.ExceptionTranslationFilter@55dc58f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2da91e05]
+2021-12-29 15:05:46 Initializing ExecutorService 'applicationTaskExecutor'
+2021-12-29 15:05:46 LiveReload server is running on port 35729
+2021-12-29 15:05:46 Starting ProtocolHandler ["http-nio-8080"]
+2021-12-29 15:05:46 Tomcat started on port(s): 8080 (http) with context path ''
+2021-12-29 15:05:46 Context refreshed
+2021-12-29 15:05:46 Found 1 custom documentation plugin(s)
+2021-12-29 15:05:46 Scanning for api listing references
+2021-12-29 15:05:46 Started HimsApplication in 2.535 seconds (JVM running for 3.359)
+2021-12-29 15:06:05 Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-12-29 15:06:05 Initializing Servlet 'dispatcherServlet'
+2021-12-29 15:06:05 Completed initialization in 1 ms
+2021-12-29 15:06:05 HikariPool-1 - Starting...
+2021-12-29 15:06:05 HikariPool-1 - Start completed.
+2021-12-29 15:06:07 patient_1 check Prescription
+2021-12-29 15:06:07 patient_1 check records
+2021-12-29 15:06:22 Shutting down ExecutorService 'applicationTaskExecutor'
+2021-12-29 15:06:22 HikariPool-1 - Shutdown initiated...
+2021-12-29 15:06:22 HikariPool-1 - Shutdown completed.

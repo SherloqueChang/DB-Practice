@@ -1,0 +1,49 @@
+2021-12-29 13:13:55.074  INFO 15592 --- [main] com.hims.HimsApplicationTests            : Starting HimsApplicationTests using Java 1.8.0_202 on DESKTOP-D3HDJN8 with PID 15592 (started by tsr in E:\changwenhui\¥ÛÀƒ…œ\ ˝æ›ø‚∏≈¬€\◊˜“µ\ µœ∞\HIMS\hims-backend)
+2021-12-29 13:13:55.077  INFO 15592 --- [main] com.hims.HimsApplicationTests            : No active profile set, falling back to default profiles: default
+2021-12-29 13:13:56.039  INFO 15592 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@6f1a80fb' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-12-29 13:13:56.059  INFO 15592 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-12-29 13:13:58.038  INFO 15592 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-12-29 13:13:58.107  INFO 15592 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 6ccdc6d4-a0d2-47da-849c-b33440eadfc2
+
+2021-12-29 13:13:58.227  INFO 15592 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@22da2fe6, org.springframework.security.web.context.SecurityContextPersistenceFilter@1376883, org.springframework.security.web.header.HeaderWriterFilter@62b475e2, org.springframework.security.web.authentication.logout.LogoutFilter@75d366c2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@46fc522d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6f25bf88, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@100ad67e, org.springframework.security.web.session.SessionManagementFilter@12219f6a, org.springframework.security.web.access.ExceptionTranslationFilter@69cd7630, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@764b14b8]
+2021-12-29 13:13:58.462  INFO 15592 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-12-29 13:13:58.746  INFO 15592 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-12-29 13:13:58.766  INFO 15592 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-12-29 13:13:58.792  INFO 15592 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-12-29 13:13:58.987  INFO 15592 --- [main] com.hims.HimsApplicationTests            : Started HimsApplicationTests in 4.325 seconds (JVM running for 5.224)
+2021-12-29 13:13:59.179  INFO 15592 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-12-29 13:14:05.333  INFO 11616 --- [restartedMain] com.hims.HimsApplication                 : Starting HimsApplication using Java 1.8.0_202 on DESKTOP-D3HDJN8 with PID 11616 (E:\changwenhui\Â§ßÂõõ‰∏ä\Êï∞ÊçÆÂ∫ìÊ¶ÇËÆ∫\‰Ωú‰∏ö\ÂÆû‰π†\HIMS\hims-backend\target\classes started by tsr in E:\changwenhui\Â§ßÂõõ‰∏ä\Êï∞ÊçÆÂ∫ìÊ¶ÇËÆ∫\‰Ωú‰∏ö\ÂÆû‰π†\HIMS\hims-backend)
+2021-12-29 13:14:05.336  INFO 11616 --- [restartedMain] com.hims.HimsApplication                 : No active profile set, falling back to default profiles: default
+2021-12-29 13:14:05.398  INFO 11616 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-12-29 13:14:05.399  INFO 11616 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-12-29 13:14:06.131  INFO 11616 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@5030cc6a' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-12-29 13:14:06.134  INFO 11616 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-12-29 13:14:06.310  INFO 11616 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-12-29 13:14:06.315  INFO 11616 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-12-29 13:14:06.315  INFO 11616 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-12-29 13:14:06.369  INFO 11616 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-12-29 13:14:06.369  INFO 11616 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 969 ms
+2021-12-29 13:14:06.861  INFO 11616 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-12-29 13:14:06.900  INFO 11616 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 1f59594f-2b37-404c-917f-335d409c2eb3
+
+2021-12-29 13:14:06.950  INFO 11616 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2daf365f, org.springframework.security.web.context.SecurityContextPersistenceFilter@5b0bff99, org.springframework.security.web.header.HeaderWriterFilter@723f35b8, org.springframework.security.web.authentication.logout.LogoutFilter@a2f61fa, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3bd97036, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@38dc501c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3a42bc04, org.springframework.security.web.session.SessionManagementFilter@254fa316, org.springframework.security.web.access.ExceptionTranslationFilter@43693415, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@28582d52]
+2021-12-29 13:14:07.015  INFO 11616 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-12-29 13:14:07.044  INFO 11616 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-12-29 13:14:07.166  INFO 11616 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-12-29 13:14:07.167  INFO 11616 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-12-29 13:14:07.178  INFO 11616 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-12-29 13:14:07.198  INFO 11616 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-12-29 13:14:07.306  INFO 11616 --- [restartedMain] com.hims.HimsApplication                 : Started HimsApplication in 2.785 seconds (JVM running for 3.897)
+2021-12-29 13:16:48.523  INFO 11616 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-12-29 13:16:48.523  INFO 11616 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-12-29 13:16:48.525  INFO 11616 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-12-29 13:16:48.586  INFO 11616 --- [http-nio-8080-exec-1] com.hims.controller.LoginController      : user log
+2021-12-29 13:16:48.596  INFO 11616 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-12-29 13:16:48.610  INFO 11616 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-12-29 13:18:11.836  INFO 11616 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-12-29 13:18:11.838  INFO 11616 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-12-29 13:18:11.842  INFO 11616 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
