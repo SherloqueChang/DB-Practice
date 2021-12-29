@@ -6,7 +6,8 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-
+import java.util.ArrayList;
+import java.util.List;
 @Repository
 public class DoctorRepository{
     @Autowired
@@ -16,4 +17,8 @@ public class DoctorRepository{
         return jdbcTemplate.queryForObject(sql, new BeanPropertyRowMapper<>(Doctor.class), id);
     }
     
+    public List<Doctor> findDoctorByDepartmentName(String departmentname) {
+        String sql = "select * from doctor where department=?";
+        return jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(Doctor.class), departmentname);
+    }
 }
