@@ -2,7 +2,7 @@
   <el-container>
     <el-aside>
       <el-menu class="el-menu-vertical-demo" router>
-        <el-menu-item index="/userInfo" v-if="!isAdmin">
+        <el-menu-item index="/userInfo">
           <i class="el-icon-user"></i><span slot="title">个人信息</span>
         </el-menu-item>
         <el-submenu index="1" v-if="isPatient">

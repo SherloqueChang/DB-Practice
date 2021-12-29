@@ -17,6 +17,10 @@
             prop="name"
             label="患者姓名">
           </el-table-column>
+          <el-table-column
+            prop="status"
+            label="就诊状态">
+          </el-table-column>
           <el-table-column align="right">
             <template slot-scope="scope">
               <el-button
@@ -31,6 +35,11 @@
                 size="mini"
                 @click="editPrescriptionForm(scope.$index, scope.row)"
               >开具处方</el-button>
+              <el-button
+                type="success"
+                icon="el-icon-check"
+                @click="submitRes(scope.$index, scope.row)"
+                circle></el-button>
             </template>
           </el-table-column>
         </el-table>
@@ -67,14 +76,15 @@ export default {
       this.$axios
         .get('/getPatientTodayInfo', {
           // 通过路由传参，获得患者的id
-          params: {id: this.user.id }
+          params: { id: this.user.id }
         })
         .then((resp) => {
           if (resp.status === 200) {
             resp.data.patientToday.forEach((element) => {
               this.appointmentTodayTable.push({
                 id: element.patient_id,
-                name: element.patient_name
+                name: element.patient_name,
+                status: element.status
               })
             })
           }
@@ -94,15 +104,34 @@ export default {
       // 编辑病历表
       this.$router.push({
         name: 'MedicalRecForm',
-        params: { p_id: row.id }
+        params: { p_id: row.id, d_id: this.user.id }
       })
     },
     editPrescriptionForm (index, row) {
       // 编辑处方
       this.$router.push({
         name: 'PrescriptionForm',
-        params: { p_id: row.id }
+        params: { p_id: row.id, d_id: this.user.id }
       })
+    },
+    submitRes (index, row) {
+      this.$axios
+        .post('/finishAppointment', {
+          // 通过路由传参，获得患者的id
+          params: { p_id: this.row.id, d_id: this.user.id }
+        })
+        .then((resp) => {
+          if (resp.status === 200) {
+            this.$message({
+              type: 'success',
+              message: '完成诊断'
+            })
+          }
+        })
+        .catch((error) => {
+          console.log(error)
+          this.$message.error('请求错误，请重试')
+        })
     }
   }
 }

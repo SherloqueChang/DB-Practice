@@ -65,11 +65,10 @@ export default {
     return {
       user: {},
       medicalRecForm: {
-        doctor: '',
-        patient: '',
+        doctor: this.$route.params.d_id,
+        patient: this.$route.params.p_id,
         date: '',
         issue: '',
-        // TODO: 待删除属性
         diagnosed_disease: '',
         allergens: ''
       }

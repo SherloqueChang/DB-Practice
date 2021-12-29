@@ -121,6 +121,7 @@ export default {
         this.isPatient = this.$store.state.user.u_type === 'patient'
         this.isDoctor = this.$store.state.user.u_type === 'doctor'
         this.isLeader = this.$store.state.user.u_type === 'leader'
+        this.isAdmin = this.$store.state.user.u_type === 'admin'
         if (this.user.u_type === 'admin') {
           this.user.id = this.$route.params.id
           this.isPatient = (this.$route.params.type === 'patient')
@@ -142,6 +143,8 @@ export default {
           return '患者'
         case 'leader':
           return '科长'
+        case 'admin':
+          return '管理员'
       }
     },
 
@@ -158,7 +161,7 @@ export default {
           if (resp.status === 200) {
             this.$message({
               type: 'success',
-              message: '个人信息修改成功！'
+              message: '信息修改成功！'
             })
             this.isReading = true
             this.isUpdating = false

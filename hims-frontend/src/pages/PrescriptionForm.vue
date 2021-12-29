@@ -11,7 +11,6 @@
               :model="prescriptionForm"
               status-icon
               ref="prescriptionForm"
-              v-loading="loading"
             >
               <el-form-item label="医生" prop="doctor">
                 <el-input v-model="prescriptionForm.doctor"></el-input>
@@ -83,8 +82,8 @@ export default {
     return {
       user: {},
       prescriptionForm: {
-        doctor: '',
-        patient: '',
+        doctor: this.$route.params.d_id,
+        patient: this.$route.params.p_id,
         date: '',
         // TODO: 处方作为多值属性如何在表格中表示(暂时以分隔符区分)
         medicine_name1: '',
@@ -109,7 +108,6 @@ export default {
       }
     },
     submitForm (formName) {
-      this.loading = true
       this.$axios
         .post('/editMedicalRecForm', null, {
           params: {
@@ -129,7 +127,6 @@ export default {
           }
         })
         .then((resp) => {
-          this.loading = false
           if (resp.status === 200) {
             this.$message({
               type: 'success',
