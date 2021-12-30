@@ -63,6 +63,9 @@ public class DoctorServiceImpl {
             AppointmentQueryRequest appointmentQueryRequest = new AppointmentQueryRequest();
             appointmentQueryRequest.setId(doctorId);
             appointmentQueryRequest.setDoctor(doctorName);
+            if(appointments.size() == 30) {
+                continue;
+            }
             appointmentQueryRequest.setAvailableAppointment(30 - appointments.size() + "");
             doctorInfo.add(appointmentQueryRequest);
         }
