@@ -116,9 +116,9 @@ export default {
     },
     submitRes (index, row) {
       this.$axios
-        .post('/finishAppointment', {
+        .post('/finishAppointment', null, {
           // 通过路由传参，获得患者的id
-          params: { p_id: this.row.id, d_id: this.user.id }
+          params: { p_id: row.id, d_id: this.user.id }
         })
         .then((resp) => {
           if (resp.status === 200) {
@@ -126,6 +126,8 @@ export default {
               type: 'success',
               message: '完成诊断'
             })
+            this.appointmentTodayTable = []
+            this.loadPatientData()
           }
         })
         .catch((error) => {

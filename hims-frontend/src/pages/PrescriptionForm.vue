@@ -21,7 +21,7 @@
                     v-for="item in options"
                     :key="item.value"
                     :label="item.label"
-                    :value="item.value">
+                    :value="item.label">
                   </el-option>
                 </el-select>
               </el-form-item>
@@ -34,7 +34,7 @@
                     v-for="item in options"
                     :key="item.value"
                     :label="item.label"
-                    :value="item.value">
+                    :value="item.label">
                   </el-option>
                 </el-select>
               </el-form-item>
@@ -47,7 +47,7 @@
                     v-for="item in options"
                     :key="item.value"
                     :label="item.label"
-                    :value="item.value">
+                    :value="item.label">
                   </el-option>
                 </el-select>              
               </el-form-item>
@@ -60,7 +60,7 @@
                     v-for="item in options"
                     :key="item.value"
                     :label="item.label"
-                    :value="item.value">
+                    :value="item.label">
                   </el-option>
                 </el-select>              
               </el-form-item>
@@ -134,7 +134,7 @@ export default {
     },
     submitForm (formName) {
       this.$axios
-        .post('/editMedicalRecForm', null, {
+        .post('/editPrescriptionForm', null, {
           params: {
             d_id: this.user.id,
             p_id: this.$route.params.p_id,
@@ -150,7 +150,10 @@ export default {
           }
         })
         .then((resp) => {
-          if (resp.status === 200) {
+          if (resp.status === 200 && resp.data.hasOwnProperty('error')) {
+            this.$message.error(resp.data.error);
+          }
+          else if (resp.status === 200) {
             this.$message({
               type: 'success',
               message: '处方编辑完成'

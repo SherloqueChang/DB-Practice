@@ -48,4 +48,10 @@ public class MedicalRepository {
         String sql = "select * from medicine";
         return jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(Medicine.class));
     }
+
+    public void finishAppointment(String doctorId, String patientId)
+    {
+        String sql = "update appointed_info set appointment_status = 'Done' where doctor_id = ? and patient_id = ?";
+        jdbcTemplate.update(sql, doctorId, patientId);
+    }
 }

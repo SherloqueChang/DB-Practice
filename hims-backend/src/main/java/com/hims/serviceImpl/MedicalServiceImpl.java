@@ -92,5 +92,4 @@ public class MedicalServiceImpl{
         return medicalRepository.findPatientHistoryByDoctorId(doctor);
     }
     
-
 }

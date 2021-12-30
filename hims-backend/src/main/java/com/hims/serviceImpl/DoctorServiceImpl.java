@@ -21,6 +21,10 @@ public class DoctorServiceImpl {
     private DepartmentRepository departmentRepository;
     @Autowired
     private DoctorRepository doctorRepository;
+    @Autowired
+    private MedicalRepository medicalRepository;
+    @Autowired
+    private MedicineRepository medicineRepository;
     @Autowired 
     private UserServiceImpl userservice;
 
@@ -66,8 +70,21 @@ public class DoctorServiceImpl {
         return map;
     }
     public Map<String, Object> addmedicalinfo(String doctorId, String patientId, String issue, String diagnosed_disease, String allergens) {
-        // TODO
         appointmentRepository.addmedicalinfo(doctorId, patientId, get_date_of_today(), issue, diagnosed_disease, allergens);
+        Map<String, Object> map = new HashMap<>();
+        return map;
+    }
+
+    public Map<String, Object> add_prescription(String doctorId, String patientId, List<String> medicines, List<Integer> nums) {
+        String error = medicineRepository.addprescription(doctorId, patientId, medicines, nums);
+        Map<String, Object> map = new HashMap<>();
+        if(error != null)
+            map.put("error", error);
+        return map;
+    }
+
+    public Map<String, Object> finishAppointment(String doctorId, String patientId) {
+        medicalRepository.finishAppointment(doctorId, patientId);
         Map<String, Object> map = new HashMap<>();
         return map;
     }
