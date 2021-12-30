@@ -83,10 +83,13 @@ export default {
     handleUserData () {
       if (this.$store.state.user) {
         this.user = this.$store.state.user
-      } else if (this.$route.params.u_type !== undefined && this.user.u_type === 'admin') {
-      // 不同路由跳转(管理员登录)
-      this.isAdmin = true
-      this.user.id = this.$route.params.id
+      }
+      if (this.$route.params.u_type !== undefined && this.user.u_type === 'admin') {
+        // 不同路由跳转(管理员登录)
+        this.isAdmin = true
+        console.log(this.$store.state.user.id)
+        this.user.id = this.$route.params.id
+        console.log(this.$store.state.user.id)
       }
     },
     loadDepartmentDesc () {

@@ -139,7 +139,9 @@ export default {
           this.userInfo.specialties = this.$route.params.specialties
           this.isDoctor = (this.$route.params.u_type === 'doctor')
         }  else {
-          this.userInfo.id = this.$store.state.user.id
+          // 管理员
+          // this.userInfo.id = this.$store.state.user.id
+          this.userInfo.id = 'admin'
           this.userInfo.name = this.$store.state.user.name
           this.userInfo.birthdate = this.$store.state.user.birthdate
           this.userInfo.idcard = this.$store.state.user.idcard
