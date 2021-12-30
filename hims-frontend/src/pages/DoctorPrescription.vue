@@ -17,7 +17,6 @@
           :data="prescriptionTable"
           height="250"
           border
-          v-loading="loading"
           style="width: 100%">
           <el-table-column
             prop="date"
@@ -50,10 +49,10 @@
         </el-table>
         <el-dialog title="编辑处方" :visible.sync="dialogFormVisible">
           <el-form :model="itemForm" :inline="true">
-            <el-form-item label="药品名称" :label-width="formLabelWidth">
+            <el-form-item label="药品名称">
               <el-input v-model="itemForm.medicine_name" autocomplete="off"></el-input>
             </el-form-item>
-            <el-form-item label="药品数量" :label-width="formLabelWidth">
+            <el-form-item label="药品数量">
               <el-input v-model="itemForm.medicine_num" autocomplete="off"></el-input>
             </el-form-item>
           </el-form>
@@ -82,10 +81,13 @@ export default {
       // TODO: 药品信息如何表示还需要处理
       itemForm: {
         medicine_name: '',
-        medicine_num: ''
+        medicine_num: '',
+        p_id: '',
+        date: '',
+        o_medicine_name: '',
+        o_medicine_num: ''
       },
-      dialogFormVisible: false,
-      loading: false
+      dialogFormVisible: false
     }
   },
   created () {
@@ -94,9 +96,6 @@ export default {
   },
   methods: {
     handleUserData () {
-      if (this.$store.state.user) {
-        this.user = this.$store.state.user
-      }
       if (this.$route.params.d_id !== undefined) {
         this.user.id = this.$route.params.d_id
       }
@@ -105,13 +104,13 @@ export default {
       this.$router.push('/departmentMng')
     },
     loadTable () {
-      this.loading = true
       this.$axios
         .get('/getDoctorPrescription', {
           params: { id: this.user.id }
         })
         .then((resp) => {
           if (resp.status === 200) {
+            this.prescriptionTable = []
             resp.data.leader.forEach((element) => {
               this.prescriptionTable.push({
                 date: element.pres_date,
@@ -126,14 +125,22 @@ export default {
     editItem (index, row) {
       this.itemForm.medicine_name = row.medicine_name
       this.itemForm.medicine_num = row.medicine_num
+      this.itemForm.p_id = row.p_id
+      this.itemForm.date = row.date
+      this.itemForm.o_medicine_name = row.medicine_name
+      this.itemForm.o_medicine_num = row.medicine_num
       this.dialogFormVisible = true
     },
     deleteItem (index, row) {
-      this.loading = true
       this.$axios
-        .post('/deletePrescriptionItem', {
-          id: this.user.id,
-          p_id: row.p_id
+        .post('/deletePrescriptionItem', null, {
+          params: {
+            d_id: this.user.id,
+            p_id: row.p_id,
+            date: row.date,
+            medicine_name: row.medicine_name,
+            medicine_num: row.medicine_num
+          }
         })
         .then((resp) => {
           if (resp.status === 200) {
@@ -141,19 +148,22 @@ export default {
               type: 'success',
               message: '操作成功'
             })
-            // this.loadTable()
-            // TODO: 重新加载界面可能需要调试
-            this.reload()
+            this.loadTable()
           }
         })
     },
     submitItem () {
       this.$axios
-        .post('/editPrescriptionItem', null, {
-          id: this.user.id,
-          p_id: this.prescriptionTable.p_id,
-          medicine_name: this.itemForm.medicine_name,
-          medicine_num: this.itemForm.medicine_num
+        .post('/editPrescriptionItem', null, { 
+          params: {
+            d_id: this.user.id,
+            p_id: this.itemForm.p_id,
+            date: this.itemForm.date,
+            o_medicine_name: this.itemForm.o_medicine_name,
+            o_medicine_num: this.itemForm.o_medicine_num,
+            medicine_name: this.itemForm.medicine_name,
+            medicine_num: this.itemForm.medicine_num
+          }
         })
         .then((resp) => {
           if (resp.status === 200) {
@@ -162,6 +172,7 @@ export default {
               message: '操作成功'
             })
             this.dialogFormVisible = false
+            this.loadTable()
           }
         })
     }

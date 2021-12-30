@@ -3,6 +3,7 @@ package com.hims.repository;
 import com.hims.domain.Department;
 import com.hims.domain.Doctor;
 import com.hims.domain.Prescription;
+import com.hims.domain.PatientHistory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -46,5 +47,36 @@ public class DepartmentRepository {
         String sql = "select * from prescription where doctor_id = ?";
         List<Prescription> result = jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(Prescription.class), doctorId);
         return result;
+    }
+
+    public List<PatientHistory> getPatientHistory(String doctorId)
+    {
+        String sql = "select * from patient_history where doctor_id = ?";
+        List<PatientHistory> result = jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(PatientHistory.class), doctorId);
+        return result;
+    }
+
+    public void editPrescriptionItem(String doctorId, String patientId, String date, String oname, String onum, String name, String num)
+    {
+        String sql = "update prescription set medicine_name=?,medicine_num=? where doctor_id=? and patient_id=? and pres_date=? and medicine_name=? and medicine_num=?";
+        jdbcTemplate.update(sql, name, num, doctorId, patientId, date, oname, onum);
+    }
+
+    public void editMedicalItem(String doctorId, String patientId, String date, String issue, String diagnosed_disease, String allergens)
+    {
+        String sql = "update patient_history set treat_issue=?, diagnosed_disease=?, allergens=? where patient_id=? and doctor_id=? and treat_date=?";
+        jdbcTemplate.update(sql, issue, diagnosed_disease, allergens, patientId, doctorId, date);
+    }
+
+    public void deletePrescriptionItem(String doctorId, String patientId, String date, String name, String num)
+    {
+        String sql = "delete from prescription where doctor_id=? and patient_id=? and pres_date=? and medicine_name=? and medicine_num=?";
+        jdbcTemplate.update(sql, doctorId, patientId, date, name, num);
+    }
+
+    public void deleteMedicalItem(String doctorId, String patientId, String date)
+    {
+        String sql = "delete from patient_history where patient_id=? and doctor_id=? and treat_date=?";
+        jdbcTemplate.update(sql, patientId, doctorId, date);
     }
 }
