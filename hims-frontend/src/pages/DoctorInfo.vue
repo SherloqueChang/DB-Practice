@@ -91,7 +91,16 @@ export default {
     // },
     goBack () {
       // this.$router.push('/appointmentOnline')
-      this.$router.back(-1)
+      if (this.$route.params.date !== undefined) {
+        this.$router.push({
+          name: 'FeverAppointment',
+          params: {
+            date: this.$route.params.date
+          }
+        })
+      } else {
+        this.$router.back(-1)
+      }
     },
     loadDoctorData () {
       this.$axios

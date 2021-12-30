@@ -85,4 +85,12 @@ public class AdminServiceImpl {
         map.put("medicine", new Medicine());
         return map;
     }
+
+    public Map<String, Object> setDeptLeader(String id, String dept) {
+        Map<String, Object> map = new HashMap<>();
+        deptRepository.setDeptLeader(id, dept);
+        userRepository.setDeptLeader(id, dept);
+        map.put("ok", null);
+        return map;
+    }
 }

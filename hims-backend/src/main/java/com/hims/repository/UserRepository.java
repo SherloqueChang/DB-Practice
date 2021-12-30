@@ -101,4 +101,8 @@ public class UserRepository {
         }
     }
 
+    public void setDeptLeader(String id, String dept) {
+        String sql = "update user set u_type = 'leader' where id = ?";
+        jdbcTemplate.update(sql, id);
+    }
 }

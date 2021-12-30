@@ -61,4 +61,10 @@ public class AdminController {
                                                      @RequestParam("num") String num) {
         return ResponseEntity.ok(adminService.editMedicine(name, num));
     }
+
+    @PostMapping("/setDeptLeader")
+    ResponseEntity<Map<String, Object>> setDeptLeader(@RequestParam("id") String id,
+                                                      @RequestParam("department") String dept) {
+        return ResponseEntity.ok(adminService.setDeptLeader(id, dept));
+    }
 }

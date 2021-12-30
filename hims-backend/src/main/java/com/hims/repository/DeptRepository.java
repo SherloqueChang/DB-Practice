@@ -32,6 +32,11 @@ public class DeptRepository {
 
     public void delete(String name) {
         String sql = "delete from department where name = ?";
-        jdbcTemplate.update(sql);
+        jdbcTemplate.update(sql, name);
+    }
+
+    public void setDeptLeader(String id, String dept) {
+        String sql = "update department set leader_id = ? where name = ?";
+        jdbcTemplate.update(sql, id, dept);
     }
 }

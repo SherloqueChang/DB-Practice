@@ -70,7 +70,6 @@ export default {
                 doctor_num: element.doctor_num
               })
             })
-            console.log(this.departmentTable)
           }
         })
     },
@@ -79,7 +78,8 @@ export default {
         name: 'DepartmentMng',
         params: {
           id: row.id,
-          dept: row.name
+          dept: row.name,
+          u_type: 'admin'
         }
       })
     },

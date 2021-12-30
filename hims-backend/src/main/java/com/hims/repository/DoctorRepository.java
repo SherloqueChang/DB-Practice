@@ -21,4 +21,6 @@ public class DoctorRepository{
         String sql = "select * from doctor where department=?";
         return jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(Doctor.class), departmentname);
     }
+
+
 }
