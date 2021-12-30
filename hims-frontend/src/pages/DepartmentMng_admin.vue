@@ -70,31 +70,22 @@ export default {
                 doctor_num: element.doctor_num
               })
             })
+            console.log(this.departmentTable)
           }
         })
     },
     checkDepartment (index, row) {
-      // 通过科室名称获取科长id
-      this.$axios
-        .get('/getDepartmentLeader', {
-          params: { name: row.name }
-        })
-        .then((resp) => {
-          if (resp.status === 200) {
-            this.d_id = resp.data.leader.d_id
-            this.$router.push({
-              name: 'DepartmentMng',
-              params: {
-                id: this.d_id,
-                dept: row.name
-              }
-            })
-          }
-        })
+      this.$router.push({
+        name: 'DepartmentMng',
+        params: {
+          id: row.id,
+          dept: row.name
+        }
+      })
     },
     deleteDepartment (index, row) {
       this.$axios
-        .post('/getDepartmentLeader', null, {
+        .post('/deleteDepartment', null, {
           params: { name: row.name }
         })
         .then((resp) => {
