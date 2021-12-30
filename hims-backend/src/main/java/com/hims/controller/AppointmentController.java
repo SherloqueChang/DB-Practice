@@ -40,4 +40,17 @@ public class AppointmentController {
         String departmentname = map.get(departmentid+"");
         return ResponseEntity.ok(doctorService.appointmentQuery(date, departmentname));
     }
+
+    @PostMapping("/submitSurveyForm")
+    ResponseEntity<Map<String, Object>> submitSurveyForm(
+        @RequestParam("name") String name, @RequestParam("cur_date") String cur_date, @RequestParam("gender") String gender,
+        @RequestParam("idcard") String idcard, @RequestParam("phone") String phone, @RequestParam("address") String address,
+        @RequestParam("whether_14days_fever") String whether_14days_fever, @RequestParam("fever_info") String fever_info,
+        @RequestParam("whether_14days_area") String whether_14days_area, @RequestParam("area_info") String area_info,
+        @RequestParam("whether_14days_contact") String whether_14days_contact, @RequestParam("contact_info") String contact_info,
+        @RequestParam("whether_14days_contact_area") String whether_14days_contact_area, @RequestParam("contact_area_info") String contact_area_info
+    ) {
+        //System.out.println("\n"+name+"*"+ cur_date+"*"+ gender+"*"+ idcard+"*"+ phone+"*"+ address+"*"+ whether_14days_fever+"*"+ fever_info+"*"+ whether_14days_area+"*"+ area_info+"*"+ whether_14days_contact+"*"+ contact_info+"*"+ whether_14days_contact_area+"*"+ contact_area_info+"\n");
+        return ResponseEntity.ok(patientService.submitSurveyForm(name, cur_date, gender, idcard, phone, address, whether_14days_fever, fever_info, whether_14days_area, area_info, whether_14days_contact, contact_info, whether_14days_contact_area, contact_area_info));
+    }
 }
