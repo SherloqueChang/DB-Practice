@@ -32,4 +32,12 @@ public class LeaderServiceImpl {
         departmentRepository.modifyDepartmentDesc(doctorId, desc);
         return map;
     } 
+
+    public Map<String, Object> getDepartmentDoctor(String doctorId)
+    {
+        Map<String, Object> map = new HashMap<>();
+        List<Doctor> result = departmentRepository.getDepartmentDoctor(doctorId);
+        map.put("leader", result);
+        return map;
+    } 
 }

@@ -83,7 +83,7 @@ export default {
       if (this.$store.state.user) {
         this.user = this.$store.state.user
       }
-      if (this.user.u_type === 'admin') {
+      if (this.$route.params.u_type !== undefined && this.user.u_type === 'admin') {
         // 不同路由跳转(管理员登录)
         this.user.id = this.$route.params.id
       }
@@ -136,7 +136,12 @@ export default {
                 name: element.name
               })
             })
+            console.log(this.departmentDoctorTable)
           }
+        })
+        .catch((error) => {
+          console.log(error)
+          this.$message.error('请求错误，请重试')
         })
     },
     getDoctorInfo (index, row) {

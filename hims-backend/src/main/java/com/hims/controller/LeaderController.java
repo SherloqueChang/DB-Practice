@@ -23,4 +23,9 @@ public class LeaderController {
                                                             @RequestParam("desc") String desc) {
         return ResponseEntity.ok(leaderService.modifyDepartmentDesc(doctorId, desc));
     }
+
+    @GetMapping("/getDepartmentDoctor")
+    ResponseEntity<Map<String, Object>> getDepartmentDoctor(@RequestParam("id") String doctorId) {
+        return ResponseEntity.ok(leaderService.getDepartmentDoctor(doctorId));
+    }
 }

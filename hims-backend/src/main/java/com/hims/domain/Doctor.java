@@ -9,4 +9,5 @@ public class Doctor{
     private String graduate_school;
     private String job_title;
     private String specialties;
+    private String name;
 }
