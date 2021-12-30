@@ -78,6 +78,10 @@ export default {
   },
   created () {
     this.handleUserData()
+    if (this.$route.params.date !== undefined) {
+      this.date = this.$route.params.date
+    }
+    this.submitQuery()
   },
   methods: {
     handleUserData () {
@@ -106,16 +110,12 @@ export default {
             })
           })
         })
-        .catch((error) => {
-          console.log(error)
-          this.$message.error('请求错误，请重试')
-        })
     },
     getDoctorInfo (index, row) {
       // 查看发热门诊中某一医生的详细信息
       this.$router.push({
         name: 'DoctorInfo',
-        params: { d_id: row.id }
+        params: { d_id: row.id, date: this.date }
       })
     },
     finalSubmit (index, row) {
