@@ -259,6 +259,7 @@ export default {
           params: { date: this.date, department: this.department }
         })
         .then((resp) => {
+          this.appointmentQueryTable = []
           resp.data.appointmentQuery.forEach((element) => {
             this.appointmentQueryTable.push({
               id: element.id,
@@ -325,9 +326,10 @@ export default {
       this.$axios
         .post('/finalSubmit', null, {
           params: {
+            patient_id: this.user.id,
             date: this.appoinmentForm.date,
             department: this.appoinmentForm.department,
-            doctor: this.appoinmentForm.doctor
+            doctor_name: this.appoinmentForm.doctor
           }
         })
         .then((resp) => {

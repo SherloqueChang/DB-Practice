@@ -4,6 +4,7 @@ import com.hims.domain.Appointment;
 import com.hims.domain.User;
 import com.hims.domain.CoronavirusSurvey;
 import com.hims.repository.CoronavirusSurveyRepository;
+import com.hims.repository.AppointmentRepository;
 
 import com.hims.controller.request.AppointmentRequest;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,11 +23,14 @@ public class PatientServiceImpl{
     private UserServiceImpl userService;
     @Autowired
     private CoronavirusSurveyRepository coronavirusSurveyRepository;
+    @Autowired
+    private AppointmentRepository appointmentRepository;
 
     @Autowired
-    public PatientServiceImpl(UserServiceImpl userService, CoronavirusSurveyRepository coronavirusSurveyRepository) {
+    public PatientServiceImpl(UserServiceImpl userService, CoronavirusSurveyRepository coronavirusSurveyRepository, AppointmentRepository appointmentRepository) {
         this.userService = userService;
         this.coronavirusSurveyRepository = coronavirusSurveyRepository;
+        this.appointmentRepository = appointmentRepository;
     }
 
 
@@ -42,6 +46,7 @@ public class PatientServiceImpl{
         map.put("patientAppointment", appointmentRequests);
         return map;
     }
+
     public Map<String, Object> submitSurveyForm(String name, String cur_date, String gender, String idcard, String phone, String address, String whether_14days_fever, String fever_info, String whether_14days_area, String area_info, String whether_14days_contact, String contact_info, String whether_14days_contact_area, String contact_area_info) {
         List<User> patients = userService.findByName(name);
         if (patients.size() > 1) {
@@ -62,6 +67,17 @@ public class PatientServiceImpl{
         }
         return map;
     }
+
+    public Map<String, Object> finalSubmit(String patient_id, String date, String department, String doctor_name) {
+        Map<String, Object> map = new HashMap<>();
+        String doctorId = userService.findByName(doctor_name).get(0).getId();
+        Appointment appointment = new Appointment(doctorId, date, patient_id, department, "Todo");
+        this.appointmentRepository.save(appointment);
+        map.put("ok", "提交成功");
+        return map;
+
+    }
+
     public AppointmentRequest changeApp2Request(Appointment appointment) {
         AppointmentRequest appointmentRequest = new AppointmentRequest();
         appointmentRequest.setDate(appointment.getAppointment_date());

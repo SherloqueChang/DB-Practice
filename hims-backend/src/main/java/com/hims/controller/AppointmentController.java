@@ -53,4 +53,19 @@ public class AppointmentController {
         //System.out.println("\n"+name+"*"+ cur_date+"*"+ gender+"*"+ idcard+"*"+ phone+"*"+ address+"*"+ whether_14days_fever+"*"+ fever_info+"*"+ whether_14days_area+"*"+ area_info+"*"+ whether_14days_contact+"*"+ contact_info+"*"+ whether_14days_contact_area+"*"+ contact_area_info+"\n");
         return ResponseEntity.ok(patientService.submitSurveyForm(name, cur_date, gender, idcard, phone, address, whether_14days_fever, fever_info, whether_14days_area, area_info, whether_14days_contact, contact_info, whether_14days_contact_area, contact_area_info));
     }
+
+    @PostMapping("/finalSubmit")
+    ResponseEntity<Map<String, Object>> finalSubmit(
+        @RequestParam("patient_id") String patient_id, @RequestParam("date") String date, @RequestParam("department") String departmentid, @RequestParam("doctor_name") String doctorname
+    ) {
+        HashMap<String, String> map = new HashMap<String, String>();
+        map.put("d1", "内科");
+        map.put("d2", "外科");
+        map.put("d3", "妇产科");
+        map.put("d4", "儿科");
+        map.put("d5", "发热门诊");
+        String department = map.get(departmentid+"");
+        System.out.println("\n"+patient_id+"*"+ date+"*"+ departmentid+"*"+ doctorname+"\n");
+        return ResponseEntity.ok(patientService.finalSubmit(patient_id, date, department, doctorname));
+    }
 }
