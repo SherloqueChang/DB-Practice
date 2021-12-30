@@ -91,5 +91,14 @@ public class UserRepository {
             return null;
         }
     }
+    public List<User> findByName(String name) {
+        String sql = "select * from user where name=?";
+        //System.out.println("\nname:"+name);
+        try {
+            return jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(User.class), name);
+        } catch (Exception e) {
+            return null;
+        }
+    }
 
 }

@@ -1,6 +1,9 @@
 package com.hims.serviceImpl;
 
 import com.hims.domain.Appointment;
+import com.hims.domain.User;
+import com.hims.domain.CoronavirusSurvey;
+import com.hims.repository.CoronavirusSurveyRepository;
 
 import com.hims.controller.request.AppointmentRequest;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,12 +20,15 @@ public class PatientServiceImpl{
 
     @Autowired
     private UserServiceImpl userService;
-
+    @Autowired
+    private CoronavirusSurveyRepository coronavirusSurveyRepository;
 
     @Autowired
-    public PatientServiceImpl(UserServiceImpl userService) {
+    public PatientServiceImpl(UserServiceImpl userService, CoronavirusSurveyRepository coronavirusSurveyRepository) {
         this.userService = userService;
+        this.coronavirusSurveyRepository = coronavirusSurveyRepository;
     }
+
 
 
     public Map<String, Object> patientAppointmentInfo(String patientId) {
@@ -36,7 +42,26 @@ public class PatientServiceImpl{
         map.put("patientAppointment", appointmentRequests);
         return map;
     }
-    
+    public Map<String, Object> submitSurveyForm(String name, String cur_date, String gender, String idcard, String phone, String address, String whether_14days_fever, String fever_info, String whether_14days_area, String area_info, String whether_14days_contact, String contact_info, String whether_14days_contact_area, String contact_area_info) {
+        List<User> patients = userService.findByName(name);
+        if (patients.size() > 1) {
+            throw new RuntimeException("name is not unique");
+        }
+        if (patients.size() == 0) {
+            throw new RuntimeException("name is not exist");
+        }
+        String patient_id = patients.get(0).getId();
+        CoronavirusSurvey coronavirusSurvey = new CoronavirusSurvey(patient_id, cur_date, name, gender, idcard, phone, address, shi2yes(whether_14days_fever), fever_info, shi2yes(whether_14days_area), area_info, shi2yes(whether_14days_contact), contact_info, shi2yes(whether_14days_contact_area), contact_area_info);
+        this.coronavirusSurveyRepository.save(coronavirusSurvey);
+        Map<String, Object> map = new HashMap<>();
+        if(whether_14days_fever.equals("是") || whether_14days_area.equals("是")|| whether_14days_contact.equals("是") || whether_14days_contact_area.equals("是")){
+            map.put("risk", "有感染风险，请前往发热门诊就医。");
+        }
+        else{
+            map.put("ok", "无感染风险，请保持安全。");
+        }
+        return map;
+    }
     public AppointmentRequest changeApp2Request(Appointment appointment) {
         AppointmentRequest appointmentRequest = new AppointmentRequest();
         appointmentRequest.setDate(appointment.getAppointment_date());
@@ -44,6 +69,14 @@ public class PatientServiceImpl{
         appointmentRequest.setDoctor(userService.find(appointment.getDoctor_id()).getName());
         appointmentRequest.setStatus(appointment.getAppointment_status());
         return appointmentRequest;
+    }
+    String shi2yes(String text){
+        if(text.equals("是")){
+            return "yes";
+        }
+        else{
+            return "no";
+        }
     }
 
 }

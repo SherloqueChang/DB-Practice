@@ -133,7 +133,13 @@ public class UserServiceImpl{
     public List<User> findAllPatient() {
         return userRepository.findAllPatient();
     }
+    public List<User> findAllDoctor() {
+        return userRepository.findAllDoctor();
+    }
 
+    public List<User> findByName(String name) {
+        return userRepository.findByName(name);
+    }
     public List<Appointment> findAppointmentByPatientId(String id) {
         return appointmentRepository.findAppointmentByPatientId(id);
     }

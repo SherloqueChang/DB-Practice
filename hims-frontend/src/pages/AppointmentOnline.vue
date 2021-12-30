@@ -61,7 +61,7 @@
           <el-tab-pane label="新建预约" name="second">
             <el-form ref="form" :model="surveyForm" label-width="330px">
               <el-form-item label="患者姓名">
-                <el-input v-model="surveyForm.name"></el-input>
+                <el-input v-model="surveyForm.patient"></el-input>
               </el-form-item>
               <el-form-item label="日期">
                 <el-col :span="11">
