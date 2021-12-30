@@ -97,6 +97,9 @@ export default {
       if (this.$store.state.user) {
         this.user = this.$store.state.user
       }
+      if (this.$route.params.d_id !== undefined) {
+        this.user.id = this.$route.params.d_id
+      }
     },
     goBack () {
       this.$router.push('/departmentMng')
@@ -111,8 +114,8 @@ export default {
           if (resp.status === 200) {
             resp.data.leader.forEach((element) => {
               this.prescriptionTable.push({
-                date: element.date,
-                p_id: element.p_id,
+                date: element.pres_date,
+                p_id: element.patient_id,
                 medicine_name: element.medicine_name,
                 medicine_num: element.medicine_num
               })

@@ -46,7 +46,7 @@
                   <el-button
                     size="mini"
                     @click="setDeptLeader(scope.index, scope.row)"
-                    v-if="(this.user.u_type === 'admin')"
+                    v-if="isAdmin"
                   >设为科长</el-button>
                 </template>
               </el-table-column>
@@ -71,7 +71,8 @@ export default {
       user: {},
       departmentDesc: '',
       departmentDoctorTable: [],
-      activeName: 'first'
+      activeName: 'first',
+      isAdmin: false
     }
   },
   created () {
@@ -82,10 +83,10 @@ export default {
     handleUserData () {
       if (this.$store.state.user) {
         this.user = this.$store.state.user
-      }
-      if (this.$route.params.u_type !== undefined && this.user.u_type === 'admin') {
-        // 不同路由跳转(管理员登录)
-        this.user.id = this.$route.params.id
+      } else if (this.$route.params.u_type !== undefined && this.user.u_type === 'admin') {
+      // 不同路由跳转(管理员登录)
+      this.isAdmin = true
+      this.user.id = this.$route.params.id
       }
     },
     loadDepartmentDesc () {
@@ -130,13 +131,13 @@ export default {
         })
         .then((resp) => {
           if (resp.status === 200) {
+            this.departmentDoctorTable = []
             resp.data.leader.forEach((element) => {
               this.departmentDoctorTable.push({
                 id: element.id,
                 name: element.name
               })
             })
-            console.log(this.departmentDoctorTable)
           }
         })
         .catch((error) => {
@@ -152,10 +153,22 @@ export default {
       })
     },
     checkDoctorMedicalHistory (index, row) {
-      this.$router.push('/checkDoctorMedicalHistory')
+      this.$router.push({
+        name: 'DoctorMedicalHistory',
+        params: {
+        d_id: row.id
+        }
+      })
+      //this.$router.push('/checkDoctorMedicalHistory')
     },
     checkDoctorPrescription (index, row) {
-      this.$router.push('/checkDoctorPrescription')
+      this.$router.push({
+        name: 'DoctorPrescription',
+        params: {
+        d_id: row.id
+        }
+      })
+      //this.$router.push('/checkDoctorPrescription')
     },
     setDeptLeader (index, row) {
       this.$axios

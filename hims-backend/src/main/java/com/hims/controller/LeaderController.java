@@ -28,4 +28,9 @@ public class LeaderController {
     ResponseEntity<Map<String, Object>> getDepartmentDoctor(@RequestParam("id") String doctorId) {
         return ResponseEntity.ok(leaderService.getDepartmentDoctor(doctorId));
     }
+
+    @GetMapping("/getDoctorPrescription")
+    ResponseEntity<Map<String, Object>> getdoctorPrescription(@RequestParam("id") String doctorId) {
+        return ResponseEntity.ok(leaderService.getdoctorPrescription(doctorId));
+    }
 }

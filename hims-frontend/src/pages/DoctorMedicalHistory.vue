@@ -100,6 +100,9 @@ export default {
       if (this.$store.state.user) {
         this.user = this.$store.state.user
       }
+      if (this.$route.params.d_id !== undefined) {
+        this.user.id = this.$route.params.d_id
+      }
     },
     goBack () {
       this.$router.push('/departmentMng')

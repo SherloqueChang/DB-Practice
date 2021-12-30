@@ -2,6 +2,7 @@ package com.hims.repository;
 
 import com.hims.domain.Department;
 import com.hims.domain.Doctor;
+import com.hims.domain.Prescription;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -38,5 +39,12 @@ public class DepartmentRepository {
             doc.setName(userRepository.find(doc.getId()).getName());
         //System.out.println(doctors);
         return doctors;
+    }
+
+    public List<Prescription> getDoctorPrescription(String doctorId)
+    {
+        String sql = "select * from prescription where doctor_id = ?";
+        List<Prescription> result = jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(Prescription.class), doctorId);
+        return result;
     }
 }
