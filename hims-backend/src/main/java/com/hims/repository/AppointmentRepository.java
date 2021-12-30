@@ -37,4 +37,8 @@ public class AppointmentRepository {
         return jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(Appointment.class), doctorId, date);
     }
 
+    public void addmedicalinfo(String doctorId, String patientId, String date, String issue, String diagnosed_disease, String allergens){
+        String sql = "insert into patient_history(patient_id, doctor_id, treat_date, treat_issue, diagnosed_disease, allergens) VALUES (?,?,?,?,?,?)";
+        jdbcTemplate.update(sql, patientId, doctorId, date, issue, diagnosed_disease, allergens);
+    }
 }

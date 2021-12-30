@@ -8,7 +8,9 @@ import com.hims.domain.Doctor;
 import com.hims.controller.request.AppointmentQueryRequest;
 
 import java.util.HashMap;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 @Service
@@ -27,6 +29,15 @@ public class DoctorServiceImpl {
         this.appointmentRepository = appointmentRepository;
         this.userservice = userserviceImpl;
     }
+
+    private String get_date_of_today()
+    {
+        SimpleDateFormat sdf = new SimpleDateFormat();// 格式化时间 
+        sdf.applyPattern("yyyy-MM-dd"); 
+        Date date = new Date();// 获取当前时间 
+        return sdf.format(date);
+    }
+
     public Map<String, Object> get_todayPatientInfo(String doctorId)
     {
         Map<String, Object> map = new HashMap<>();
@@ -56,6 +67,7 @@ public class DoctorServiceImpl {
     }
     public Map<String, Object> addmedicalinfo(String doctorId, String patientId, String issue, String diagnosed_disease, String allergens) {
         // TODO
+        appointmentRepository.addmedicalinfo(doctorId, patientId, get_date_of_today(), issue, diagnosed_disease, allergens);
         Map<String, Object> map = new HashMap<>();
         return map;
     }

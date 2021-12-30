@@ -44,7 +44,6 @@ public class MedicalServiceImpl{
             his.setDoctor_name(userService.find(his.getDoctor_id()).getName());
             his.setPatient_name(userService.find(his.getPatient_id()).getName());
         }
-        System.out.println(patientHistory);
         map.put("patientHistoryTable", patientHistory);
         return map;
     }
