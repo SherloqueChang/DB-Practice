@@ -12,45 +12,57 @@
               status-icon
               ref="prescriptionForm"
             >
-              <el-form-item label="医生" prop="doctor">
-                <el-input v-model="prescriptionForm.doctor"></el-input>
-              </el-form-item>
-              <el-form-item label="患者" prop="patient">
-                <el-input v-model="prescriptionForm.patient"></el-input>
-              </el-form-item>
-              <el-form-item label="日期" prop="date">
-                <div class="block">
-                  <el-date-picker
-                    value-format="yyyy-MM-dd"
-                    v-model="prescriptionForm.date"
-                    type="date"
-                    placeholder="选择日期">
-                  </el-date-picker>
-                </div>
-              </el-form-item>
               <el-form-item label="药品种类数量">
                 <el-input  v-model="total_m_num"></el-input>
               </el-form-item>
-              <el-form-item label="药品名称" prop="medicine_name1" v-if="parseInt(total_m_num)>0">
-                <el-input v-model="prescriptionForm.medicine_name1"></el-input>
+              <el-form-item v-if="parseInt(total_m_num)>0">
+                <el-select v-model="prescriptionForm.medicine_name1" placeholder="选择药品">
+                  <el-option
+                    v-for="item in options"
+                    :key="item.value"
+                    :label="item.label"
+                    :value="item.value">
+                  </el-option>
+                </el-select>
               </el-form-item>
               <el-form-item label="药品数量" prop="medicine_num1" v-if="parseInt(total_m_num)>0">
                 <el-input v-model="prescriptionForm.medicine_num1"></el-input>
               </el-form-item>
-              <el-form-item label="药品名称" prop="medicine_name2" v-if="parseInt(total_m_num)>1">
-                <el-input v-model="prescriptionForm.medicine_name2"></el-input>
+              <el-form-item v-if="parseInt(total_m_num)>1">
+                <el-select v-model="prescriptionForm.medicine_name2" placeholder="选择药品">
+                  <el-option
+                    v-for="item in options"
+                    :key="item.value"
+                    :label="item.label"
+                    :value="item.value">
+                  </el-option>
+                </el-select>
               </el-form-item>
               <el-form-item label="药品数量" prop="medicine_num2" v-if="parseInt(total_m_num)>1">
                 <el-input v-model="prescriptionForm.medicine_num2"></el-input>
               </el-form-item>
-              <el-form-item label="药品名称" prop="medicine_name3" v-if="parseInt(total_m_num)>2">
-                <el-input v-model="prescriptionForm.medicine_name3"></el-input>
+              <el-form-item v-if="parseInt(total_m_num)>2">
+                <el-select v-model="prescriptionForm.medicine_name3" placeholder="选择药品">
+                  <el-option
+                    v-for="item in options"
+                    :key="item.value"
+                    :label="item.label"
+                    :value="item.value">
+                  </el-option>
+                </el-select>              
               </el-form-item>
               <el-form-item label="药品数量" prop="medicine_num3" v-if="parseInt(total_m_num)>2">
                 <el-input v-model="prescriptionForm.medicine_num3"></el-input>
               </el-form-item>
-              <el-form-item label="药品名称" prop="medicine_name4" v-if="parseInt(total_m_num)>3">
-                <el-input v-model="prescriptionForm.medicine_name4"></el-input>
+              <el-form-item v-if="parseInt(total_m_num)>3">
+                <el-select v-model="prescriptionForm.medicine_name4" placeholder="选择药品">
+                  <el-option
+                    v-for="item in options"
+                    :key="item.value"
+                    :label="item.label"
+                    :value="item.value">
+                  </el-option>
+                </el-select>              
               </el-form-item>
               <el-form-item label="药品数量" prop="medicine_num4" v-if="parseInt(total_m_num)>3">
                 <el-input v-model="prescriptionForm.medicine_num4"></el-input>
@@ -82,9 +94,6 @@ export default {
     return {
       user: {},
       prescriptionForm: {
-        doctor: this.$route.params.d_id,
-        patient: this.$route.params.p_id,
-        date: '',
         // TODO: 处方作为多值属性如何在表格中表示(暂时以分隔符区分)
         medicine_name1: '',
         medicine_num1: '',
@@ -95,9 +104,11 @@ export default {
         medicine_name4: '',
         medicine_num4: ''
       },
-      total_m_num: '0'
+      total_m_num: '1',
+      options: []
     }
   },
+  
   created () {
     this.handleUserData()
   },
@@ -106,6 +117,20 @@ export default {
       if (this.$store.state.user) {
         this.user = this.$store.state.user
       }
+      this.$axios
+        .get('/getMedicineInfo', {
+          // 通过路由传参，获得药品列表
+          params: {}
+        })
+        .then((resp) => {
+          if (resp.status === 200) {
+            this.options = resp.data.options
+          }
+        })
+        .catch((error) => {
+          console.log(error)
+          this.$message.error('获取药品列表失败')
+        })
     },
     submitForm (formName) {
       this.$axios
@@ -113,8 +138,6 @@ export default {
           params: {
             d_id: this.user.id,
             p_id: this.$route.params.p_id,
-            doctor: this.prescriptionForm.doctor,
-            patient: this.prescriptionForm.patient,
             total_m_num: this.total_m_num,
             medicine_name1: this.prescriptionForm.medicine_name1,
             medicine_num1: this.prescriptionForm.medicine_num1,

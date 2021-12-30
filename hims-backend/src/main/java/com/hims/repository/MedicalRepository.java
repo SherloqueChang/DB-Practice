@@ -2,6 +2,7 @@ package com.hims.repository;
 
 import com.hims.domain.Prescription;
 import com.hims.domain.PatientHistory;
+import com.hims.domain.Medicine;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -40,5 +41,11 @@ public class MedicalRepository {
         } catch (Exception e) {
             return null;
         }
+    }
+
+    public List<Medicine> getAllMedicine()
+    {
+        String sql = "select * from medicine";
+        return jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(Medicine.class));
     }
 }
