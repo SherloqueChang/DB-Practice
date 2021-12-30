@@ -139,9 +139,7 @@ export default {
           this.userInfo.specialties = this.$route.params.specialties
           this.isDoctor = (this.$route.params.u_type === 'doctor')
         }  else {
-          // 管理员
-          // this.userInfo.id = this.$store.state.user.id
-          this.userInfo.id = 'admin'
+          this.userInfo.id = this.$store.state.user.id
           this.userInfo.name = this.$store.state.user.name
           this.userInfo.birthdate = this.$store.state.user.birthdate
           this.userInfo.idcard = this.$store.state.user.idcard
@@ -154,6 +152,9 @@ export default {
           this.userInfo.job_title = this.$store.state.user.job_title
           this.userInfo.specialties = this.$store.state.user.specialties
           this.isDoctor = (this.user.u_type === 'doctor' || this.user.u_type === 'leader')
+          if (this.user.u_type === 'admin') {
+            this.userInfo.id = 'admin'
+          }
         }
       }
     },
