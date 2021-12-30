@@ -101,17 +101,17 @@ export default {
         })
         .then((resp) => {
           if (resp.status === 200) {
-            this.doctorInfoForm.name = resp.data.name
-            this.doctorInfoForm.birthdate = resp.data.birthdate
-            this.doctorInfoForm.idcard = resp.data.idcard
-            this.doctorInfoForm.gender = resp.data.gender
-            this.doctorInfoForm.phone = resp.data.phone
-            this.doctorInfoForm.email = resp.data.email
-            this.doctorInfoForm.u_type = resp.data.u_type
-            this.doctorInfoForm.gradSchool = resp.data.gradSchool
-            this.doctorInfoForm.department = resp.data.department
-            this.doctorInfoForm.techTitle = resp.data.techTitle
-            this.doctorInfoForm.specialty = resp.data.specialty
+            this.doctorInfoForm.name = resp.data.doctor.name
+            this.doctorInfoForm.birthdate = resp.data.doctor.birthdate
+            this.doctorInfoForm.idcard = resp.data.doctor.idcard
+            this.doctorInfoForm.gender = resp.data.doctor.gender
+            this.doctorInfoForm.phone = resp.data.doctor.phone
+            this.doctorInfoForm.email = resp.data.doctor.email
+            this.doctorInfoForm.u_type = resp.data.doctor.u_type
+            this.doctorInfoForm.gradSchool = resp.data.doctor.graduate_school
+            this.doctorInfoForm.department = resp.data.doctor.department
+            this.doctorInfoForm.techTitle = resp.data.doctor.job_title
+            this.doctorInfoForm.specialty = resp.data.doctor.specialties
           } else {
             this.$message.error('请求错误，请重试')
           }
