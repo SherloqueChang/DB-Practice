@@ -35,11 +35,15 @@
                 size="mini"
                 @click="editPrescriptionForm(scope.$index, scope.row)"
               >开具处方</el-button>
-              <el-button
-                type="success"
-                icon="el-icon-check"
-                @click="submitRes(scope.$index, scope.row)"
-                circle></el-button>
+              <el-tooltip class="item" effect="dark" content="完成诊断" placement="top-start">
+                <el-button
+                  type="success"
+                  size="mini"
+                  icon="el-icon-check"
+                  @click="submitRes(scope.$index, scope.row)"
+                  plain
+                  circle></el-button>
+              </el-tooltip>
             </template>
           </el-table-column>
         </el-table>
