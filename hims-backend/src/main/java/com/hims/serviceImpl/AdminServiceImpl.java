@@ -65,6 +65,13 @@ public class AdminServiceImpl {
         return map;
     }
 
+    public Map<String, Object> deleteDepartment(String name) {
+        Map<String, Object> map = new HashMap<>();
+        deptRepository.delete(name);
+        map.put("department", new Department());
+        return map;
+    }
+
     public Map<String, Object> getMedicineTable() {
         Map<String, Object> map = new HashMap<>();
         List<Medicine> dept = medicineRepository.findAll();

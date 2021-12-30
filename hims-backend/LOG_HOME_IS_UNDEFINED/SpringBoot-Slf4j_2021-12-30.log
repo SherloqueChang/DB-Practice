@@ -1,0 +1,180 @@
+2021-12-30 09:45:18 Starting HimsApplication using Java 1.8.0_202 on DESKTOP-D3HDJN8 with PID 4212 (E:\changwenhui\大四上\数据库概论\作业\实习\DB-Practice\hims-backend\target\classes started by tsr in E:\changwenhui\大四上\数据库概论\作业\实习\DB-Practice\hims-backend)
+2021-12-30 09:45:18 No active profile set, falling back to default profiles: default
+2021-12-30 09:45:18 Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-12-30 09:45:18 For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-12-30 09:45:18 Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@b0b0189' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-12-30 09:45:18 Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-12-30 09:45:19 Tomcat initialized with port(s): 8080 (http)
+2021-12-30 09:45:19 Initializing ProtocolHandler ["http-nio-8080"]
+2021-12-30 09:45:19 Starting service [Tomcat]
+2021-12-30 09:45:19 Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-12-30 09:45:19 Initializing Spring embedded WebApplicationContext
+2021-12-30 09:45:19 Root WebApplicationContext: initialization completed in 1001 ms
+2021-12-30 09:45:19 Autowired annotation should only be used on methods with parameters: public java.util.Map com.hims.serviceImpl.AdminServiceImpl.getDoctorTable()
+2021-12-30 09:45:19 Autowired annotation should only be used on methods with parameters: public java.util.Map com.hims.serviceImpl.AdminServiceImpl.getPatientTable()
+2021-12-30 09:45:19 HikariPool-1 - Starting...
+2021-12-30 09:45:19 HikariPool-1 - Start completed.
+2021-12-30 09:45:19 Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-12-30 09:45:19 
+
+Using generated security password: 18260681-7266-4da2-9706-752d849d83cf
+
+2021-12-30 09:45:19 Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1a91249f, org.springframework.security.web.context.SecurityContextPersistenceFilter@1647f2d7, org.springframework.security.web.header.HeaderWriterFilter@5c761c1d, org.springframework.security.web.authentication.logout.LogoutFilter@28e738b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4f4da6a6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@415a00d2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4839675a, org.springframework.security.web.session.SessionManagementFilter@28582d52, org.springframework.security.web.access.ExceptionTranslationFilter@13d42750, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@660b27c7]
+2021-12-30 09:45:19 Initializing ExecutorService 'applicationTaskExecutor'
+2021-12-30 09:45:19 LiveReload server is running on port 35729
+2021-12-30 09:45:20 Starting ProtocolHandler ["http-nio-8080"]
+2021-12-30 09:45:20 Tomcat started on port(s): 8080 (http) with context path ''
+2021-12-30 09:45:20 Context refreshed
+2021-12-30 09:45:20 Found 1 custom documentation plugin(s)
+2021-12-30 09:45:20 Scanning for api listing references
+2021-12-30 09:45:20 Started HimsApplication in 2.425 seconds (JVM running for 3.245)
+2021-12-30 09:45:34 Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-12-30 09:45:34 Initializing Servlet 'dispatcherServlet'
+2021-12-30 09:45:34 Completed initialization in 1 ms
+2021-12-30 10:05:20 Shutting down ExecutorService 'applicationTaskExecutor'
+2021-12-30 10:05:20 HikariPool-1 - Shutdown initiated...
+2021-12-30 10:05:20 HikariPool-1 - Shutdown completed.
+2021-12-30 10:06:45 Starting HimsApplication using Java 1.8.0_202 on DESKTOP-D3HDJN8 with PID 14624 (E:\changwenhui\大四上\数据库概论\作业\实习\DB-Practice\hims-backend\target\classes started by tsr in E:\changwenhui\大四上\数据库概论\作业\实习\DB-Practice\hims-backend)
+2021-12-30 10:06:45 No active profile set, falling back to default profiles: default
+2021-12-30 10:06:45 Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-12-30 10:06:45 For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-12-30 10:06:46 Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@54e2725f' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-12-30 10:06:46 Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-12-30 10:06:46 Tomcat initialized with port(s): 8080 (http)
+2021-12-30 10:06:46 Initializing ProtocolHandler ["http-nio-8080"]
+2021-12-30 10:06:46 Starting service [Tomcat]
+2021-12-30 10:06:46 Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-12-30 10:06:46 Initializing Spring embedded WebApplicationContext
+2021-12-30 10:06:46 Root WebApplicationContext: initialization completed in 991 ms
+2021-12-30 10:06:46 Autowired annotation should only be used on methods with parameters: public java.util.Map com.hims.serviceImpl.AdminServiceImpl.getPatientTable()
+2021-12-30 10:06:46 Autowired annotation should only be used on methods with parameters: public java.util.Map com.hims.serviceImpl.AdminServiceImpl.getDoctorTable()
+2021-12-30 10:06:46 HikariPool-1 - Starting...
+2021-12-30 10:06:46 HikariPool-1 - Start completed.
+2021-12-30 10:06:46 Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-12-30 10:06:46 
+
+Using generated security password: b2747df8-b3b3-4ec7-960d-f0f5cfd6184e
+
+2021-12-30 10:06:46 Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5f61504e, org.springframework.security.web.context.SecurityContextPersistenceFilter@725d8ff7, org.springframework.security.web.header.HeaderWriterFilter@2b7ee45, org.springframework.security.web.authentication.logout.LogoutFilter@3f8c9dc, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@32dc2ee6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@40539d60, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@39573ffd, org.springframework.security.web.session.SessionManagementFilter@70f6036f, org.springframework.security.web.access.ExceptionTranslationFilter@32205dd9, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@196e05bb]
+2021-12-30 10:06:47 Initializing ExecutorService 'applicationTaskExecutor'
+2021-12-30 10:06:47 LiveReload server is running on port 35729
+2021-12-30 10:06:47 Starting ProtocolHandler ["http-nio-8080"]
+2021-12-30 10:06:47 Tomcat started on port(s): 8080 (http) with context path ''
+2021-12-30 10:06:47 Context refreshed
+2021-12-30 10:06:47 Found 1 custom documentation plugin(s)
+2021-12-30 10:06:47 Scanning for api listing references
+2021-12-30 10:06:47 Started HimsApplication in 2.386 seconds (JVM running for 3.255)
+2021-12-30 10:06:51 Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-12-30 10:06:51 Initializing Servlet 'dispatcherServlet'
+2021-12-30 10:06:51 Completed initialization in 1 ms
+2021-12-30 10:07:07 Shutting down ExecutorService 'applicationTaskExecutor'
+2021-12-30 10:07:07 HikariPool-1 - Shutdown initiated...
+2021-12-30 10:07:07 HikariPool-1 - Shutdown completed.
+2021-12-30 10:08:38 Starting HimsApplication using Java 1.8.0_202 on DESKTOP-D3HDJN8 with PID 14920 (E:\changwenhui\大四上\数据库概论\作业\实习\DB-Practice\hims-backend\target\classes started by tsr in E:\changwenhui\大四上\数据库概论\作业\实习\DB-Practice\hims-backend)
+2021-12-30 10:08:38 No active profile set, falling back to default profiles: default
+2021-12-30 10:08:39 Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-12-30 10:08:39 For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-12-30 10:08:39 Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@6ad60329' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-12-30 10:08:39 Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-12-30 10:08:39 Tomcat initialized with port(s): 8080 (http)
+2021-12-30 10:08:39 Initializing ProtocolHandler ["http-nio-8080"]
+2021-12-30 10:08:39 Starting service [Tomcat]
+2021-12-30 10:08:39 Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-12-30 10:08:40 Initializing Spring embedded WebApplicationContext
+2021-12-30 10:08:40 Root WebApplicationContext: initialization completed in 980 ms
+2021-12-30 10:08:40 Autowired annotation should only be used on methods with parameters: public java.util.Map com.hims.serviceImpl.AdminServiceImpl.getDoctorTable()
+2021-12-30 10:08:40 Autowired annotation should only be used on methods with parameters: public java.util.Map com.hims.serviceImpl.AdminServiceImpl.getPatientTable()
+2021-12-30 10:08:40 HikariPool-1 - Starting...
+2021-12-30 10:08:40 HikariPool-1 - Start completed.
+2021-12-30 10:08:40 Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-12-30 10:08:40 
+
+Using generated security password: 54ff9282-74f7-47e2-8f5b-79a37e452d85
+
+2021-12-30 10:08:40 Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6d04a79, org.springframework.security.web.context.SecurityContextPersistenceFilter@8ccc365, org.springframework.security.web.header.HeaderWriterFilter@480c6e8d, org.springframework.security.web.authentication.logout.LogoutFilter@44e2b01c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1b76cd83, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@d3b2c8d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@76505bc2, org.springframework.security.web.session.SessionManagementFilter@7f77ddb7, org.springframework.security.web.access.ExceptionTranslationFilter@299cd344, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@234af6ab]
+2021-12-30 10:08:40 Initializing ExecutorService 'applicationTaskExecutor'
+2021-12-30 10:08:40 LiveReload server is running on port 35729
+2021-12-30 10:08:40 Starting ProtocolHandler ["http-nio-8080"]
+2021-12-30 10:08:40 Tomcat started on port(s): 8080 (http) with context path ''
+2021-12-30 10:08:40 Context refreshed
+2021-12-30 10:08:40 Found 1 custom documentation plugin(s)
+2021-12-30 10:08:40 Scanning for api listing references
+2021-12-30 10:08:40 Started HimsApplication in 2.334 seconds (JVM running for 3.174)
+2021-12-30 10:08:45 Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-12-30 10:08:45 Initializing Servlet 'dispatcherServlet'
+2021-12-30 10:08:45 Completed initialization in 1 ms
+2021-12-30 10:09:36 Shutting down ExecutorService 'applicationTaskExecutor'
+2021-12-30 10:09:36 HikariPool-1 - Shutdown initiated...
+2021-12-30 10:09:36 HikariPool-1 - Shutdown completed.
+2021-12-30 10:09:42 Starting HimsApplication using Java 1.8.0_202 on DESKTOP-D3HDJN8 with PID 14992 (E:\changwenhui\大四上\数据库概论\作业\实习\DB-Practice\hims-backend\target\classes started by tsr in E:\changwenhui\大四上\数据库概论\作业\实习\DB-Practice\hims-backend)
+2021-12-30 10:09:42 No active profile set, falling back to default profiles: default
+2021-12-30 10:09:42 Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-12-30 10:09:42 For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-12-30 10:09:43 Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@6ad60329' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-12-30 10:09:43 Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-12-30 10:09:43 Tomcat initialized with port(s): 8080 (http)
+2021-12-30 10:09:43 Initializing ProtocolHandler ["http-nio-8080"]
+2021-12-30 10:09:43 Starting service [Tomcat]
+2021-12-30 10:09:43 Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-12-30 10:09:43 Initializing Spring embedded WebApplicationContext
+2021-12-30 10:09:43 Root WebApplicationContext: initialization completed in 981 ms
+2021-12-30 10:09:43 Autowired annotation should only be used on methods with parameters: public java.util.Map com.hims.serviceImpl.AdminServiceImpl.getPatientTable()
+2021-12-30 10:09:43 Autowired annotation should only be used on methods with parameters: public java.util.Map com.hims.serviceImpl.AdminServiceImpl.getDoctorTable()
+2021-12-30 10:09:43 HikariPool-1 - Starting...
+2021-12-30 10:09:43 HikariPool-1 - Start completed.
+2021-12-30 10:09:44 Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-12-30 10:09:44 
+
+Using generated security password: 9d20a4e1-3557-4791-82d9-9b472d74c156
+
+2021-12-30 10:09:44 Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@234af6ab, org.springframework.security.web.context.SecurityContextPersistenceFilter@c22679e, org.springframework.security.web.header.HeaderWriterFilter@604ab99e, org.springframework.security.web.authentication.logout.LogoutFilter@1e11441c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3c7dadcf, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6fcc0189, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@40aabfc3, org.springframework.security.web.session.SessionManagementFilter@635888b3, org.springframework.security.web.access.ExceptionTranslationFilter@49796659, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@121a9c6d]
+2021-12-30 10:09:44 Initializing ExecutorService 'applicationTaskExecutor'
+2021-12-30 10:09:44 LiveReload server is running on port 35729
+2021-12-30 10:09:44 Starting ProtocolHandler ["http-nio-8080"]
+2021-12-30 10:09:44 Tomcat started on port(s): 8080 (http) with context path ''
+2021-12-30 10:09:44 Context refreshed
+2021-12-30 10:09:44 Found 1 custom documentation plugin(s)
+2021-12-30 10:09:44 Scanning for api listing references
+2021-12-30 10:09:44 Started HimsApplication in 2.352 seconds (JVM running for 3.228)
+2021-12-30 10:10:54 Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-12-30 10:10:54 Initializing Servlet 'dispatcherServlet'
+2021-12-30 10:10:54 Completed initialization in 1 ms
+2021-12-30 10:11:02 Shutting down ExecutorService 'applicationTaskExecutor'
+2021-12-30 10:11:02 HikariPool-1 - Shutdown initiated...
+2021-12-30 10:11:02 HikariPool-1 - Shutdown completed.
+2021-12-30 10:11:24 Starting HimsApplication using Java 1.8.0_202 on DESKTOP-D3HDJN8 with PID 16320 (E:\changwenhui\大四上\数据库概论\作业\实习\DB-Practice\hims-backend\target\classes started by tsr in E:\changwenhui\大四上\数据库概论\作业\实习\DB-Practice\hims-backend)
+2021-12-30 10:11:24 No active profile set, falling back to default profiles: default
+2021-12-30 10:11:24 Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-12-30 10:11:24 For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-12-30 10:11:24 Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@6295c117' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-12-30 10:11:24 Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-12-30 10:11:25 Tomcat initialized with port(s): 8080 (http)
+2021-12-30 10:11:25 Initializing ProtocolHandler ["http-nio-8080"]
+2021-12-30 10:11:25 Starting service [Tomcat]
+2021-12-30 10:11:25 Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-12-30 10:11:25 Initializing Spring embedded WebApplicationContext
+2021-12-30 10:11:25 Root WebApplicationContext: initialization completed in 997 ms
+2021-12-30 10:11:25 Autowired annotation should only be used on methods with parameters: public java.util.Map com.hims.serviceImpl.AdminServiceImpl.getPatientTable()
+2021-12-30 10:11:25 Autowired annotation should only be used on methods with parameters: public java.util.Map com.hims.serviceImpl.AdminServiceImpl.getDoctorTable()
+2021-12-30 10:11:25 HikariPool-1 - Starting...
+2021-12-30 10:11:25 HikariPool-1 - Start completed.
+2021-12-30 10:11:25 Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-12-30 10:11:25 
+
+Using generated security password: 5a1bd5bc-58e2-4352-a0ba-ecb848ee9221
+
+2021-12-30 10:11:25 Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6c5c1381, org.springframework.security.web.context.SecurityContextPersistenceFilter@59b8662e, org.springframework.security.web.header.HeaderWriterFilter@3eeb12f0, org.springframework.security.web.authentication.logout.LogoutFilter@7a80120c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@44983f66, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@65e8d73b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7bb12ea7, org.springframework.security.web.session.SessionManagementFilter@45a4744d, org.springframework.security.web.access.ExceptionTranslationFilter@545f3514, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7438ec11]
+2021-12-30 10:11:25 Initializing ExecutorService 'applicationTaskExecutor'
+2021-12-30 10:11:25 LiveReload server is running on port 35729
+2021-12-30 10:11:26 Starting ProtocolHandler ["http-nio-8080"]
+2021-12-30 10:11:26 Tomcat started on port(s): 8080 (http) with context path ''
+2021-12-30 10:11:26 Context refreshed
+2021-12-30 10:11:26 Found 1 custom documentation plugin(s)
+2021-12-30 10:11:26 Scanning for api listing references
+2021-12-30 10:11:26 Started HimsApplication in 2.412 seconds (JVM running for 3.28)
+2021-12-30 10:11:28 Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-12-30 10:11:28 Initializing Servlet 'dispatcherServlet'
+2021-12-30 10:11:28 Completed initialization in 1 ms
+2021-12-30 10:11:48 Shutting down ExecutorService 'applicationTaskExecutor'
+2021-12-30 10:11:48 HikariPool-1 - Shutdown initiated...
+2021-12-30 10:11:48 HikariPool-1 - Shutdown completed.

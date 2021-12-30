@@ -46,6 +46,11 @@ public class AdminController {
         return ResponseEntity.ok(adminService.getDepartmentTable());
     }
 
+    @PostMapping("/deleteDepartment")
+    ResponseEntity<Map<String, Object>> deleteDepartment(@RequestParam("name") String name) {
+        return ResponseEntity.ok(adminService.deleteDepartment(name));
+    }
+
     @GetMapping("/getMedicineTable")
     ResponseEntity<Map<String, Object>> getMedicineTable() {
         return ResponseEntity.ok(adminService.getMedicineTable());
