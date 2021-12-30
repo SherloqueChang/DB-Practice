@@ -17,6 +17,9 @@
                   </el-date-picker>
                 </div>
               </el-form-item>
+              <el-form-item>
+                <el-button type="primary" @click="submitQuery">查询</el-button>
+              </el-form-item>
             </el-form>
             <el-table
               :data="appointmentQueryTable"
@@ -43,7 +46,7 @@
                   >详情</el-button>
                   <el-button
                     size="mini"
-                    @click="dcotorAppointment(scope.index, scope.row)"
+                    @click="finalSubmit(scope.index, scope.row)"
                   >预约</el-button>
                 </template>
               </el-table-column>
@@ -82,6 +85,32 @@ export default {
         this.user = this.$store.state.user
       }
     },
+    handleClick (tab) {
+      if (tab.index === '0') {
+        this.submitQuery()
+      }
+    },
+    submitQuery () {
+      // 获取某一日期，某一科室中的有空余预约名额的医生信息
+      this.$axios
+        .get('/appointmentQuery', {
+          params: { date: this.date, department: "5" }
+        })
+        .then((resp) => {
+          this.appointmentQueryTable = []
+          resp.data.appointmentQuery.forEach((element) => {
+            this.appointmentQueryTable.push({
+              id: element.id,
+              doctor: element.doctor,
+              availableAppointment: element.availableAppointment
+            })
+          })
+        })
+        .catch((error) => {
+          console.log(error)
+          this.$message.error('请求错误，请重试')
+        })
+    },
     getDoctorInfo (index, row) {
       // 查看发热门诊中某一医生的详细信息
       this.$router.push({
@@ -89,14 +118,15 @@ export default {
         params: { d_id: row.id }
       })
     },
-    dcotorAppointment () {
+    finalSubmit (index, row) {
       // 预约发热门诊医生
       this.$axios
-        .post('/dcotorAppointment', null, {
+        .post('/finalSubmit', null, {
           params: {
-            date: this.appoinmentForm.date,
-            department: this.appoinmentForm.department,
-            doctor: this.appoinmentForm.doctor
+            patient_id: this.user.id,
+            date: this.date,
+            department: "d5",
+            doctor_name: row.doctor
           }
         })
         .then((resp) => {
@@ -106,8 +136,8 @@ export default {
               type: 'success',
               message: '预约成功！'
             })
-            this.$router.push('/appointmentOnline')
-            //  是否需要reload
+            this.activeName = 'first'
+          //  是否需要reload
           }
         })
         .catch((error) => {

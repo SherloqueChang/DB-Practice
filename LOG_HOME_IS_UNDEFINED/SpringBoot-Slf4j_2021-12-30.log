@@ -2571,8 +2571,13 @@ org.springframework.dao.EmptyResultDataAccessException: Incorrect result size: e
 	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1061)
 	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:961)
 	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+<<<<<<< HEAD
 	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626)
+=======
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652)
+>>>>>>> d465760991b0e5055f7702c905ce4ee63e0d40d2
 	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
