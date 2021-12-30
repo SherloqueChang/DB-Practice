@@ -41,4 +41,10 @@ public class AppointmentRepository {
         String sql = "insert into patient_history(patient_id, doctor_id, treat_date, treat_issue, diagnosed_disease, allergens) VALUES (?,?,?,?,?,?)";
         jdbcTemplate.update(sql, patientId, doctorId, date, issue, diagnosed_disease, allergens);
     }
+
+    public void save(Appointment appointment) {
+        String sql = "insert into appointed_info(doctor_id, appointment_date, patient_id, department, appointment_status) VALUES (?,?,?,?,?)";
+        jdbcTemplate.update(sql, appointment.getDoctor_id(), appointment.getAppointment_date(), appointment.getPatient_id(), appointment.getDepartment(), appointment.getAppointment_status());
+    }
+
 }
