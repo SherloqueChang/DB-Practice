@@ -31,9 +31,12 @@ public class AppointmentController {
     
     @GetMapping("/appointmentQuery")
     ResponseEntity<Map<String, Object>> appointmentQuery(@RequestParam("date") String date, @RequestParam("department") String departmentid) {
-        Map<String, String> map = new HashMap<>(Map.of(
-            "1", "内科", "2", "外科", "3", "妇产科", "4", "儿科", "5", "发热门诊"
-        ));
+        HashMap<String, String> map = new HashMap<String, String>();
+        map.put("1", "内科");
+        map.put("2", "外科");
+        map.put("3", "妇产科");
+        map.put("4", "儿科");
+        map.put("5", "发热门诊");
         String departmentname = map.get(departmentid+"");
         return ResponseEntity.ok(doctorService.appointmentQuery(date, departmentname));
     }

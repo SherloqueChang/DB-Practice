@@ -55,6 +55,7 @@ public class DoctorServiceImpl {
         return map;
     }
     public Map<String, Object> addmedicalinfo(String doctorId, String patientId, String issue, String diagnosed_disease, String allergens) {
+        // TODO
         Map<String, Object> map = new HashMap<>();
         return map;
     }
