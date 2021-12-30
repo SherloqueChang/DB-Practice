@@ -151,7 +151,7 @@ export default {
           this.userInfo.department = this.$store.state.user.department
           this.userInfo.job_title = this.$store.state.user.job_title
           this.userInfo.specialties = this.$store.state.user.specialties
-          this.isDoctor = (this.user.u_type === 'doctor')
+          this.isDoctor = (this.user.u_type === 'doctor' || this.user.u_type === 'leader')
         }
       }
     },

@@ -85,7 +85,7 @@ export default {
       }
       if (this.user.u_type === 'admin') {
         // 不同路由跳转(管理员登录)
-        this.user.id = this.$route.params.d_id
+        this.user.id = this.$route.params.id
       }
     },
     loadDepartmentDesc () {
@@ -95,14 +95,14 @@ export default {
         })
         .then((resp) => {
           if (resp.status === 200) {
-            this.departmentDesc = resp.data.leader.departmentDesc
+            this.departmentDesc = resp.data.leader.dept_description
           }
         })
     },
     submitChange () {
       this.$axios
         .post('/modifyDepartmentDesc', null, {
-          param: {
+          params: {
             id: this.user.id,
             desc: this.departmentDesc
           }
