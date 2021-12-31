@@ -31,98 +31,6 @@ CREATE TABLE user(
     u_type ENUM('patient','doctor','leader','admin')
 ) DEFAULT CHARSET UTF8 COMMENT '';
 
-CREATE TABLE department( 
-    name VARCHAR(50) NOT NULL PRIMARY KEY COMMENT 'Name of department',
-    leader_id VARCHAR(50) COMMENT 'Leader id of the department',
-    dept_description VARCHAR(255) COMMENT 'Description of the department'
-) DEFAULT CHARSET UTF8 COMMENT '';
-
-CREATE TABLE doctor(
-    id VARCHAR(50) NOT NULL COMMENT 'Primary Key, login id',
-    department VARCHAR(50) COMMENT 'department name of the doctor, can be NULL',
-    graduate_school VARCHAR(255) NOT NULL COMMENT 'graduate_school',
-    job_title VARCHAR(50) NOT NULL COMMENT 'job title',
-    specialties VARCHAR(255) COMMENT 'specialties'
-    #FOREIGN KEY (department) REFERENCES department(name) ON DELETE SET NULL
-)DEFAULT CHARSET UTF8 COMMENT '';
-
-#ALTER TABLE department ADD CONSTRAINT CS
-#    FOREIGN KEY (leader_id) REFERENCES doctor(id) ON DELETE SET NULL;
-
-#ALTER TABLE department DROP CONSTRAINT CS;
-#flush privileges ;
-
-
-CREATE TABLE medicine(
-    name VARCHAR(50) NOT NULL PRIMARY KEY COMMENT 'medicine name',
-    num VARCHAR(50) NOT NULL COMMENT 'number of medicine'
-) DEFAULT CHARSET UTF8 COMMENT '';
-
-CREATE TABLE prescription(
-    doctor_id VARCHAR(50) NOT NULL COMMENT 'id of the doctor',
-    patient_id VARCHAR(50) NOT NULL COMMENT 'id of the patient',
-    pres_date DATE NOT NULL COMMENT 'date of the prescription',
-    medicine_name VARCHAR(50) NOT NULL COMMENT 'medicine id',
-    medicine_num int NOT NULL COMMENT 'number of the madicine'
-    #FOREIGN KEY (doctor_id) REFERENCES doctor(id) ON DELETE NO ACTION,
-    #FOREIGN KEY (patient_id) REFERENCES patient(id) ON DELETE NO ACTION,
-    #FOREIGN KEY (medicine_name) REFERENCES medicine(name) ON DELETE NO ACTION
-) DEFAULT CHARSET UTF8 COMMENT '';
-
-CREATE TABLE Coronavirus_Survey_Form(
-    patient_id VARCHAR(50) NOT NULL COMMENT 'Who fills the table',
-    fill_time DATETIME NOT NULL COMMENT 'time of the form finished',
-    name VARCHAR(50) NOT NULL COMMENT 'name of the patient',
-    gender ENUM('male','female') NOT NULL COMMENT 'gender of the patient',
-    idcard VARCHAR(50) NOT NULL COMMENT 'ID card number of the patient',
-    phone VARCHAR(50) NOT NULL COMMENT 'phone number of the patient',
-    address VARCHAR(255) NOT NULL COMMENT 'address of the patient',
-    whether_14days_fever ENUM('yes', 'no') NOT NULL COMMENT 'whether the patient has fever in the past 14 days',
-    fever_info VARCHAR(255) COMMENT 'information of the patient about fever, can be NULL',
-    whether_14days_area ENUM('yes', 'no') NOT NULL COMMENT 'Whether there is a history of residence in high-risk areas within 14 days',
-    area_info VARCHAR(255) COMMENT 'information of the patient about high-risk areas, can be NULL',
-    whether_14days_contact ENUM('yes', 'no') NOT NULL COMMENT 'Whether there is a history of close contact with patients with coronavirus in 14 days',
-    contact_info VARCHAR(255) COMMENT 'information of the patient about contact, can be NULL',
-    whether_14days_contact_area ENUM('yes', 'no') NOT NULL COMMENT 'Whether there is close contact with people from medium-to-high-risk areas or overseas within 14 days',
-    contact_area_info VARCHAR(255) COMMENT 'information of the patient about contact with people from medium-to-high-risk areas or overseas, can be NULL'     
-    #FOREIGN KEY (patient_id) REFERENCES patient(id) ON DELETE NO ACTION
-) DEFAULT CHARSET UTF8 COMMENT '';
-
-CREATE TABLE num_appointed(
-    doctor_id VARCHAR(50) NOT NULL COMMENT 'id of the doctor',
-    appointment_date date NOT NULL COMMENT 'date of the record',
-    num int NOT NULL COMMENT 'number of patient already appointed'
-    #FOREIGN KEY (doctor_id) REFERENCES doctor(id) ON DELETE CASCADE
-) DEFAULT CHARSET UTF8 COMMENT '';
-
-CREATE TABLE appointed_info(
-    doctor_id VARCHAR(50) NOT NULL COMMENT 'id of the doctor',
-    appointment_date date NOT NULL COMMENT 'date of the record',
-    department VARCHAR(50) NOT NULL COMMENT 'department name',
-    patient_id VARCHAR(50) NOT NULL COMMENT 'id of the patient',
-    appointment_status ENUM('Todo','Done') NOT NULL COMMENT 'status of the appointment'
-    #FOREIGN KEY (doctor_id) REFERENCES doctor(id) ON DELETE CASCADE,
-    #FOREIGN KEY (patient_id) REFERENCES patient(id) ON DELETE CASCADE
-) DEFAULT CHARSET UTF8 COMMENT '';
-
-CREATE TABLE patient_history (
-    patient_id VARCHAR(50) NOT NULL COMMENT 'id of the patient',
-    doctor_id VARCHAR(50) NOT NULL COMMENT 'id of the doctor',
-    treat_date DATE NOT NULL COMMENT 'date of the treatment',
-    treat_issue VARCHAR(200) NOT NULL COMMENT 'comment of the doctor',
-    diagnosed_disease VARCHAR(200) NOT NULL COMMENT 'diagnosised disease',
-    allergens VARCHAR(200) NOT NULL COMMENT 'allergens'
-    #FOREIGN KEY (doctor_id) REFERENCES doctor(id) ON DELETE CASCADE,
-    #FOREIGN KEY (patient_id) REFERENCES patient(id) ON DELETE CASCADE
-) DEFAULT CHARSET UTF8 COMMENT '';
-
-
-INSERT INTO medicine(name, num) VALUES
-('盘尼西林', '100'),('胰岛素', '100'),('感冒软胶囊', '100'),('阿莫西林', '100'),('布洛芬', '100'),('头孢拉定', '100');
-
-INSERT INTO user(id, pwd, name, birthdate, idcard, gender, phone, email, u_type) VALUES
-('admin', '123456', '管理员', '1999-01-01', '260257697148274013', 'male', '18811344695', 'admin@pku.com', 'admin');
-
 INSERT INTO user(id, pwd, name, birthdate, idcard, gender, phone, email, u_type) VALUES
 ('patient_0','123456','许洁','1970-03-05','260257696184556740','male','15250420736','iELWWtk1bp@163.com','patient'),
 ('patient_1','123456','居梅','1971-09-01','901470558715503816','male','18518198333','O7XX8gypG@qq.com','patient'),
@@ -164,6 +72,32 @@ INSERT INTO user(id, pwd, name, birthdate, idcard, gender, phone, email, u_type)
 ('doctor_14','123456','陈玉珍','1984-04-01','409149555922238501','female','18587676456','kj5GLR@189.com','doctor'),
 ('doctor_15','123456','李娟','1985-04-04','932660963646907176','female','15562690370','sx8v@126.com','doctor');
 
+INSERT INTO user(id, pwd, name, birthdate, idcard, gender, phone, email, u_type) VALUES
+('admin', '123456', '管理员', '1999-01-01', '260257697148274013', 'male', '18811344695', 'admin@pku.com', 'admin');
+
+CREATE TABLE department( 
+    name VARCHAR(50) NOT NULL PRIMARY KEY COMMENT 'Name of department',
+    leader_id VARCHAR(50) COMMENT 'Leader id of the department',
+    dept_description VARCHAR(255) COMMENT 'Description of the department'
+) DEFAULT CHARSET UTF8 COMMENT '';
+
+INSERT INTO department(name, leader_id, dept_description) VALUES
+('内科','doctor_0','xxx'),
+('儿科','doctor_3','xxx'),
+('妇产科','doctor_6','xxx'),
+('外科','doctor_9','xxx'),
+('发热门诊','doctor_12','xxx');
+
+CREATE TABLE doctor(
+    id VARCHAR(50) NOT NULL COMMENT 'Primary Key, login id',
+    department VARCHAR(50) COMMENT 'department name of the doctor, can be NULL',
+    graduate_school VARCHAR(255) NOT NULL COMMENT 'graduate_school',
+    job_title VARCHAR(50) NOT NULL COMMENT 'job title',
+    specialties VARCHAR(255) COMMENT 'specialties',
+    FOREIGN KEY (id) REFERENCES user(id) ON DELETE CASCADE,
+    FOREIGN KEY (department) REFERENCES department(name) ON DELETE SET NULL ON UPDATE CASCADE
+)DEFAULT CHARSET UTF8 COMMENT '';
+
 INSERT INTO doctor (id, department, graduate_school, job_title, specialties) VALUES
 ('doctor_0','内科','北京大学','医师','xxx'),
 ('doctor_1','内科','清华大学','药师','xxx'),
@@ -182,142 +116,31 @@ INSERT INTO doctor (id, department, graduate_school, job_title, specialties) VAL
 ('doctor_14','发热门诊','吉林大学','技师','xxx'),
 ('doctor_15', '发热门诊', '南京大学', '药师', 'xxx');
 
-INSERT INTO department(name, leader_id, dept_description) VALUES
-('内科','doctor_0','xxx'),
-('儿科','doctor_3','xxx'),
-('妇产科','doctor_6','xxx'),
-('外科','doctor_9','xxx'),
-('发热门诊','doctor_12','xxx');
+ALTER TABLE department ADD CONSTRAINT CS
+    FOREIGN KEY (leader_id) REFERENCES doctor(id) ON DELETE RESTRICT;
 
-INSERT INTO appointed_info(doctor_id, appointment_date, department, patient_id,  appointment_status) VALUES
-('doctor_9','2021-04-08','外科','patient_0','Done'),
-('doctor_4','2020-10-14','儿科','patient_0','Done'),
-('doctor_9','2021-12-31','外科','patient_0','Done'),
-('doctor_1','2020-01-17','内科','patient_1','Done'),
-('doctor_3','2020-01-01','儿科','patient_1','Done'),
-('doctor_3','2020-04-07','儿科','patient_1','Done'),
-('doctor_0','2021-12-31','内科','patient_2','Done'),
-('doctor_3','2020-08-28','儿科','patient_2','Done'),
-('doctor_14','2020-10-11','发热门诊','patient_2','Done'),
-('doctor_4','2020-01-21','内科','patient_3','Done'),
-('doctor_10','2020-02-13','外科','patient_3','Done'),
-('doctor_6','2021-12-31','妇产科','patient_3','Done'),
-('doctor_10','2021-06-05','外科','patient_4','Done'),
-('doctor_6','2020-12-21','妇产科','patient_4','Done'),
-('doctor_12','2020-07-23','发热门诊','patient_4','Done'),
-('doctor_13','2021-12-22','发热门诊','patient_5','Done'),
-('doctor_7','2020-07-21','妇产科','patient_5','Done'),
-('doctor_7','2020-01-01','妇产科','patient_5','Done'),
-('doctor_3','2021-12-31','儿科','patient_6','Done'),
-('doctor_1','2020-04-13','内科','patient_6','Done'),
-('doctor_5','2021-02-08','儿科','patient_6','Done'),
-('doctor_12','2020-12-15','发热门诊','patient_7','Done'),
-('doctor_13','2020-01-27','发热门诊','patient_7','Done'),
-('doctor_15','2020-09-20','发热门诊','patient_7','Done'),
-('doctor_1','2020-11-07','内科','patient_8','Done'),
-('doctor_10','2021-12-31','外科','patient_8','Done'),
-('doctor_12','2020-06-06','发热门诊','patient_8','Done'),
-('doctor_9','2020-12-23','外科','patient_9','Done'),
-('doctor_6','2020-08-24','妇产科','patient_9','Done'),
-('doctor_5','2020-10-23','儿科','patient_9','Done'),
-('doctor_5','2020-03-17','儿科','patient_10','Done'),
-('doctor_6','2020-11-08','妇产科','patient_10','Done'),
-('doctor_5','2020-11-06','儿科','patient_10','Done'),
-('doctor_11','2021-01-14','外科','patient_11','Done'),
-('doctor_9','2020-04-26','外科','patient_11','Done'),
-('doctor_14','2020-09-04','发热门诊','patient_11','Done'),
-('doctor_10','2021-12-31','外科','patient_12','Done'),
-('doctor_8','2021-01-08','妇产科','patient_12','Done'),
-('doctor_1','2021-12-31','内科','patient_12','Done'),
-('doctor_11','2021-02-04','外科','patient_13','Done'),
-('doctor_2','2020-06-10','内科','patient_13','Done'),
-('doctor_9','2020-03-20','外科','patient_13','Done'),
-('doctor_11','2020-11-02','外科','patient_14','Done'),
-('doctor_11','2020-12-18','外科','patient_14','Done'),
-('doctor_14','2021-12-01','发热门诊','patient_14','Done'),
-('doctor_9','2020-04-12','外科','patient_15','Done'),
-('doctor_6','2021-12-31','妇产科','patient_15','Done'),
-('doctor_0','2020-04-21','内科','patient_15','Done'),
-('doctor_5','2020-01-20','儿科','patient_16','Done'),
-('doctor_2','2020-05-17','内科','patient_16','Done'),
-('doctor_9','2020-09-28','外科','patient_16','Done'),
-('doctor_14','2020-06-07','发热门诊','patient_17','Done'),
-('doctor_10','2020-12-27','妇产科','patient_17','Done'),
-('doctor_10','2020-12-23','外科','patient_17','Done'),
-('doctor_6','2020-01-26','妇产科','patient_18','Done'),
-('doctor_5','2020-03-07','儿科','patient_18','Done'),
-('doctor_0','2020-12-09','内科','patient_18','Done'),
-('doctor_15','2020-02-04','发热门诊','patient_19','Done'),
-('doctor_11','2020-12-25','外科','patient_19','Done'),
-('doctor_1','2021-12-31','内科','patient_19','Done'),
-('doctor_11','2020-10-05','外科','patient_20','Done'),
-('doctor_2','2020-11-01','内科','patient_20','Done'),
-('doctor_2','2020-06-24','内科','patient_20','Done');
+#ALTER TABLE department DROP CONSTRAINT CS;
+#flush privileges ;
 
-INSERT INTO patient_history(patient_id, doctor_id, treat_date, treat_issue, diagnosed_disease, allergens) VALUES
-('patient_0','doctor_9','2020-04-08','xxx','xxx','xxx'),
-('patient_0','doctor_4','2020-10-14','xxx','xxx','xxx'),
-('patient_0','doctor_9','2020-03-08','xxx','xxx','xxx'),
-('patient_1','doctor_1','2020-01-17','xxx','xxx','xxx'),
-('patient_1','doctor_3','2020-01-01','xxx','xxx','xxx'),
-('patient_1','doctor_3','2020-04-07','xxx','xxx','xxx'),
-('patient_2','doctor_0','2020-03-18','xxx','xxx','xxx'),
-('patient_2','doctor_3','2020-08-28','xxx','xxx','xxx'),
-('patient_2','doctor_14','2020-10-11','xxx','xxx','xxx'),
-('patient_3','doctor_4','2020-01-21','xxx','xxx','xxx'),
-('patient_3','doctor_10','2020-02-13','xxx','xxx','xxx'),
-('patient_3','doctor_6','2020-12-04','xxx','xxx','xxx'),
-('patient_4','doctor_10','2020-06-05','xxx','xxx','xxx'),
-('patient_4','doctor_6','2020-12-21','xxx','xxx','xxx'),
-('patient_4','doctor_12','2020-07-23','xxx','xxx','xxx'),
-('patient_5','doctor_13','2020-12-22','xxx','xxx','xxx'),
-('patient_5','doctor_7','2020-07-21','xxx','xxx','xxx'),
-('patient_5','doctor_7','2020-01-01','xxx','xxx','xxx'),
-('patient_6','doctor_3','2020-10-19','xxx','xxx','xxx'),
-('patient_6','doctor_1','2020-04-13','xxx','xxx','xxx'),
-('patient_6','doctor_5','2020-02-08','xxx','xxx','xxx'),
-('patient_7','doctor_12','2020-12-15','xxx','xxx','xxx'),
-('patient_7','doctor_13','2020-01-27','xxx','xxx','xxx'),
-('patient_7','doctor_15','2020-09-20','xxx','xxx','xxx'),
-('patient_8','doctor_1','2020-11-07','xxx','xxx','xxx'),
-('patient_8','doctor_10','2020-05-08','xxx','xxx','xxx'),
-('patient_8','doctor_12','2020-06-06','xxx','xxx','xxx'),
-('patient_9','doctor_9','2020-12-23','xxx','xxx','xxx'),
-('patient_9','doctor_6','2020-08-24','xxx','xxx','xxx'),
-('patient_9','doctor_5','2020-10-23','xxx','xxx','xxx'),
-('patient_10','doctor_5','2020-03-17','xxx','xxx','xxx'),
-('patient_10','doctor_6','2020-11-08','xxx','xxx','xxx'),
-('patient_10','doctor_5','2020-11-06','xxx','xxx','xxx'),
-('patient_11','doctor_11','2020-01-14','xxx','xxx','xxx'),
-('patient_11','doctor_9','2020-04-26','xxx','xxx','xxx'),
-('patient_11','doctor_14','2020-09-04','xxx','xxx','xxx'),
-('patient_12','doctor_10','2020-04-04','xxx','xxx','xxx'),
-('patient_12','doctor_8','2020-01-08','xxx','xxx','xxx'),
-('patient_12','doctor_1','2020-05-14','xxx','xxx','xxx'),
-('patient_13','doctor_11','2020-02-04','xxx','xxx','xxx'),
-('patient_13','doctor_2','2020-06-10','xxx','xxx','xxx'),
-('patient_13','doctor_9','2020-03-20','xxx','xxx','xxx'),
-('patient_14','doctor_11','2020-11-02','xxx','xxx','xxx'),
-('patient_14','doctor_11','2020-12-18','xxx','xxx','xxx'),
-('patient_14','doctor_14','2020-12-01','xxx','xxx','xxx'),
-('patient_15','doctor_9','2020-04-12','xxx','xxx','xxx'),
-('patient_15','doctor_6','2020-01-10','xxx','xxx','xxx'),
-('patient_15','doctor_0','2020-04-21','xxx','xxx','xxx'),
-('patient_16','doctor_5','2020-01-20','xxx','xxx','xxx'),
-('patient_16','doctor_2','2020-05-17','xxx','xxx','xxx'),
-('patient_16','doctor_9','2020-09-28','xxx','xxx','xxx'),
-('patient_17','doctor_14','2020-06-07','xxx','xxx','xxx'),
-('patient_17','doctor_10','2020-12-27','xxx','xxx','xxx'),
-('patient_17','doctor_10','2020-12-23','xxx','xxx','xxx'),
-('patient_18','doctor_6','2020-01-26','xxx','xxx','xxx'),
-('patient_18','doctor_5','2020-03-07','xxx','xxx','xxx'),
-('patient_18','doctor_0','2020-12-09','xxx','xxx','xxx'),
-('patient_19','doctor_15','2020-02-04','xxx','xxx','xxx'),
-('patient_19','doctor_11','2020-12-25','xxx','xxx','xxx'),
-('patient_19','doctor_1','2020-12-18','xxx','xxx','xxx'),
-('patient_20','doctor_11','2020-10-05','xxx','xxx','xxx'),
-('patient_20','doctor_2','2020-11-01','xxx','xxx','xxx'),
-('patient_20','doctor_2','2020-06-24','xxx','xxx','xxx');
+
+CREATE TABLE medicine(
+    name VARCHAR(50) NOT NULL PRIMARY KEY COMMENT 'medicine name',
+    num VARCHAR(50) NOT NULL COMMENT 'number of medicine'
+) DEFAULT CHARSET UTF8 COMMENT '';
+
+INSERT INTO medicine(name, num) VALUES
+('盘尼西林', '100'),('胰岛素', '100'),('感冒软胶囊', '100'),('阿莫西林', '100'),('布洛芬', '100'),('头孢拉定', '100');
+
+CREATE TABLE prescription(
+    doctor_id VARCHAR(50) COMMENT 'id of the doctor',
+    patient_id VARCHAR(50) NOT NULL COMMENT 'id of the patient',
+    pres_date DATE NOT NULL COMMENT 'date of the prescription',
+    medicine_name VARCHAR(50) NOT NULL COMMENT 'medicine id',
+    medicine_num int NOT NULL COMMENT 'number of the madicine',
+    FOREIGN KEY (doctor_id) REFERENCES doctor(id) ON DELETE SET NULL,
+    FOREIGN KEY (patient_id) REFERENCES user(id) ON DELETE CASCADE,
+    FOREIGN KEY (medicine_name) REFERENCES medicine(name) ON DELETE CASCADE
+) DEFAULT CHARSET UTF8 COMMENT '';
 
 INSERT INTO prescription(doctor_id, patient_id, pres_date, medicine_name, medicine_num) VALUES
 ('doctor_9','patient_0','2020-04-08','阿莫西林','2'),
@@ -384,6 +207,32 @@ INSERT INTO prescription(doctor_id, patient_id, pres_date, medicine_name, medici
 ('doctor_2','patient_20','2020-11-01','阿莫西林','2'),
 ('doctor_2','patient_20','2020-06-24','胰岛素','2');
 
+CREATE TABLE Coronavirus_Survey_Form(
+    patient_id VARCHAR(50) NOT NULL COMMENT 'Who fills the table',
+    fill_time DATETIME NOT NULL COMMENT 'time of the form finished',
+    name VARCHAR(50) NOT NULL COMMENT 'name of the patient',
+    gender ENUM('male','female') NOT NULL COMMENT 'gender of the patient',
+    idcard VARCHAR(50) NOT NULL COMMENT 'ID card number of the patient',
+    phone VARCHAR(50) NOT NULL COMMENT 'phone number of the patient',
+    address VARCHAR(255) NOT NULL COMMENT 'address of the patient',
+    whether_14days_fever ENUM('yes', 'no') NOT NULL COMMENT 'whether the patient has fever in the past 14 days',
+    fever_info VARCHAR(255) COMMENT 'information of the patient about fever, can be NULL',
+    whether_14days_area ENUM('yes', 'no') NOT NULL COMMENT 'Whether there is a history of residence in high-risk areas within 14 days',
+    area_info VARCHAR(255) COMMENT 'information of the patient about high-risk areas, can be NULL',
+    whether_14days_contact ENUM('yes', 'no') NOT NULL COMMENT 'Whether there is a history of close contact with patients with coronavirus in 14 days',
+    contact_info VARCHAR(255) COMMENT 'information of the patient about contact, can be NULL',
+    whether_14days_contact_area ENUM('yes', 'no') NOT NULL COMMENT 'Whether there is close contact with people from medium-to-high-risk areas or overseas within 14 days',
+    contact_area_info VARCHAR(255) COMMENT 'information of the patient about contact with people from medium-to-high-risk areas or overseas, can be NULL',     
+    FOREIGN KEY (patient_id) REFERENCES user(id)
+) DEFAULT CHARSET UTF8 COMMENT '';
+
+CREATE TABLE num_appointed(
+    doctor_id VARCHAR(50) NOT NULL COMMENT 'id of the doctor',
+    appointment_date date NOT NULL COMMENT 'date of the record',
+    num int NOT NULL COMMENT 'number of patient already appointed',
+    FOREIGN KEY (doctor_id) REFERENCES doctor(id) ON DELETE CASCADE
+) DEFAULT CHARSET UTF8 COMMENT '';
+
 INSERT INTO num_appointed(doctor_id, appointment_date, num) VALUES
 ('doctor_9','2020-04-08','1'),
 ('doctor_4','2020-10-14','1'),
@@ -448,6 +297,159 @@ INSERT INTO num_appointed(doctor_id, appointment_date, num) VALUES
 ('doctor_11','2020-10-05','1'),
 ('doctor_2','2020-11-01','1'),
 ('doctor_2','2020-06-24','1');
+
+CREATE TABLE appointed_info(
+    doctor_id VARCHAR(50) NOT NULL COMMENT 'id of the doctor',
+    appointment_date date NOT NULL COMMENT 'date of the record',
+    department VARCHAR(50) NOT NULL COMMENT 'department name',
+    patient_id VARCHAR(50) NOT NULL COMMENT 'id of the patient',
+    appointment_status ENUM('Todo','Done') NOT NULL COMMENT 'status of the appointment',
+    FOREIGN KEY (doctor_id) REFERENCES doctor(id) ON DELETE CASCADE,
+    FOREIGN KEY (patient_id) REFERENCES user(id) ON DELETE CASCADE
+) DEFAULT CHARSET UTF8 COMMENT '';
+
+INSERT INTO appointed_info(doctor_id, appointment_date, department, patient_id,  appointment_status) VALUES
+('doctor_9','2021-04-08','外科','patient_0','Done'),
+('doctor_4','2020-10-14','儿科','patient_0','Done'),
+('doctor_9','2021-12-31','外科','patient_0','Done'),
+('doctor_1','2020-01-17','内科','patient_1','Done'),
+('doctor_3','2020-01-01','儿科','patient_1','Done'),
+('doctor_3','2020-04-07','儿科','patient_1','Done'),
+('doctor_0','2021-12-31','内科','patient_2','Done'),
+('doctor_3','2020-08-28','儿科','patient_2','Done'),
+('doctor_14','2020-10-11','发热门诊','patient_2','Done'),
+('doctor_4','2020-01-21','内科','patient_3','Done'),
+('doctor_10','2020-02-13','外科','patient_3','Done'),
+('doctor_6','2021-12-31','妇产科','patient_3','Done'),
+('doctor_10','2021-06-05','外科','patient_4','Done'),
+('doctor_6','2020-12-21','妇产科','patient_4','Done'),
+('doctor_12','2020-07-23','发热门诊','patient_4','Done'),
+('doctor_13','2021-12-22','发热门诊','patient_5','Done'),
+('doctor_7','2020-07-21','妇产科','patient_5','Done'),
+('doctor_7','2020-01-01','妇产科','patient_5','Done'),
+('doctor_3','2021-12-31','儿科','patient_6','Done'),
+('doctor_1','2020-04-13','内科','patient_6','Done'),
+('doctor_5','2021-02-08','儿科','patient_6','Done'),
+('doctor_12','2020-12-15','发热门诊','patient_7','Done'),
+('doctor_13','2020-01-27','发热门诊','patient_7','Done'),
+('doctor_15','2020-09-20','发热门诊','patient_7','Done'),
+('doctor_1','2020-11-07','内科','patient_8','Done'),
+('doctor_10','2021-12-31','外科','patient_8','Done'),
+('doctor_12','2020-06-06','发热门诊','patient_8','Done'),
+('doctor_9','2020-12-23','外科','patient_9','Done'),
+('doctor_6','2020-08-24','妇产科','patient_9','Done'),
+('doctor_5','2020-10-23','儿科','patient_9','Done'),
+('doctor_5','2020-03-17','儿科','patient_10','Done'),
+('doctor_6','2020-11-08','妇产科','patient_10','Done'),
+('doctor_5','2020-11-06','儿科','patient_10','Done'),
+('doctor_11','2021-01-14','外科','patient_11','Done'),
+('doctor_9','2020-04-26','外科','patient_11','Done'),
+('doctor_14','2020-09-04','发热门诊','patient_11','Done'),
+('doctor_10','2021-12-31','外科','patient_12','Done'),
+('doctor_8','2021-01-08','妇产科','patient_12','Done'),
+('doctor_1','2021-12-31','内科','patient_12','Done'),
+('doctor_11','2021-02-04','外科','patient_13','Done'),
+('doctor_2','2020-06-10','内科','patient_13','Done'),
+('doctor_9','2020-03-20','外科','patient_13','Done'),
+('doctor_11','2020-11-02','外科','patient_14','Done'),
+('doctor_11','2020-12-18','外科','patient_14','Done'),
+('doctor_14','2021-12-01','发热门诊','patient_14','Done'),
+('doctor_9','2020-04-12','外科','patient_15','Done'),
+('doctor_6','2021-12-31','妇产科','patient_15','Done'),
+('doctor_0','2020-04-21','内科','patient_15','Done'),
+('doctor_5','2020-01-20','儿科','patient_16','Done'),
+('doctor_2','2020-05-17','内科','patient_16','Done'),
+('doctor_9','2020-09-28','外科','patient_16','Done'),
+('doctor_14','2020-06-07','发热门诊','patient_17','Done'),
+('doctor_10','2020-12-27','妇产科','patient_17','Done'),
+('doctor_10','2020-12-23','外科','patient_17','Done'),
+('doctor_6','2020-01-26','妇产科','patient_18','Done'),
+('doctor_5','2020-03-07','儿科','patient_18','Done'),
+('doctor_0','2020-12-09','内科','patient_18','Done'),
+('doctor_15','2020-02-04','发热门诊','patient_19','Done'),
+('doctor_11','2020-12-25','外科','patient_19','Done'),
+('doctor_1','2021-12-31','内科','patient_19','Done'),
+('doctor_11','2020-10-05','外科','patient_20','Done'),
+('doctor_2','2020-11-01','内科','patient_20','Done'),
+('doctor_2','2020-06-24','内科','patient_20','Done');
+
+CREATE TABLE patient_history (
+    patient_id VARCHAR(50) NOT NULL COMMENT 'id of the patient',
+    doctor_id VARCHAR(50) COMMENT 'id of the doctor',
+    treat_date DATE NOT NULL COMMENT 'date of the treatment',
+    treat_issue VARCHAR(200) NOT NULL COMMENT 'comment of the doctor',
+    diagnosed_disease VARCHAR(200) NOT NULL COMMENT 'diagnosised disease',
+    allergens VARCHAR(200) NOT NULL COMMENT 'allergens',
+    FOREIGN KEY (doctor_id) REFERENCES doctor(id) ON DELETE SET NULL,
+    FOREIGN KEY (patient_id) REFERENCES user(id) ON DELETE CASCADE
+) DEFAULT CHARSET UTF8 COMMENT '';
+
+
+INSERT INTO patient_history(patient_id, doctor_id, treat_date, treat_issue, diagnosed_disease, allergens) VALUES
+('patient_0','doctor_9','2020-04-08','xxx','xxx','xxx'),
+('patient_0','doctor_4','2020-10-14','xxx','xxx','xxx'),
+('patient_0','doctor_9','2020-03-08','xxx','xxx','xxx'),
+('patient_1','doctor_1','2020-01-17','xxx','xxx','xxx'),
+('patient_1','doctor_3','2020-01-01','xxx','xxx','xxx'),
+('patient_1','doctor_3','2020-04-07','xxx','xxx','xxx'),
+('patient_2','doctor_0','2020-03-18','xxx','xxx','xxx'),
+('patient_2','doctor_3','2020-08-28','xxx','xxx','xxx'),
+('patient_2','doctor_14','2020-10-11','xxx','xxx','xxx'),
+('patient_3','doctor_4','2020-01-21','xxx','xxx','xxx'),
+('patient_3','doctor_10','2020-02-13','xxx','xxx','xxx'),
+('patient_3','doctor_6','2020-12-04','xxx','xxx','xxx'),
+('patient_4','doctor_10','2020-06-05','xxx','xxx','xxx'),
+('patient_4','doctor_6','2020-12-21','xxx','xxx','xxx'),
+('patient_4','doctor_12','2020-07-23','xxx','xxx','xxx'),
+('patient_5','doctor_13','2020-12-22','xxx','xxx','xxx'),
+('patient_5','doctor_7','2020-07-21','xxx','xxx','xxx'),
+('patient_5','doctor_7','2020-01-01','xxx','xxx','xxx'),
+('patient_6','doctor_3','2020-10-19','xxx','xxx','xxx'),
+('patient_6','doctor_1','2020-04-13','xxx','xxx','xxx'),
+('patient_6','doctor_5','2020-02-08','xxx','xxx','xxx'),
+('patient_7','doctor_12','2020-12-15','xxx','xxx','xxx'),
+('patient_7','doctor_13','2020-01-27','xxx','xxx','xxx'),
+('patient_7','doctor_15','2020-09-20','xxx','xxx','xxx'),
+('patient_8','doctor_1','2020-11-07','xxx','xxx','xxx'),
+('patient_8','doctor_10','2020-05-08','xxx','xxx','xxx'),
+('patient_8','doctor_12','2020-06-06','xxx','xxx','xxx'),
+('patient_9','doctor_9','2020-12-23','xxx','xxx','xxx'),
+('patient_9','doctor_6','2020-08-24','xxx','xxx','xxx'),
+('patient_9','doctor_5','2020-10-23','xxx','xxx','xxx'),
+('patient_10','doctor_5','2020-03-17','xxx','xxx','xxx'),
+('patient_10','doctor_6','2020-11-08','xxx','xxx','xxx'),
+('patient_10','doctor_5','2020-11-06','xxx','xxx','xxx'),
+('patient_11','doctor_11','2020-01-14','xxx','xxx','xxx'),
+('patient_11','doctor_9','2020-04-26','xxx','xxx','xxx'),
+('patient_11','doctor_14','2020-09-04','xxx','xxx','xxx'),
+('patient_12','doctor_10','2020-04-04','xxx','xxx','xxx'),
+('patient_12','doctor_8','2020-01-08','xxx','xxx','xxx'),
+('patient_12','doctor_1','2020-05-14','xxx','xxx','xxx'),
+('patient_13','doctor_11','2020-02-04','xxx','xxx','xxx'),
+('patient_13','doctor_2','2020-06-10','xxx','xxx','xxx'),
+('patient_13','doctor_9','2020-03-20','xxx','xxx','xxx'),
+('patient_14','doctor_11','2020-11-02','xxx','xxx','xxx'),
+('patient_14','doctor_11','2020-12-18','xxx','xxx','xxx'),
+('patient_14','doctor_14','2020-12-01','xxx','xxx','xxx'),
+('patient_15','doctor_9','2020-04-12','xxx','xxx','xxx'),
+('patient_15','doctor_6','2020-01-10','xxx','xxx','xxx'),
+('patient_15','doctor_0','2020-04-21','xxx','xxx','xxx'),
+('patient_16','doctor_5','2020-01-20','xxx','xxx','xxx'),
+('patient_16','doctor_2','2020-05-17','xxx','xxx','xxx'),
+('patient_16','doctor_9','2020-09-28','xxx','xxx','xxx'),
+('patient_17','doctor_14','2020-06-07','xxx','xxx','xxx'),
+('patient_17','doctor_10','2020-12-27','xxx','xxx','xxx'),
+('patient_17','doctor_10','2020-12-23','xxx','xxx','xxx'),
+('patient_18','doctor_6','2020-01-26','xxx','xxx','xxx'),
+('patient_18','doctor_5','2020-03-07','xxx','xxx','xxx'),
+('patient_18','doctor_0','2020-12-09','xxx','xxx','xxx'),
+('patient_19','doctor_15','2020-02-04','xxx','xxx','xxx'),
+('patient_19','doctor_11','2020-12-25','xxx','xxx','xxx'),
+('patient_19','doctor_1','2020-12-18','xxx','xxx','xxx'),
+('patient_20','doctor_11','2020-10-05','xxx','xxx','xxx'),
+('patient_20','doctor_2','2020-11-01','xxx','xxx','xxx'),
+('patient_20','doctor_2','2020-06-24','xxx','xxx','xxx');
+
 ```
 
 在登录界面添加病人注册界面的router，设置submitForm方法向数据库插入数据
