@@ -1,5 +1,5 @@
-2021-12-29 13:13:55.074  INFO 15592 --- [main] com.hims.HimsApplicationTests            : Starting HimsApplicationTests using Java 1.8.0_202 on DESKTOP-D3HDJN8 with PID 15592 (started by tsr in E:\changwenhui\������\���ݿ����\��ҵ\ʵϰ\HIMS\hims-backend)
-2021-12-29 13:13:55.077  INFO 15592 --- [main] com.hims.HimsApplicationTests            : No active profile set, falling back to default profiles: default
+2021-12-29 13:13:55.074  INFO 15592 --- [main] com.wmhas.wmhasApplicationTests            : Starting wmhasApplicationTests using Java 1.8.0_202 on DESKTOP-D3HDJN8 with PID 15592 (started by tsr in E:\changwenhui\������\���wmhas�wmhas\ʵϰ\HIMS\hims-backend)
+2021-12-29 13:13:55.077  INFO 15592 --- [main] com.wmhas.wmhasApplicationTests            : No active profile set, falling back to default profiles: default
 2021-12-29 13:13:56.039  INFO 15592 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@6f1a80fb' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
 2021-12-29 13:13:56.059  INFO 15592 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
 2021-12-29 13:13:58.038  INFO 15592 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
@@ -12,10 +12,10 @@ Using generated security password: 6ccdc6d4-a0d2-47da-849c-b33440eadfc2
 2021-12-29 13:13:58.746  INFO 15592 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
 2021-12-29 13:13:58.766  INFO 15592 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
 2021-12-29 13:13:58.792  INFO 15592 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-2021-12-29 13:13:58.987  INFO 15592 --- [main] com.hims.HimsApplicationTests            : Started HimsApplicationTests in 4.325 seconds (JVM running for 5.224)
+2021-12-29 13:13:58.987  INFO 15592 --- [main] com.wmhas.wmhasApplicationTests            : Started wmhasApplicationTests in 4.325 seconds (JVM running for 5.224)
 2021-12-29 13:13:59.179  INFO 15592 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2021-12-29 13:14:05.333  INFO 11616 --- [restartedMain] com.hims.HimsApplication                 : Starting HimsApplication using Java 1.8.0_202 on DESKTOP-D3HDJN8 with PID 11616 (E:\changwenhui\大四上\数据库概论\作业\实习\HIMS\hims-backend\target\classes started by tsr in E:\changwenhui\大四上\数据库概论\作业\实习\HIMS\hims-backend)
-2021-12-29 13:14:05.336  INFO 11616 --- [restartedMain] com.hims.HimsApplication                 : No active profile set, falling back to default profiles: default
+2021-12-29 13:14:05.333  INFO 11616 --- [restartedMain] com.wmhas.wmhasApplication                 : Starting wmhasApplication using Java 1.8.0_202 on DESKTOP-D3HDJN8 with PID 11616 (E:\changwenhui\大四上\数据库概论\作业\实习\wmhas\wmhas-backend\target\classes started by tsr in E:\changwenhui\大四上\数据库概论\作业\实习\wmhas\wmhas-backend)
+2021-12-29 13:14:05.336  INFO 11616 --- [restartedMain] com.wmhas.wmhasApplication                 : No active profile set, falling back to default profiles: default
 2021-12-29 13:14:05.398  INFO 11616 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
 2021-12-29 13:14:05.399  INFO 11616 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
 2021-12-29 13:14:06.131  INFO 11616 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@5030cc6a' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
@@ -37,11 +37,11 @@ Using generated security password: 1f59594f-2b37-404c-917f-335d409c2eb3
 2021-12-29 13:14:07.167  INFO 11616 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
 2021-12-29 13:14:07.178  INFO 11616 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
 2021-12-29 13:14:07.198  INFO 11616 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-2021-12-29 13:14:07.306  INFO 11616 --- [restartedMain] com.hims.HimsApplication                 : Started HimsApplication in 2.785 seconds (JVM running for 3.897)
+2021-12-29 13:14:07.306  INFO 11616 --- [restartedMain] com.wmhas.wmhasApplication                 : Started wmhasApplication in 2.785 seconds (JVM running for 3.897)
 2021-12-29 13:16:48.523  INFO 11616 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2021-12-29 13:16:48.523  INFO 11616 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2021-12-29 13:16:48.525  INFO 11616 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2021-12-29 13:16:48.586  INFO 11616 --- [http-nio-8080-exec-1] com.hims.controller.LoginController      : user log
+2021-12-29 13:16:48.586  INFO 11616 --- [http-nio-8080-exec-1] com.wmhas.controller.LoginController      : user log
 2021-12-29 13:16:48.596  INFO 11616 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
 2021-12-29 13:16:48.610  INFO 11616 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
 2021-12-29 13:18:11.836  INFO 11616 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'

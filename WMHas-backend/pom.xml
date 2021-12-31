@@ -8,10 +8,10 @@
         <version>2.4.1</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.hims</groupId>
-    <artifactId>hims</artifactId>
+    <groupId>com.wmhas</groupId>
+    <artifactId>wmhas</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>hims</name>
+    <name>wmhas</name>
     <description>A hospital information management system</description>
 
     <properties>
