@@ -12,7 +12,7 @@
 
 在后端项目的`application.propeties`中把`password`改为自己的密码，其他不用修改；
 
-vs code 应该会自动识别依赖，先执行`HimsAppication.java`中的`main`函数，如果不能正常运行的话就需要配置`maven`环境；
+vs code 应该会自动识别依赖，先执行`wmhasAppication.java`中的`main`函数，如果不能正常运行的话就需要配置`maven`环境；
 
 后端运行起来后Web端的功能就可以正常响应了
 
