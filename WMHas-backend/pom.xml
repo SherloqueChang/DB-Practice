@@ -12,7 +12,7 @@
     <artifactId>wmhas</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>wmhas</name>
-    <description>A hospital information management system</description>
+    <description>WeiMing Hospital Appointment System</description>
 
     <properties>
         <java.version>1.8</java.version>
