@@ -105,4 +105,9 @@ public class UserRepository {
         String sql = "update user set u_type = 'leader' where id = ?";
         jdbcTemplate.update(sql, id);
     }
+
+    public void setDoctor(String id) {
+        String sql = "update user set u_type = 'doctor' where id = ?";
+        jdbcTemplate.update(sql, id);
+    }
 }

@@ -23,6 +23,8 @@ public class AdminServiceImpl {
     @Autowired
     private DeptRepository deptRepository;
     @Autowired
+    private DepartmentRepository departmentRepository;
+    @Autowired
     private MedicineRepository medicineRepository;
 
     @Autowired
@@ -88,8 +90,11 @@ public class AdminServiceImpl {
 
     public Map<String, Object> setDeptLeader(String id, String dept) {
         Map<String, Object> map = new HashMap<>();
+        Department d = departmentRepository.getDepartment_by_name(dept);
         deptRepository.setDeptLeader(id, dept);
         userRepository.setDeptLeader(id, dept);
+        if(!d.getId().equals(id))
+            userRepository.setDoctor(d.getId());
         map.put("ok", null);
         return map;
     }

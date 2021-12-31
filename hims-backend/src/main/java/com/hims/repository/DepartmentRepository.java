@@ -25,6 +25,13 @@ public class DepartmentRepository {
         return result;
     }
 
+    public Department getDepartment_by_name(String name)
+    {
+        String sql = "select name, leader_id as id, dept_description from department where name=?";
+        Department result = jdbcTemplate.queryForObject(sql, new BeanPropertyRowMapper<>(Department.class), name);
+        return result;
+    }
+
     public void modifyDepartmentDesc(String doctorId, String desc)
     {
         String sql = "update department set dept_description = ? where leader_id=?";
