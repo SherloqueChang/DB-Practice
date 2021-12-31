@@ -1,6 +1,5 @@
 package com.hims.serviceImpl;
 
-import com.hims.serviceImpl.*; 
 import com.hims.repository.*;
 import com.hims.domain.PatientHistory;
 import com.hims.domain.Doctor;
@@ -9,7 +8,6 @@ import com.hims.domain.Prescription;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;

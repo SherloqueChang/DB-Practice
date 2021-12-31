@@ -1,15 +1,10 @@
 package com.hims.repository;
 
-import com.hims.domain.Appointment;
 import com.hims.domain.CoronavirusSurvey;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.List;
 
 @Repository
 public class CoronavirusSurveyRepository {

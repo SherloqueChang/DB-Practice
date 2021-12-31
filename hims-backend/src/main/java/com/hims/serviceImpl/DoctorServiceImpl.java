@@ -18,8 +18,6 @@ public class DoctorServiceImpl {
     @Autowired
     private AppointmentRepository appointmentRepository;
     @Autowired
-    private DepartmentRepository departmentRepository;
-    @Autowired
     private DoctorRepository doctorRepository;
     @Autowired
     private MedicalRepository medicalRepository;
