@@ -1,10 +1,10 @@
-package com.hims;
+package com.wmhas;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class HimsApplicationTests {
+class wmhasApplicationTests {
 
 	@Test
 	void contextLoads() {

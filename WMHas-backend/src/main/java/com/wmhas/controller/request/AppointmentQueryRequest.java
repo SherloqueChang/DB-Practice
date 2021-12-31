@@ -1,4 +1,4 @@
-package com.hims.controller.request;
+package com.wmhas.controller.request;
 import lombok.Data;
 
 @Data public class AppointmentQueryRequest {

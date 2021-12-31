@@ -1,6 +1,6 @@
-package com.hims.repository;
+package com.wmhas.repository;
 
-import com.hims.domain.Medicine;
+import com.wmhas.domain.Medicine;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;

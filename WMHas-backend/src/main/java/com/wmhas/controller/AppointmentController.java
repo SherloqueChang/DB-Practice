@@ -1,7 +1,7 @@
-package com.hims.controller;
+package com.wmhas.controller;
 
-import com.hims.serviceImpl.PatientServiceImpl;
-import com.hims.serviceImpl.DoctorServiceImpl;
+import com.wmhas.serviceImpl.PatientServiceImpl;
+import com.wmhas.serviceImpl.DoctorServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

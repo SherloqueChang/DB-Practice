@@ -1,10 +1,10 @@
-package com.hims.serviceImpl;
+package com.wmhas.serviceImpl;
 
-import com.hims.repository.*;
-import com.hims.domain.PatientHistory;
-import com.hims.domain.Doctor;
-import com.hims.domain.Department;
-import com.hims.domain.Prescription;
+import com.wmhas.repository.*;
+import com.wmhas.domain.PatientHistory;
+import com.wmhas.domain.Doctor;
+import com.wmhas.domain.Department;
+import com.wmhas.domain.Prescription;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

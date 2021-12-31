@@ -1,7 +1,7 @@
-package com.hims.controller;
+package com.wmhas.controller;
 
-import com.hims.controller.request.UserInfoRequest;
-import com.hims.serviceImpl.UserServiceImpl;
+import com.wmhas.controller.request.UserInfoRequest;
+import com.wmhas.serviceImpl.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

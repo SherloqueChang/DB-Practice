@@ -1,4 +1,4 @@
-package com.hims.domain;
+package com.wmhas.domain;
 
 
 import lombok.Data;

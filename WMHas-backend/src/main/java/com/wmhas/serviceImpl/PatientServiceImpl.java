@@ -1,12 +1,12 @@
-package com.hims.serviceImpl;
+package com.wmhas.serviceImpl;
 
-import com.hims.domain.Appointment;
-import com.hims.domain.User;
-import com.hims.domain.CoronavirusSurvey;
-import com.hims.repository.CoronavirusSurveyRepository;
-import com.hims.repository.AppointmentRepository;
+import com.wmhas.domain.Appointment;
+import com.wmhas.domain.User;
+import com.wmhas.domain.CoronavirusSurvey;
+import com.wmhas.repository.CoronavirusSurveyRepository;
+import com.wmhas.repository.AppointmentRepository;
 
-import com.hims.controller.request.AppointmentRequest;
+import com.wmhas.controller.request.AppointmentRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

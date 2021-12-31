@@ -1,6 +1,6 @@
-package com.hims.repository;
+package com.wmhas.repository;
 
-import com.hims.domain.Appointment;
+import com.wmhas.domain.Appointment;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;

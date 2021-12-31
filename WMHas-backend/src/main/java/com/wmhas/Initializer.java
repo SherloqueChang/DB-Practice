@@ -1,4 +1,4 @@
-package com.hims;
+package com.wmhas;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;

@@ -1,7 +1,7 @@
-package com.hims.repository;
+package com.wmhas.repository;
 
-import com.hims.domain.Department;
-import com.hims.domain.DepartmentCnt;
+import com.wmhas.domain.Department;
+import com.wmhas.domain.DepartmentCnt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;

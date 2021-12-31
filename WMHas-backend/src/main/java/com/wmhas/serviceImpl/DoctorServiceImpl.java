@@ -1,11 +1,11 @@
-package com.hims.serviceImpl;
+package com.wmhas.serviceImpl;
 
-import com.hims.repository.*;
+import com.wmhas.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.hims.domain.Appointment;
-import com.hims.domain.Doctor;
-import com.hims.controller.request.AppointmentQueryRequest;
+import com.wmhas.domain.Appointment;
+import com.wmhas.domain.Doctor;
+import com.wmhas.controller.request.AppointmentQueryRequest;
 
 import java.util.HashMap;
 import java.text.SimpleDateFormat;

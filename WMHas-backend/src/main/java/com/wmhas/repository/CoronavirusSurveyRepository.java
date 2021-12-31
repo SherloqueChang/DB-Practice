@@ -1,6 +1,6 @@
-package com.hims.repository;
+package com.wmhas.repository;
 
-import com.hims.domain.CoronavirusSurvey;
+import com.wmhas.domain.CoronavirusSurvey;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
